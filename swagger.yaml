@@ -1,0 +1,721 @@
+openapi: 3.0.0
+info:
+  description: architecture hometask
+  version: 3.2.3
+  title: Task Swagger
+  termsOfService: http://swagger.io/terms/
+tags:
+  - name: Tasks
+    description: Everything about Tasks in db
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+  - name: Comments
+    description: Everything about Comments in db
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+  - name: Employees
+    description: Everything about Employees in db
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+  - name: Documents
+    description: Everything about Documents in db
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+  - name: Tasks in current document
+    description: Everything about Tasks in current document in db
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+
+paths:
+  /tasks:
+    get:
+      tags:
+        - Tasks
+      summary: Get Tasks from db
+      responses:
+        '200':
+          description: Tasks successfully are got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SimpleTasks"
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+  
+    post:
+      tags:
+        - Tasks
+      summary: Add a new Task to the db
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Task"
+      responses:
+        '200':
+          description: Task is successfully created
+        # 'default':
+        #   description: default message
+
+  /tasks/{id}:
+    get:
+      tags:
+        - Tasks
+      summary: get Task info
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Task info is successfully got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+    put:
+      tags:
+        - Tasks
+      summary: Modify an existing Task
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Task"
+      responses:
+        '200':
+          description:  Task is successfully modified
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+    delete:
+      tags:
+        - Tasks
+      summary: Delete an existing Task
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description:  Task is successfully deleted
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+          
+
+############################################################################################
+
+
+  /tasks/{id}/comments:
+    get:
+      tags:
+        - Comments
+      summary: Get Comments from db
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Comments are successfully got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Comments"
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+  
+    post:
+      tags:
+        - Comments
+      summary: Add a new Comment to the db
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Comment"
+      responses:
+        '200':
+          description: Comment is successfully created
+        # 'default':
+        #   description: default message
+
+  /tasks/{id}/comments/{id_comment}:
+    put:
+      tags:
+        - Comments
+      summary: Modify an existing Comment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+        - name: id_comment
+          in: path
+          required: true
+          description: comment id
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Comment"
+      responses:
+        '200':
+          description: Comment is successfully modified
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+    delete:
+      tags:
+        - Comments
+      summary: Delete an existing Comment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+        - name: id_comment
+          in: path
+          required: true
+          description: comment id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Comment is successfully deleted
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+
+
+###################################################################################################
+
+
+  /employees:
+    get:
+      tags:
+        - Employees
+      summary: Get Emplyees from db
+      responses:
+        '200':
+          description: Emplyees successfully are got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SimpleEmployees"
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+  
+    post:
+      tags:
+        - Employees
+      summary: Add a new Emplyee to the db
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Employee"
+      responses:
+        '200':
+          description: Employee is successfully created
+
+
+  /employees/{id}:
+    get:
+      tags:
+        - Employees
+      summary: Get an existing Employee
+      # operationId: modifyTask
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: employee id
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Employee"
+      responses:
+        '200':
+          description:  Employee is successfully got
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+    put:
+      tags:
+        - Employees
+      summary: Modify an existing Employee
+      # operationId: modifyTask
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Employee"
+      responses:
+        '200':
+          description:  Employee is successfully modified
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+    delete:
+      tags:
+        - Employees
+      summary: Delete an existing Employee
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Employee is successfully deleted
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+
+###################################################################################################
+
+
+  /documents:
+    get:
+      tags:
+        - Documents
+      summary: Get Documents from db
+      responses:
+        '200':
+          description: Documents are successfully got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Documents"
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+  
+    post:
+      tags:
+        - Documents
+      summary: Add a new Document to the db
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Document"
+      responses:
+        '200':
+          description: Document is successfully created
+        # 'default':
+        #   description: default message
+
+  /documents/{id}:
+    get:
+      tags:
+        - Documents
+      summary: Det an existing Document
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Document id
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Document"
+      responses:
+        '200':
+          description: Document is successfully got
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+    put:
+      tags:
+        - Documents
+      summary: Modify an existing Document
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Document id
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Document"
+      responses:
+        '200':
+          description: Document is successfully modified
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+    delete:
+      tags:
+        - Documents
+      summary: Delete an existing Document
+      # operationId: deleteTask
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Document id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Document is successfully deleted
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+
+###################################################################################################
+
+  /documents/{id_doc}/tasks:
+    get:
+      tags:
+        - Tasks in current document
+      summary: Get Tasks of the current documents from db
+      parametrs:
+        - name: id_doc
+          in: path
+          required: true
+          description: Document id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Tasks of the current document are successfully got
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimpleTasks'
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+  /documents/{id_doc}/tasks/{id_task}:
+    put:
+      tags:
+        - Tasks in current document
+      summary: Add Task to current document
+      parameters:
+        - name: id_doc
+          in: path
+          required: true
+          description: Document id
+          schema:
+            type: integer
+        - name: id_task
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Task is added to current document
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+    delete:
+      tags:
+        - Tasks in current document
+      summary: Delete Task from current document
+      parameters:
+        - name: id_doc
+          in: path
+          required: true
+          description: Document id
+          schema:
+            type: integer
+        - name: id_task
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Task is deleted from current document
+        # 'default':
+        #   description: Error!!!
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: "#/components/schemas/Error"
+
+###################################################################################################
+
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+
+servers:
+  - url: http://127.0.0.1:8099
+
+
+components:
+  schemas:
+    Task:
+      type: object
+      required:
+        - name
+        - type
+        - executor
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        type:
+          type: string
+        creator:
+          type: string
+        executor:
+          $ref: '#/components/schemas/Employee'
+    SimpleTask:
+      type: object
+      required:
+        - name
+        - type
+        - executor
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        executor:
+          $ref: '#/components/schemas/SimpleEmployee'
+    Tasks:
+      type: array
+      items:
+        $ref: "#/components/schemas/Task"
+    SimpleTasks:
+      type: array
+      items:
+        $ref: "#/components/schemas/SimpleTask"
+
+
+    Employee:
+      type: object
+      required:
+        - name
+        - surname
+      properties:
+        name:
+          type: string
+        surname:
+          type: string
+        login:
+          type: string
+        grade:
+          type: string
+    SimpleEmployee:
+      type: object
+      required:
+        - name
+        - surname
+      properties:
+        name:
+          type: string
+        surname:
+          type: string
+    Employees:
+      type: array
+      items:
+        $ref: "#/components/schemas/Employee"
+    SimpleEmployees:
+      type: array
+      items:
+        $ref: "#/components/schemas/Employee"
+      
+
+    Comment:
+      type: object
+      required:
+        - timestamp
+        - author
+        - text
+      properties:
+        timestamp:
+          type: string
+        author:
+          $ref: "#/components/schemas/Employee"
+        text:
+          type: string
+    Comments:
+      type: array
+      items:
+        $ref: "#/components/schemas/Comment"
+
+
+    Document:
+      type: object
+      required:
+        - timestamp
+        - name
+        - author
+        - text
+      properties:
+        timestamp:
+          type: string
+        name:
+          type: string
+        author:
+          $ref: "#/components/schemas/Employee"
+        text:
+          type: string
+    SimpleDocument:
+      type: object
+      required:
+        - timestamp
+        - name
+        - author
+      properties:
+        timestamp:
+          type: string
+        name:
+          type: string
+        author:
+          $ref: "#/components/schemas/SimpleEmployee"
+    Documents:
+      type: array
+      items:
+        $ref: "#/components/schemas/Document"
+    SimpleDocuments:
+      type: array
+      items:
+        $ref: "#/components/schemas/SimpleDocument"
+
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+ 
