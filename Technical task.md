@@ -117,7 +117,7 @@ Resolved - задача выполнена
 
 Схема взаимодействия сотрудников:
 
-![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/Изображения/Сотрудники.jpg)
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/Employee.jpg)
  
 
 ## Детальное описание каждого этапа работ.
@@ -125,6 +125,7 @@ Resolved - задача выполнена
 ### Имеющиеся сущности:
 
 #### Сущности БД
+
 1.	Сотрудник (Employee)
 
 • id - идентификатор (обязательный)
@@ -218,9 +219,31 @@ Resolved - задача выполнена
 •	Статус (драфт,сохраненный)
 ## Описание БД
 
-![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/Изображения/Снимок2.jfif)
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/BD.jfif)
 
 ### Схемы составляющих
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/SchemaSostav.jpg)
+
+### Схема сотрудника
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/SchemaEmployee.jpg)
+
+### Схема отчета
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/SchemaReport.jpg)
+
+### Схема задачи
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/SchemaTask.jpg)
+
+### Схема проработки задач
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/SchemaWorkTask.jpg)
+
+### Схема проработки отчетов
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/SchemaWorkReport.png)
 
 
 
