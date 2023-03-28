@@ -7,6 +7,7 @@ import { NavBar } from "./components/Base/NavBar/NavBar";
 import { Header } from "./components/Base/Header/Header";
 import { Route, NavLink, Routes } from "react-router-dom";
 
+
 function App() {
   return (
     <div className="App">
