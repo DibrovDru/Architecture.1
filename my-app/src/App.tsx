@@ -7,16 +7,17 @@ import { NavBar } from "./components/Base/NavBar/NavBar";
 import { Header } from "./components/Base/Header/Header";
 import { Route, NavLink, Routes } from "react-router-dom";
 
-
 function App() {
   return (
     <div className="App">
       <Header />
-      <NavBar />
-      <Routes>
-        <Route path="/tasks" element={<Tasks />} />
-        <Route path="/employees" element={<Employees />} />
-      </Routes>
+      <div className="navbar_content">
+        <NavBar />
+        <Routes>
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/employees" element={<Employees />} />
+        </Routes>
+      </div>
     </div>
   );
 }

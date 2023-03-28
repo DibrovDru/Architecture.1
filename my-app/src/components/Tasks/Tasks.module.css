@@ -1,0 +1,14 @@
+.content {
+    border: solid 1px;
+    background-color:aquamarine;
+    /* height: 100wh; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    overflow: hidden;
+}
+
+.tasks {
+    border: solid 1px;
+}
