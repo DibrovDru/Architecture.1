@@ -1,0 +1,25 @@
+.header {
+    border: solid 1px;
+    background-color: aqua;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button_navbar {
+    border: solid 1px;
+    margin-left: 10px;
+}
+
+.logo {
+    border: solid 1px;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.part_header {
+    border: solid 1px;
+    display: flex;
+    align-items: center;
+}
