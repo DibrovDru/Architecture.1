@@ -12,7 +12,7 @@ function TodoTasks() {
       execitor: "Andrey",
     },
     {
-      name: "Technical descriptiona",
+      name: "Technical descriptionaaaaaa a a  a a a a a a",
       execitor: "Sveta",
     },
     {
@@ -87,7 +87,7 @@ function ActiveTasks() {
 
   return (
     <div className={styles.tasks_column}>
-      <div className={styles.tasks_type}>TODO</div>
+      <div className={styles.tasks_type}>InProcess</div>
       {tasks.map((el) => (
         <div className={styles.task}>
           <div> name : {el.name} </div> <div> executor: {el.execitor} </div>{" "}
@@ -119,7 +119,7 @@ function DoneTasks() {
 
   return (
     <div className={styles.tasks_column}>
-      <div className={styles.tasks_type}>TODO</div>
+      <div className={styles.tasks_type}>DONE</div>
       {tasks.map((el) => (
         <div className={styles.task}>
           <div> name : {el.name} </div> <div> executor: {el.execitor} </div>{" "}
