@@ -4,7 +4,11 @@
 
 .navbar_content {
     border: 1px solid red;
-
-    overflow: hidden; /* for 2 divs in 1 line */
+    position: absolute;
+    top: 40px;
+    z-index: -1;
+    
+    /* overflow: hidden;  */
+    /* for 2 divs in 1 line */
     /* https://translated.turbopages.org/proxy_u/en-ru.ru.4b574428-642366ca-66971354-74722d776562/https/stackoverflow.com/questions/6056759/two-divs-the-same-line-one-dynamic-width-one-fixed */
 }

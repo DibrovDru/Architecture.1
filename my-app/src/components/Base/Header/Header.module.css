@@ -2,9 +2,11 @@
     border: solid 1px;
     background-color: aqua;
     height: 40px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    /* position: fixed; */
+
+    position: fixed;
 }
 
 .button_navbar {

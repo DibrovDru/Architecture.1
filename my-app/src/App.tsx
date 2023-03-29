@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import { Tasks } from "./components/Tasks/Tasks";
@@ -8,11 +8,23 @@ import { Header } from "./components/Base/Header/Header";
 import { Route, NavLink, Routes } from "react-router-dom";
 
 function App() {
+  let [isOpenNavBar, changeStateButton] = useState(true);
+
+  let VirtualNavBar;
+  if (isOpenNavBar) {
+    VirtualNavBar = <NavBar />;
+  } else {
+    VirtualNavBar = <div></div>;
+  }
+
   return (
     <div className="App">
-      <Header />
+      <Header
+        changeStateButton={changeStateButton}
+        isOpenNavBar={isOpenNavBar}
+      />
       <div className="navbar_content">
-        <NavBar />
+        {VirtualNavBar}
         <Routes>
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/employees" element={<Employees />} />
