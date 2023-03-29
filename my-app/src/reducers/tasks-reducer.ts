@@ -1,4 +1,4 @@
-const ADD_TASK = 'ADD-TASK'
+import {ADD_TASK} from '../ActionCreators/';
 
 let initial_state = [
         {
@@ -19,7 +19,7 @@ let initial_state = [
           },
     ]
 
-export function tasksReducer(state = initial_state, action: any) {
+function tasksReducer(state = initial_state, action: any) {
     // debugger;
     switch (action.type) {
         case ADD_TASK:
@@ -34,6 +34,6 @@ export function tasksReducer(state = initial_state, action: any) {
     }
 }
 
-export function addTaskCreator() {
-    return {type: ADD_TASK}
-}
+
+
+export default tasksReducer;

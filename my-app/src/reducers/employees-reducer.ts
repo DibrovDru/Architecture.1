@@ -1,4 +1,4 @@
-const ADD_EMPLOYEE = 'ADD-EMPLOYEE'
+import {ADD_EMPLOYEE} from '../ActionCreators';
 
 let initial_state = {
     employees: [
@@ -21,7 +21,7 @@ let initial_state = {
     ]
 }
 
-export function employeeReducer(state = initial_state, action: any) {
+function employeeReducer(state = initial_state, action: any) {
     switch (action.type) {
         case ADD_EMPLOYEE:
             let newEmployee = {
@@ -35,6 +35,6 @@ export function employeeReducer(state = initial_state, action: any) {
     }
 }
 
-export function addEmployeeCreator() {
-    return {type: ADD_EMPLOYEE}
-}
+
+
+export default employeeReducer;

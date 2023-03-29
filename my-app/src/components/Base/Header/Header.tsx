@@ -1,8 +1,5 @@
-import React from "react";
-import base_styles from "../Base.module.css";
 import styles from "./Header.module.css";
 import logo from "../logo.svg";
-import { addTaskCreator } from "../../../redux/tasks-reducer";
 
 import { NavBarButtonState } from "../NavBar/NavBar";
 import { useStore } from "react-redux";
@@ -48,7 +45,8 @@ function Profile() {
   );
 }
 
-export function Header(props: NavBarButtonState) {
+function Header(props: any) {
+  // NavBarButtonState
   let store: Store = useStore();
   console.log(store.getState());
   console.log("=====================");
@@ -61,9 +59,11 @@ export function Header(props: NavBarButtonState) {
           isOpenNavBar={props.isOpenNavBar}
         />
         <Logo />
-        <button onClick={() => store.dispatch(addTaskCreator())}>Create</button>
+        <button onClick={props.addTask}>Create</button>
       </div>
       <Profile />
     </div>
   );
 }
+
+export default Header;

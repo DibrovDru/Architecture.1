@@ -104,14 +104,15 @@ function ActiveTasks() {
   );
 }
 
-function DoneTasks() {
-  const store: Store = useStore();
-  console.log(store.getState());
+function DoneTasks(props: any) {
+  // const store: Store = useStore();
+  // console.log(store.getState());
+  // console.log(props);
   // debugger;
   return (
     <div className={styles.tasks_column}>
       <div className={styles.tasks_type}>DONE</div>
-      {store.getState().tasks.map((el: Task) => (
+      {props.tasks.map((el: Task) => (
         <div className={styles.task}>
           <div> name : {el.name} </div> <div> executor: {el.executor} </div>{" "}
         </div>
@@ -120,13 +121,17 @@ function DoneTasks() {
   );
 }
 
-export function Tasks(props: { isOpenNavBar: boolean }) {
+export function Tasks(props: any) {
+  // { isOpenNavBar: boolean }
+  // console.log("+++++++++++++++++++");
+  // console.log(props);
+  // debugger;
   return (
     <div className={styles.content}>
       {props.isOpenNavBar ? <></> : <div className={styles.empty_column}></div>}
       <TodoTasks />
       <ActiveTasks />
-      <DoneTasks />
+      <DoneTasks tasks={props.tasks} />
       <div className={styles.empty_column}></div>
     </div>
   );
