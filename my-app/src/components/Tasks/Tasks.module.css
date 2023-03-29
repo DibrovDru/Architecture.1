@@ -9,6 +9,19 @@
     overflow: hidden;
 }
 
-.tasks {
+.tasks_column {
     border: solid 1px;
+}
+
+.empty_column {
+    width: 150px;
+}
+
+.tasks_type {
+    border: solid 1px yellow;
+}
+
+.task {
+    border: solid 1px;
+    margin: 10px;
 }

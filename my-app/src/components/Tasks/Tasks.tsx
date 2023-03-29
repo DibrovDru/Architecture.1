@@ -2,15 +2,131 @@ import React from "react";
 import styles from "./Tasks.module.css";
 
 function TodoTasks() {
-  return <div className={styles.tasks}>TODO</div>;
+  const tasks = [
+    {
+      name: "frontend",
+      execitor: "Andrey",
+    },
+    {
+      name: "backend",
+      execitor: "Andrey",
+    },
+    {
+      name: "Technical descriptiona",
+      execitor: "Sveta",
+    },
+    {
+      name: "disgn",
+      execitor: "Sonya",
+    },
+    {
+      name: "frontend",
+      execitor: "Andrey",
+    },
+    {
+      name: "backend",
+      execitor: "Andrey",
+    },
+    {
+      name: "Technical descriptiona",
+      execitor: "Sveta",
+    },
+    {
+      name: "disgn",
+      execitor: "Sonya",
+    },
+    {
+      name: "frontend",
+      execitor: "Andrey",
+    },
+    {
+      name: "backend",
+      execitor: "Andrey",
+    },
+    {
+      name: "Technical descriptiona",
+      execitor: "Sveta",
+    },
+    {
+      name: "disgn",
+      execitor: "Sonya",
+    },
+  ];
+
+  return (
+    <div className={styles.tasks_column}>
+      <div className={styles.tasks_type}>TODO</div>
+      {tasks.map((el) => (
+        <div className={styles.task}>
+          <div> name : {el.name} </div> <div> executor: {el.execitor} </div>{" "}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 function ActiveTasks() {
-  return <div className={styles.tasks}>Active</div>;
+  const tasks = [
+    {
+      name: "frontend",
+      execitor: "Andrey",
+    },
+    {
+      name: "backend",
+      execitor: "Andrey",
+    },
+    {
+      name: "Technical description",
+      execitor: "Sveta",
+    },
+    {
+      name: "disgn",
+      execitor: "Sonya",
+    },
+  ];
+
+  return (
+    <div className={styles.tasks_column}>
+      <div className={styles.tasks_type}>TODO</div>
+      {tasks.map((el) => (
+        <div className={styles.task}>
+          <div> name : {el.name} </div> <div> executor: {el.execitor} </div>{" "}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 function DoneTasks() {
-  return <div className={styles.tasks}>DONE</div>;
+  const tasks = [
+    {
+      name: "frontend",
+      execitor: "Andrey",
+    },
+    {
+      name: "backend",
+      execitor: "Andrey",
+    },
+    {
+      name: "Technical description",
+      execitor: "Sveta",
+    },
+    {
+      name: "disgn",
+      execitor: "Sonya",
+    },
+  ];
+
+  return (
+    <div className={styles.tasks_column}>
+      <div className={styles.tasks_type}>TODO</div>
+      {tasks.map((el) => (
+        <div className={styles.task}>
+          <div> name : {el.name} </div> <div> executor: {el.execitor} </div>{" "}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export function Tasks() {
@@ -19,7 +135,7 @@ export function Tasks() {
       <TodoTasks />
       <ActiveTasks />
       <DoneTasks />
-      <div className={styles.tasks}>text</div>
+      <div className={styles.empty_column}></div>
     </div>
   );
 }
