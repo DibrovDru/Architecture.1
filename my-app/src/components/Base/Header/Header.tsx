@@ -2,12 +2,11 @@ import React from "react";
 import base_styles from "../Base.module.css";
 import styles from "./Header.module.css";
 import logo from "../logo.svg";
-import { type } from "os";
+import { addTaskCreator } from "../../../redux/tasks-reducer";
 
-type NavBarButtonState = {
-  isOpenNavBar: boolean;
-  changeStateButton: Function;
-};
+import { NavBarButtonState } from "../NavBar/NavBar";
+import { useStore } from "react-redux";
+import { Store } from "@reduxjs/toolkit";
 
 function ButtonNavBar(props: NavBarButtonState) {
   return (
@@ -50,6 +49,10 @@ function Profile() {
 }
 
 export function Header(props: NavBarButtonState) {
+  let store: Store = useStore();
+  console.log(store.getState());
+  console.log("=====================");
+
   return (
     <div className={styles.header}>
       <div className={styles.part_header}>
@@ -58,7 +61,7 @@ export function Header(props: NavBarButtonState) {
           isOpenNavBar={props.isOpenNavBar}
         />
         <Logo />
-        <button>Create</button>
+        <button onClick={() => store.dispatch(addTaskCreator())}>Create</button>
       </div>
       <Profile />
     </div>

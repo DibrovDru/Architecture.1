@@ -3,7 +3,7 @@ import base_styles from "../Base.module.css";
 import styles from "./NavBar.module.css";
 import logo from "../logo.svg";
 
-type NavBarButtonState = {
+export type NavBarButtonState = {
   isOpenNavBar: boolean;
   changeStateButton: Function;
 };

@@ -1,5 +1,12 @@
 import React from "react";
 import styles from "./Tasks.module.css";
+import { useStore } from "react-redux";
+import { Store } from "@reduxjs/toolkit";
+
+type Task = {
+  name: string;
+  executor: string;
+};
 
 function TodoTasks() {
   const tasks = [
@@ -98,31 +105,15 @@ function ActiveTasks() {
 }
 
 function DoneTasks() {
-  const tasks = [
-    {
-      name: "frontend",
-      execitor: "Andrey",
-    },
-    {
-      name: "backend",
-      execitor: "Andrey",
-    },
-    {
-      name: "Technical description",
-      execitor: "Sveta",
-    },
-    {
-      name: "disgn",
-      execitor: "Sonya",
-    },
-  ];
-
+  const store: Store = useStore();
+  console.log(store.getState());
+  // debugger;
   return (
     <div className={styles.tasks_column}>
       <div className={styles.tasks_type}>DONE</div>
-      {tasks.map((el) => (
+      {store.getState().tasks.map((el: Task) => (
         <div className={styles.task}>
-          <div> name : {el.name} </div> <div> executor: {el.execitor} </div>{" "}
+          <div> name : {el.name} </div> <div> executor: {el.executor} </div>{" "}
         </div>
       ))}
     </div>
