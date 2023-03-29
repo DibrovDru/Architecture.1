@@ -129,9 +129,10 @@ function DoneTasks() {
   );
 }
 
-export function Tasks() {
+export function Tasks(props: { isOpenNavBar: boolean }) {
   return (
     <div className={styles.content}>
+      {props.isOpenNavBar ? <></> : <div className={styles.empty_column}></div>}
       <TodoTasks />
       <ActiveTasks />
       <DoneTasks />

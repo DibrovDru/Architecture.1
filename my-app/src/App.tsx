@@ -26,7 +26,10 @@ function App() {
       <div className="navbar_content">
         {VirtualNavBar}
         <Routes>
-          <Route path="/tasks" element={<Tasks />} />
+          <Route
+            path="/tasks"
+            element={<Tasks isOpenNavBar={isOpenNavBar} />}
+          />
           <Route path="/employees" element={<Employees />} />
         </Routes>
       </div>
