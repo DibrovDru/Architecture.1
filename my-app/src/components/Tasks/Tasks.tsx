@@ -122,8 +122,6 @@ function DoneTasks(props: any) {
 }
 
 export function Tasks(props: any) {
-  // { isOpenNavBar: boolean }
-  // console.log("+++++++++++++++++++");
   // console.log(props);
   // debugger;
   return (

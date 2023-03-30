@@ -2,8 +2,6 @@ import styles from "./Header.module.css";
 import logo from "../logo.svg";
 
 import { NavBarButtonState } from "../NavBar/NavBar";
-import { useStore } from "react-redux";
-import { Store } from "@reduxjs/toolkit";
 
 function ButtonNavBar(props: NavBarButtonState) {
   return (
@@ -20,16 +18,6 @@ function ButtonNavBar(props: NavBarButtonState) {
       nav bar
     </span>
   );
-  // return (
-  //   <div>
-  //     <input
-  //       type="checkbox"
-  //       id={styles.nav_trigger}
-  //       className={styles.nav_trigger}
-  //     />
-  //     <label htmlFor={styles.nav_trigger}></label>
-  //   </div>
-  // );
 }
 
 function Logo() {
@@ -46,10 +34,8 @@ function Profile() {
 }
 
 function Header(props: any) {
-  // NavBarButtonState
-  let store: Store = useStore();
-  console.log(store.getState());
-  console.log("=====================");
+  // console.log(props.addTask);
+  // debugger;
 
   return (
     <div className={styles.header}>

@@ -5,8 +5,4 @@ const mapStateToProps = (state: any, ownProps: any) => ({
   tasks: state.tasksReducer,
 });
 
-// const mapDispatchToProps = (dispatch: any, ownProps: any) => ({
-//   addTask: () => dispatch(addTaskActionCreator()),
-// });
-
-export default connect(mapStateToProps)(Tasks);
+export default connect(mapStateToProps, null)(Tasks);
