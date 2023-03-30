@@ -1,8 +1,3 @@
-export type NavBarButtonState = {
-    isOpenNavBar: boolean;
-    changeStateButton: Function;
-  };
-
 //////////////////////////////    TASKS    //////////////////////////////////////////////
 // type TS~ using in C++
 export type Task = {

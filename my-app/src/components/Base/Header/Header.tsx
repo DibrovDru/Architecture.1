@@ -1,7 +1,6 @@
 import styles from "./Header.module.css";
 import logo from "../logo.svg";
 
-import { NavBarButtonState } from "../../../types";
 import { Dispatch } from "react";
 
 function ButtonNavBar({
@@ -75,8 +74,8 @@ function Header({
   StateNavBar,
   StateNewTaskPanel,
 }: {
-  StateNavBar: any;
-  StateNewTaskPanel: any;
+  StateNavBar: [boolean, Dispatch<any>];
+  StateNewTaskPanel: [boolean, Dispatch<any>];
 }) {
   // console.log(addTask);
   // debugger;

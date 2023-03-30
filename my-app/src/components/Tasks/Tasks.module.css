@@ -33,3 +33,58 @@
     border: solid 1px;
     margin: 10px;
 }
+
+
+.new_task_panel {
+    border: solid 1px red;
+    background-color:beige;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+}
+
+.new_task_panel > div {
+    border: solid 1px red;
+    margin: 20px;
+}
+
+
+.task_type {
+    display: flex;
+    justify-content: space-between;
+}
+
+.types {
+    border: solid 1px red;
+    width: 120px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.types > div {
+    border: solid 1px;
+    background-color: white;
+    width: 30px;
+}
+
+
+.description > input {
+    width: 90%;
+    height: 100px;
+    display: table;
+    margin: auto;
+}
+
+
+.executor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.choose_employee {
+    border: solid 1px red;
+    width: 200px;
+}
