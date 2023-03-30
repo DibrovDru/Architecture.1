@@ -6,7 +6,6 @@ import { Employees } from "./components/Employees/Employees";
 import { NavBar } from "./components/Base/NavBar/NavBar";
 import Header from "./components/Base/Header/ContainerHeader";
 import { Route, NavLink, Routes } from "react-router-dom";
-import { ConfigureStoreOptions } from "@reduxjs/toolkit";
 
 function App() {
   let [isOpenNavBar, changeStateButton] = useState(true);
@@ -21,8 +20,9 @@ function App() {
   return (
     <div className="App">
       <Header
-        changeStateButton={changeStateButton}
-        isOpenNavBar={isOpenNavBar}
+        NavBarButtonState={{ changeStateButton, isOpenNavBar }}
+        // changeStateButton={changeStateButton}
+        // isOpenNavBar={isOpenNavBar}
       />
       <div className="navbar_content">
         {VirtualNavBar}

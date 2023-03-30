@@ -3,11 +3,6 @@ import base_styles from "../Base.module.css";
 import styles from "./NavBar.module.css";
 import logo from "../logo.svg";
 
-export type NavBarButtonState = {
-  isOpenNavBar: boolean;
-  changeStateButton: Function;
-};
-
 function Project() {
   return (
     <div className={styles.project}>

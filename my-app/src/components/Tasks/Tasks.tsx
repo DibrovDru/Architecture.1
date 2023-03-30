@@ -1,135 +1,70 @@
-import React from "react";
 import styles from "./Tasks.module.css";
-import { useStore } from "react-redux";
-import { Store } from "@reduxjs/toolkit";
 
-type Task = {
-  name: string;
-  executor: string;
-};
+import { Task } from "../../types";
 
-function TodoTasks() {
-  const tasks = [
-    {
-      name: "frontend",
-      execitor: "Andrey",
-    },
-    {
-      name: "backend",
-      execitor: "Andrey",
-    },
-    {
-      name: "Technical descriptionaaaaaa a a  a a a a a a",
-      execitor: "Sveta",
-    },
-    {
-      name: "disgn",
-      execitor: "Sonya",
-    },
-    {
-      name: "frontend",
-      execitor: "Andrey",
-    },
-    {
-      name: "backend",
-      execitor: "Andrey",
-    },
-    {
-      name: "Technical descriptiona",
-      execitor: "Sveta",
-    },
-    {
-      name: "disgn",
-      execitor: "Sonya",
-    },
-    {
-      name: "frontend",
-      execitor: "Andrey",
-    },
-    {
-      name: "backend",
-      execitor: "Andrey",
-    },
-    {
-      name: "Technical descriptiona",
-      execitor: "Sveta",
-    },
-    {
-      name: "disgn",
-      execitor: "Sonya",
-    },
-  ];
-
+function TodoTasks({ tasks }: { tasks: Array<Task> }) {
+  // console.log(tasks);
+  // debugger;
   return (
     <div className={styles.tasks_column}>
       <div className={styles.tasks_type}>TODO</div>
-      {tasks.map((el) => (
+      {tasks.map((el: Task) => (
         <div className={styles.task}>
-          <div> name : {el.name} </div> <div> executor: {el.execitor} </div>{" "}
+          <div> name : {el.name} </div>{" "}
+          <div> executor: {el.executor.name} </div>{" "}
         </div>
       ))}
     </div>
   );
 }
 
-function ActiveTasks() {
-  const tasks = [
-    {
-      name: "frontend",
-      execitor: "Andrey",
-    },
-    {
-      name: "backend",
-      execitor: "Andrey",
-    },
-    {
-      name: "Technical description",
-      execitor: "Sveta",
-    },
-    {
-      name: "disgn",
-      execitor: "Sonya",
-    },
-  ];
-
+function ActiveTasks({ tasks }: { tasks: Array<Task> }) {
+  // console.log(tasks);
+  // debugger;
   return (
     <div className={styles.tasks_column}>
-      <div className={styles.tasks_type}>InProcess</div>
-      {tasks.map((el) => (
+      <div className={styles.tasks_type}>In Progress</div>
+      {tasks.map((el: Task) => (
         <div className={styles.task}>
-          <div> name : {el.name} </div> <div> executor: {el.execitor} </div>{" "}
+          <div> name : {el.name} </div>{" "}
+          <div> executor: {el.executor.name} </div>{" "}
         </div>
       ))}
     </div>
   );
 }
 
-function DoneTasks(props: any) {
-  // const store: Store = useStore();
-  // console.log(store.getState());
-  // console.log(props);
+function DoneTasks({ tasks }: { tasks: Array<Task> }) {
+  // console.log(tasks);
   // debugger;
   return (
     <div className={styles.tasks_column}>
       <div className={styles.tasks_type}>DONE</div>
-      {props.tasks.map((el: Task) => (
+      {tasks.map((el: Task) => (
         <div className={styles.task}>
-          <div> name : {el.name} </div> <div> executor: {el.executor} </div>{" "}
+          <div> name : {el.name} </div>{" "}
+          <div> executor: {el.executor.name} </div>{" "}
         </div>
       ))}
     </div>
   );
 }
 
-export function Tasks(props: any) {
-  // console.log(props);
+export function Tasks({
+  isOpenNavBar,
+  tasks,
+}: {
+  isOpenNavBar: boolean;
+  tasks: Array<Task>;
+}) {
+  // console.log(tasks);
   // debugger;
   return (
     <div className={styles.content}>
-      {props.isOpenNavBar ? <></> : <div className={styles.empty_column}></div>}
-      <TodoTasks />
-      <ActiveTasks />
-      <DoneTasks tasks={props.tasks} />
+      {isOpenNavBar ? <></> : <div className={styles.empty_column}></div>}
+      <TodoTasks tasks={tasks.filter((el) => el.type == "TODO")} />
+      <ActiveTasks tasks={tasks.filter((el) => el.type == "INPROGRESS")} />
+      <DoneTasks tasks={tasks.filter((el) => el.type == "DONE")} />
       <div className={styles.empty_column}></div>
     </div>
   );

@@ -1,17 +1,18 @@
 import styles from "./Header.module.css";
 import logo from "../logo.svg";
 
-import { NavBarButtonState } from "../NavBar/NavBar";
+import { NavBarButtonState } from "../../../types";
+import { Dispatch } from "react";
 
-function ButtonNavBar(props: NavBarButtonState) {
+function ButtonNavBar({ isOpenNavBar, changeStateButton }: NavBarButtonState) {
   return (
     <span
       className={styles.button_navbar}
       onClick={() => {
-        if (props.isOpenNavBar) {
-          props.changeStateButton(false);
+        if (isOpenNavBar) {
+          changeStateButton(false);
         } else {
-          props.changeStateButton(true);
+          changeStateButton(true);
         }
       }}
     >
@@ -33,19 +34,25 @@ function Profile() {
   );
 }
 
-function Header(props: any) {
-  // console.log(props.addTask);
+function Header({
+  NavBarButtonState,
+  addTask,
+}: {
+  NavBarButtonState: NavBarButtonState;
+  addTask: Dispatch<any>;
+}) {
+  // console.log(addTask);
   // debugger;
 
   return (
     <div className={styles.header}>
       <div className={styles.part_header}>
         <ButtonNavBar
-          changeStateButton={props.changeStateButton}
-          isOpenNavBar={props.isOpenNavBar}
+          changeStateButton={NavBarButtonState.changeStateButton}
+          isOpenNavBar={NavBarButtonState.isOpenNavBar}
         />
         <Logo />
-        <button onClick={props.addTask}>Create</button>
+        <button onClick={addTask}>Create</button>
       </div>
       <Profile />
     </div>
