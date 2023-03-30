@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import { addTaskActionCreator } from "../../../ActionCreators";
 import Header from "./Header";
-import { Task } from "./../../../types";
 
 const mapDispatchToProps = (dispatch: any, ownProps: any) => ({
   addTask: () =>

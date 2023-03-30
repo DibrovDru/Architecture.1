@@ -4,19 +4,52 @@ import logo from "../logo.svg";
 import { NavBarButtonState } from "../../../types";
 import { Dispatch } from "react";
 
-function ButtonNavBar({ isOpenNavBar, changeStateButton }: NavBarButtonState) {
+function ButtonNavBar({
+  StateNavBar,
+}: {
+  StateNavBar: [boolean, Dispatch<any>];
+}) {
+  let [isOpenNavBar, changeStateNavBar] = StateNavBar;
+  // console.log("888888888");
+  // console.log(props);
+  // debugger;
   return (
     <span
       className={styles.button_navbar}
       onClick={() => {
         if (isOpenNavBar) {
-          changeStateButton(false);
+          changeStateNavBar(false);
         } else {
-          changeStateButton(true);
+          changeStateNavBar(true);
         }
       }}
     >
       nav bar
+    </span>
+  );
+}
+
+function NewTaskPanel({
+  StateNewTaskPanel,
+}: {
+  StateNewTaskPanel: [boolean, Dispatch<any>];
+}) {
+  let [isOpenPanel, changeStatePanel] = StateNewTaskPanel;
+  // console.log("888888888");
+  // console.log(props);
+  // debugger;
+  return (
+    <span
+      className={styles.button_navbar}
+      onClick={() => {
+        if (isOpenPanel) {
+          changeStatePanel(false);
+        } else {
+          changeStatePanel(true);
+        }
+      }}
+    >
+      Create
     </span>
   );
 }
@@ -34,12 +67,16 @@ function Profile() {
   );
 }
 
+{
+  /* <Header StateNavBar={StateNavBar}, 
+StateNewTaskPanel={StateNewTaskPanel} /> */
+}
 function Header({
-  NavBarButtonState,
-  addTask,
+  StateNavBar,
+  StateNewTaskPanel,
 }: {
-  NavBarButtonState: NavBarButtonState;
-  addTask: Dispatch<any>;
+  StateNavBar: any;
+  StateNewTaskPanel: any;
 }) {
   // console.log(addTask);
   // debugger;
@@ -47,12 +84,11 @@ function Header({
   return (
     <div className={styles.header}>
       <div className={styles.part_header}>
-        <ButtonNavBar
-          changeStateButton={NavBarButtonState.changeStateButton}
-          isOpenNavBar={NavBarButtonState.isOpenNavBar}
-        />
+        <ButtonNavBar StateNavBar={StateNavBar} />
         <Logo />
-        <button onClick={addTask}>Create</button>
+        {/* <button onClick={addTask}>Create</button> */}
+        {/* <button onClick={StateNewTaskPanel}>Create</button> */}
+        <NewTaskPanel StateNewTaskPanel={StateNewTaskPanel} />
       </div>
       <Profile />
     </div>

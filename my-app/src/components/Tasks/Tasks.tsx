@@ -2,6 +2,10 @@ import styles from "./Tasks.module.css";
 
 import { Task } from "../../types";
 
+export function NewTaskPanel(props: any) {
+  return <div>!!!!!!!</div>;
+}
+
 function TodoTasks({ tasks }: { tasks: Array<Task> }) {
   // console.log(tasks);
   // debugger;
