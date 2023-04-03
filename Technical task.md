@@ -55,7 +55,6 @@ Resolved - задача выполнена.
  
 ## Ролевая модель
 
-![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/role.JPG)
 
 ## Функциональные требования к веб-приложению:
 
