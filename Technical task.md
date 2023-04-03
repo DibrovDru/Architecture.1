@@ -53,8 +53,16 @@ Resolved - задача выполнена.
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/Employee.jpg)
  
-## Ролевая модель
+## Модель работы в веб-приложении
+### Вход в веб приложение
 
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/Enter.png)
+
+### Авторизация в веб приложение
+
+### Регистрация в веб приложение
+
+### Работа в веб приложение
 
 ## Функциональные требования к веб-приложению:
 
