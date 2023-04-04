@@ -63,6 +63,8 @@ Resolved - задача выполнена.
 
 ### Работа в веб-приложение
 
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/work.png)
+
 ### [Создание проекта](#раздел-проекты)
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/createProject2.png)
