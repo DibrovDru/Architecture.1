@@ -380,7 +380,7 @@ Resolved - задача выполнена.
 
 ## Описание БД
 
-![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/)
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/base.png)
 
 ### Имеющиеся сущности:
 
