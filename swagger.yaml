@@ -353,7 +353,8 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Relations"
+              type: string
+              # $ref: "#/components/schemas/Relations"
       responses:
         '200':
           description: Emplyees successfully are added
@@ -508,7 +509,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Tasks"
+                $ref: "#/components/schemas/Sprints"
     post:
       tags:
         - Sprints
@@ -518,13 +519,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Task"
+              $ref: "#/components/schemas/Sprints"
       responses:
         '200':
           description: Task is successfully created
 
 
-  /projects/{id}/sprints/{task_id}:
+  /projects/{id}/sprints/{sprint_id}:
     get:
       tags:
         - Sprints
@@ -536,10 +537,10 @@ paths:
           description: Project id
           schema:
             type: integer
-        - name: task_id
+        - name: sprint_id
           in: path
           required: true
-          description: task id
+          description: sprint id
           schema:
             type: integer
       responses:
@@ -548,7 +549,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Task"
+                $ref: "#/components/schemas/Sprint"
     put:
       tags:
         - Sprints
@@ -571,7 +572,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Task"
+              $ref: "#/components/schemas/Sprint"
       responses:
         '200':
           description:  Task is successfully modified
@@ -677,6 +678,8 @@ components:
     Relation:
       type: object
       properties: 
+        id:
+          type: number # old relation id
         boss:
           type: string
         employee:
@@ -707,6 +710,32 @@ components:
       type: array
       items:
         $ref: "#/components/schemas/Comment"
+    
+    Sprint:
+      type: object
+      required:
+        - id
+        - name
+        - timestamp
+        - is_actual
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        timestamp:
+          type: string
+        is_actual:
+          type: boolean
+        description:
+          type: string
+        n_days:
+          type: number
+    Sprints:
+      type: array
+      items:
+        $ref: "#/components/schemas/Sprint"
+
 
     Error:
       type: object
