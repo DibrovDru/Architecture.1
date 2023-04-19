@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MainPage from "./pages/MainPage";
 import AutorisationPage from "./pages/AutorisationPage";
+import RegistrationPage from "./pages/RegistrationPage";
 
 function App() {
     if (!true) {
@@ -13,7 +14,8 @@ function App() {
         );
     } else {
         return (
-            <AutorisationPage/>
+            // <AutorisationPage/>
+            <RegistrationPage/>
         );
     }
 }
