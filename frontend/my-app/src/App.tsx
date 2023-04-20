@@ -6,6 +6,7 @@ import './App.css';
 import MainPage from "./pages/MainPage";
 import AutorisationPage from "./pages/AutorisationPage";
 import RegistrationPage from "./pages/RegistrationPage";
+import CreationProject from "./pages/CreationProject";
 
 function App() {
     if (!true) {
@@ -15,7 +16,8 @@ function App() {
     } else {
         return (
             // <AutorisationPage/>
-            <RegistrationPage/>
+            // <RegistrationPage/>
+            <CreationProject/>
         );
     }
 }
