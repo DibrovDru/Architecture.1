@@ -7,6 +7,7 @@ import MainPage from "./pages/MainPage";
 import AutorisationPage from "./pages/AutorisationPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import CreationProject from "./pages/CreationProject";
+import Projects from "./pages/Projects";
 
 function App() {
     if (!true) {
@@ -18,7 +19,9 @@ function App() {
             // <AutorisationPage/>
             // <RegistrationPage/>
             <CreationProject/>
+            // <Projects/>
         );
+
     }
 }
 

@@ -9,7 +9,8 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import CloseButton from 'react-bootstrap/CloseButton';
+
 
 function Hint() {
     return (
@@ -54,12 +55,23 @@ export function CreationProjectInfo() {
                     <Form.Label>Количество дней с спринте</Form.Label>
                     <Hint/>
                     </div>
-                    <Form.Control type="n_days_sprint" placeholder="7 дней" />
+                    <Form.Select aria-label="Default select example">
+                        <option>Open this select menu</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                        <option value="3">5</option>
+                        <option value="3">6</option>
+                        <option value="3">7</option>
+                        <option value="3">8</option>
+                        <option value="3">9</option>
+                    </Form.Select>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Описание проекта</Form.Label>
-                    <textarea className="form-control" placeholder="" />
+                    <Form.Control as="textarea" rows={3} />
                 </Form.Group>
                 <Button variant="primary" type="submit" style={{width: '100%', backgroundColor: '#5222D0'}}>
                     Готово
@@ -82,7 +94,24 @@ export function AddingEmployeesToProject() {
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Добавить участников</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <Form.Control type="email" placeholder="borovets" />
+                    <CloseButton style={{margin: 'auto'}} />
+                    </div>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Добавить участников</Form.Label>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <Form.Control type="email" placeholder="dibrov" />
+                        <CloseButton style={{margin: 'auto'}} />
+                    </div>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Добавить участников</Form.Label>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <Form.Control type="email" placeholder="borovets" />
+                        {/*<CloseButton style={{margin: 'auto'}} />*/}
+                    </div>
                 </Form.Group>
 
                 <Button variant="primary" type="submit" style={{width: '100%', backgroundColor: '#5222D0'}}>
@@ -110,15 +139,21 @@ function AddingRelations() {
             <Form.Control type="email" placeholder="Enter email" />
         </Form.Group>
         <div style={{width:'50%'}}>
-            <text >
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <text>
                 Подчиненные
             </text>
+                <CloseButton />
+            </div>
         <Dropdown  style={{ marginTop: '0.5rem'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
             <Dropdown.Toggle id="dropdown-button-dark-example1" variant="info" style={{width: "100%", height: '37px', display: 'flex', justifyContent: 'right', backgroundColor: 'white'}}>
                 <text style={{backgroundColor: '#5222D0', color: 'white'}}>
                 borovets
                 </text>
             </Dropdown.Toggle>
+            <CloseButton style={{margin: 'auto'}}/>
+            </div>
 
             <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1" active>
@@ -131,11 +166,14 @@ function AddingRelations() {
             </Dropdown.Menu>
         </Dropdown>
         <Dropdown  style={{ marginTop: '0.5rem'}}>
-            <Dropdown.Toggle id="dropdown-button-dark-example1" variant="info" style={{width: "100%", height: '37px', display: 'flex', justifyContent: 'right', backgroundColor: 'white'}}>
-                <text style={{backgroundColor: '#5222D0', color: 'white'}}>
-                    dibrov
-                </text>
-            </Dropdown.Toggle>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <Dropdown.Toggle id="dropdown-button-dark-example1" variant="info" style={{width: "100%", height: '37px', display: 'flex', justifyContent: 'right', backgroundColor: 'white'}}>
+                    <text style={{backgroundColor: '#5222D0', color: 'white'}}>
+                        dibrov
+                    </text>
+                </Dropdown.Toggle>
+                <CloseButton style={{margin: 'auto'}}/>
+            </div>
 
             <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1" active>
