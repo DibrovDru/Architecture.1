@@ -6,30 +6,79 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import AutorisationCard from "../components/AutorisationCard";
-import CreationProjectCard from "../components/CreationProjectCard";
+import {CreationProjectInfo, AddingEmployeesToProject, CreationHierarchy} from "../components/CreationProjectInfo";
 import {ProjectCreateionStage} from "../types";
 
-function CreationProject() {
-    // var stage : ProjectCreateionStage = UseState();
+function ImgCard() {
     return (
-        <Container>
-            <Row style={{height: '100vh'}}>
-                <Col className="border" style={{display:'flex', justifyContent:'center',alignItems:'center', backgroundColor: '#F2F4F6'}}>
-                    <CreationProjectCard />
-                </Col>
-                <Col className="border" style={{display:'flex', justifyContent:'center',alignItems:'center'}}>
-                    <Card style={{ width: '80%' }}>
-                        <Card.Img variant="top" src={require('../images/man.png')}/>
-                        <Card.Body>
-                            <Card.Text style={{textAlign: 'center'}}>
-                                Система для управления вашими проектами онлайн
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        </Container>
+        <Card style={{width: '80%'}}>
+            <Card.Img variant="top" src={require('../images/man.png')}/>
+            <Card.Body>
+                <Card.Text style={{textAlign: 'center'}}>
+                    Система для управления вашими проектами онлайн
+                </Card.Text>
+            </Card.Body>
+        </Card>
     );
+}
+
+function CreationProject() {
+    let stage : ProjectCreateionStage = ProjectCreateionStage.creating_hierarchy as ProjectCreateionStage;
+    if (stage === ProjectCreateionStage.naming) {
+        return (
+            <Container>
+                <Row style={{height: '100vh'}}>
+                    <Col className="border" style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: '#F2F4F6'
+                    }}>
+                        <CreationProjectInfo/>
+                    </Col>
+                    <Col className="border" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <ImgCard/>
+                    </Col>
+                </Row>
+            </Container>
+        );
+    } else if (stage === ProjectCreateionStage.adding_employees) {
+        return (
+            <Container>
+                <Row style={{height: '100vh'}}>
+                    <Col className="border" style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: '#F2F4F6'
+                    }}>
+                        <AddingEmployeesToProject />
+                    </Col>
+                    <Col className="border" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <ImgCard/>
+                    </Col>
+                </Row>
+            </Container>
+        );
+    } else {  // stage == ProjectCreateionStage.creating_hierarchy
+        return (
+            <Container>
+                <Row style={{height: '100vh'}}>
+                    <Col className="border" style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: '#F2F4F6'
+                    }}>
+                        <CreationHierarchy/>
+                    </Col>
+                    <Col className="border" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <ImgCard/>
+                    </Col>
+                </Row>
+            </Container>
+        );
+    }
 }
 
 export default CreationProject;
