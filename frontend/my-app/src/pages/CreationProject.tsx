@@ -23,7 +23,7 @@ function ImgCard() {
 }
 
 function CreationProject() {
-    let stage : ProjectCreateionStage = ProjectCreateionStage.creating_hierarchy as ProjectCreateionStage;
+    let stage : ProjectCreateionStage = ProjectCreateionStage.adding_employees as ProjectCreateionStage;
     if (stage === ProjectCreateionStage.naming) {
         return (
             <Container>

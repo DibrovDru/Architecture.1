@@ -18,8 +18,8 @@ function App() {
         return (
             // <AutorisationPage/>
             // <RegistrationPage/>
-            <CreationProject/>
-            // <Projects/>
+            // <CreationProject/>
+            <Projects/>
         );
 
     }

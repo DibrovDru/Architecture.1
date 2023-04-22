@@ -91,39 +91,35 @@ export function AddingEmployeesToProject() {
             <Card.Body>
                 <Card.Title style={{textAlign: 'center'}}>Создание проекта</Card.Title>
             </Card.Body>
-            <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Добавить участников</Form.Label>
-                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                    <Form.Control type="email" placeholder="borovets" />
-                    <CloseButton style={{margin: 'auto'}} />
-                    </div>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Добавить участников</Form.Label>
-                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                        <Form.Control type="email" placeholder="dibrov" />
-                        <CloseButton style={{margin: 'auto'}} />
-                    </div>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Добавить участников</Form.Label>
-                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <div className="overflow-scroll" style={{height: '250px'}}>
+                <Form>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Добавить участников</Form.Label>
+                        <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '1rem'}}>
                         <Form.Control type="email" placeholder="borovets" />
-                        {/*<CloseButton style={{margin: 'auto'}} />*/}
-                    </div>
-                </Form.Group>
+                        <CloseButton style={{margin: 'auto'}} />
+                        </div>
+                        <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '1rem'}}>
+                            <Form.Control type="email" placeholder="dibrov" />
+                            <CloseButton style={{margin: 'auto'}} />
+                        </div>
+                        <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '1rem'}}>
+                            <Form.Control type="email" placeholder="borovets" />
+                            <CloseButton style={{margin: 'auto'}} />
+                        </div>
+                    </Form.Group>
+                </Form>
+            </div>
 
-                <Button variant="primary" type="submit" style={{width: '100%', backgroundColor: '#5222D0'}}>
-                    +
-                </Button>
+            <Button variant="primary" type="submit" style={{width: '100%', backgroundColor: '#5222D0'}}>
+                +
+            </Button>
 
-                <div style={{height: '200px'}}></div>
+            <div style={{height: '200px'}}></div>
 
-                <Button variant="primary" type="submit" style={{width: '100%', backgroundColor: '#5222D0'}}>
-                    Готово
-                </Button>
-            </Form>
+            <Button variant="primary" type="submit" style={{width: '100%', backgroundColor: '#5222D0'}}>
+                Готово
+            </Button>
             <Card.Body>
                 <Card.Link href="#" style={{display: 'flex', justifyContent: 'center'}}>Назад</Card.Link>
             </Card.Body>
