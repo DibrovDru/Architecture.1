@@ -19,7 +19,8 @@ function App() {
             // <AutorisationPage/>
             // <RegistrationPage/>
             // <CreationProject/>
-            <Projects/>
+            // <Projects/>
+            <MainPage/>
         );
 
     }
