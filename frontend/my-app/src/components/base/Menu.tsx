@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import app_styles from '../../App.module.css';
 import main_page_styles from '../../pages/main_page/MainPage.module.css';
+import base_styles from './base.module.css';
 
 function Menu() {
 
     return (
-        <div className={`${app_styles.grey} ${app_styles.height_full_screen}`}>
+        <div className={`${app_styles.grey} ${app_styles.height_full_screen} ${base_styles.sidebar}`}>
             <div style={{display: 'flex'}}>
                 <img src={require('../../images/github.png')} style={{height: '30px', objectFit: 'scale-down'}}/>
                 <div style={{display: 'flex', flexDirection: 'column'}}>

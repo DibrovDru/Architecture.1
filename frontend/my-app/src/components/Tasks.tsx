@@ -14,8 +14,6 @@ function TaskCard() {
                     Some quick example text to build on the card title and make up the
                     bulk of the card's content.
                 </Card.Text>
-                <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link>
             </Card.Body>
         </Card>
     );
@@ -50,13 +48,24 @@ function Tasks() {
 
             <TaskCard/>
             <TaskCard/>
+
+            <div className={main_pages_styles.sprint}>
+                <img src={require('../images/opened_bracket.png')} />
+                <p>
+                    2 спринт (24.03.2023 - 31.03.2023)
+                </p>
+            </div>
+
+            <TaskCard/>
+            <TaskCard/>
+
         </Col>
 
         <Col sm={3}>
             <div className={main_pages_styles.title} />
             <div className={main_pages_styles.task_type}>
                 <h5>
-                    Открытые
+                    Активные
                 </h5>
                 <div>
                     +
@@ -71,7 +80,7 @@ function Tasks() {
             <div className={main_pages_styles.title} />
             <div className={main_pages_styles.task_type}>
                 <h5>
-                    Открытые
+                    Решенные
                 </h5>
                 <div>
                     +

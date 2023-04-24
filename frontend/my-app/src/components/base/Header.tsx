@@ -11,7 +11,7 @@ import base_styles from './base.module.css';
 
 function Header() {
     return (
-        <Navbar expand="lg" className={`${app_styles.white} ${base_styles.navbar}`}>
+        <Navbar expand="lg" className={`${app_styles.white} ${base_styles.myheader}`}>
             <Container fluid>
                 <Button className={`${app_styles.white} ${base_styles.button}`}>
                     <img src={require('../../images/burger.png')}/>

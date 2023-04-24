@@ -1,4 +1,7 @@
-.navbar {
+.myheader {
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
     border-bottom: solid 1px
 }
 
@@ -38,6 +41,11 @@
 .footer_right_part img {
     height: 30px;
     margin: 10px
+}
+
+.sidebar {
+    position: fixed;
+    top: 58px
 }
 
 ul {

@@ -8,6 +8,7 @@ import Menu from "../../components/base/Menu";
 import Tasks from "../../components/Tasks";
 import app_styles from '../../App.module.css';
 import main_page_styles from './MainPage.module.css';
+import base_styles from '../../components/base/base.module.css';
 
 function MainPage() {
 
@@ -24,6 +25,12 @@ function MainPage() {
                         <h3 className={`${app_styles.header_weight} ${main_page_styles.title}`}>
                             Автор
                         </h3>
+                        <div className={app_styles.space_between}>
+                            <img src={require('../../images/profile.png')} className={base_styles.profile} />
+                             <text>
+                                 Sophia Golovanova
+                             </text>
+                        </div>
                     </Col>
                 </Row>
             </Container>
