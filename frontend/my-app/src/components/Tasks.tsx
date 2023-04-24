@@ -6,13 +6,13 @@ import main_pages_styles from '../pages/main_page/MainPage.module.css';
 
 function TaskCard() {
     return (
-        <Card style={{ width: '15rem', marginTop: '10px' }}>
+        <Card style={{ width: '15rem', marginTop: '10px', height: '200px', overflow: 'hidden' }}>
             <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
                 <Card.Text>
                     Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                    bulk of the card's content. edvklmeqkvm kevkenrnrnvk enavkmadfklvmndflkvndfklqnv'l qkenkenvkenvklwnekrnvw
                 </Card.Text>
             </Card.Body>
         </Card>
@@ -71,6 +71,11 @@ function Tasks() {
                     +
                 </div>
             </div>
+
+            <div className={main_pages_styles.sprint} />
+
+            <TaskCard/>
+            <TaskCard/>
 
             <div className={main_pages_styles.sprint} />
 
