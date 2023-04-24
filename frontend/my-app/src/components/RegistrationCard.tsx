@@ -1,14 +1,15 @@
 import React from 'react';
 
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import app_styles from "../App.module.css";
+import reg_auth_styles from '../pages/reg_auth_page/RegAuth.module.css';
 
 function RegistrationCard() {
     return (
-        <Card style={{ width: '18rem', backgroundColor: '#F2F4F6'}}>
-            <Card.Img variant="top" src={require('../images/deta.png')} style={{height: '50px', width: 'auto', objectFit: 'scale-down'}}/>
+        <Card className={`${reg_auth_styles.card_width} ${app_styles.grey}`}>
+            <Card.Img variant="top" src={require('../images/deta.png')} className={app_styles.deta}/>
             <Card.Body>
                 <Card.Title style={{textAlign: 'center'}}>Регистрация в системе</Card.Title>
             </Card.Body>
@@ -32,12 +33,12 @@ function RegistrationCard() {
                     <Form.Label>Повторите пароль</Form.Label>
                     <Form.Control type="check_password" placeholder="Password" />
                 </Form.Group>
-                <Button variant="primary" type="submit" style={{width: '100%', backgroundColor: '#5222D0'}}>
+                <Button variant="primary" type="submit" className={`${app_styles.main_color} ${app_styles.max_width}`}>
                     Готово
                 </Button>
             </Form>
             <Card.Body>
-                <Card.Link href="#" style={{display: 'flex', justifyContent: 'center'}}>Ругистрация</Card.Link>
+                <Card.Link href="#" className={app_styles.to_center}>Ругистрация</Card.Link>
             </Card.Body>
         </Card>
     );

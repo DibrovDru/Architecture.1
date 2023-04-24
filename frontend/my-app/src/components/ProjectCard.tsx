@@ -2,17 +2,18 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import React from "react";
-import RegistrationCard from "./RegistrationCard";
+import app_styles from '../App.module.css';
+import projects_styles from '../pages/projects/projects.module.css';
 
 function ProjectCard() {
     return (
-        <Card style={{ width: '20rem', backgroundColor: '#5322D0'}}>
-            <Card.Header style={{color: 'white', fontWeight: '700', fontSize: 28}}>Крутой проект</Card.Header>
+        <Card className={`${app_styles.main_color} ${projects_styles.width_card_project}`}>
+            <Card.Header className={`${projects_styles.header_text} ${app_styles.header_weight}`}>Крутой проект</Card.Header>
             <Card.Body>
-                <Card.Text style={{height: '200px', color: 'white'}}>
+                <Card.Text className={projects_styles.body_text}>
                     Очень крутой проект про созданию мобильного приложения для всех людей на Земле!
                 </Card.Text>
-                <Button variant="primary" style={{width: '100%'}}>Выбрать проект</Button>
+                <Button variant="primary" className={`${app_styles.max_width} ${app_styles.white} ${app_styles.text_main_color}`}>Выбрать проект</Button>
             </Card.Body>
         </Card>
     );

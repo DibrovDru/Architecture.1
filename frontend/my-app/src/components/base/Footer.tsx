@@ -1,12 +1,7 @@
-import Card from "react-bootstrap/Card";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import React from "react";
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import app_styles from '../../App.module.css';
+import base_styles from './base.module.css';
 
 function Footer() {
     return (
@@ -24,21 +19,21 @@ function Footer() {
                 }}
         >
             <Nav.Item>
-                <div style={{margin: '10px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
-                    <img src={require('../images/logo.png')} style={{height: '30px', objectFit: 'scale-down'}}/>
+                <div className={base_styles.footer_left_part}>
+                    <img src={require('../../images/logo.png')} className={app_styles.logo}/>
                 <text>
                     © 2023 AO “Deta”
                 </text>
                 </div>
             </Nav.Item>
-            <Nav.Item style={{display: 'flex', margin: 'auto'}}>
+            <Nav.Item className={`${base_styles.footer_center_part} ${app_styles.header_weight}`}>
                 <Nav.Link eventKey="link-1" style={{color: 'black'}}>FAQ</Nav.Link>
                 <Nav.Link eventKey="link-2" style={{color: 'black'}}>Связаться</Nav.Link>
                 <Nav.Link eventKey="link-3" style={{color: 'black'}}>Покупка</Nav.Link>
             </Nav.Item>
-            <Nav.Item style={{display: 'flex', margin: 'auto 30px'}}>
-                <img src={require('../images/youtube.png')} style={{height: '30px', margin: '10px'}}/>
-                <img src={require('../images/vk.png')} style={{height: '30px', margin: '10px'}}/>
+            <Nav.Item className={base_styles.footer_right_part}>
+                <img src={require('../../images/youtube.png')} />
+                <img src={require('../../images/vk.png')} />
             </Nav.Item>
         </Nav>
     );

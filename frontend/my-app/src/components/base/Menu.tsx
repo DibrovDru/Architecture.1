@@ -1,32 +1,33 @@
 import React, {useState} from "react";
-
+import app_styles from '../../App.module.css';
+import main_page_styles from '../../pages/main_page/MainPage.module.css';
 
 function Menu() {
 
     return (
-        <div style={{backgroundColor: '#E7ECEF', height: '100vh'}}>
+        <div className={`${app_styles.grey} ${app_styles.height_full_screen}`}>
             <div style={{display: 'flex'}}>
-                <img src={require('../images/github.png')} style={{height: '40px', objectFit: 'scale-down'}}/>
+                <img src={require('../../images/github.png')} style={{height: '30px', objectFit: 'scale-down'}}/>
                 <div style={{display: 'flex', flexDirection: 'column'}}>
-                    <text style={{fontWeight: 700, fontSize: 24}}>
+                    <h3 className={`${app_styles.header_weight} ${main_page_styles.title}`}>
                         Имя проекта
-                    </text>
-                    <text>
+                    </h3>
+                    <text style={{marginTop: '-40px', marginBottom: '40px'}}>
                         Инфо о проекте
                     </text>
                 </div>
             </div>
-            <ul style={{listStyleType: 'disclosure-closed'}}>
-                <li style={{margin: '10px'}}>
+            <ul>
+                <li>
                     Проекты
                 </li>
-                <li style={{margin: '10px'}}>
+                <li>
                     Задачи
                 </li>
-                <li style={{margin: '10px'}}>
+                <li>
                     Участники
                 </li>
-                <li style={{margin: '10px'}}>
+                <li>
                     Спринты
                 </li>
             </ul>

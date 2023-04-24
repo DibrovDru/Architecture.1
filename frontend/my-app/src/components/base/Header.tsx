@@ -6,12 +6,15 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import app_styles from '../../App.module.css';
+import base_styles from './base.module.css';
+
 function Header() {
     return (
-        <Navbar expand="lg" style={{backgroundColor: 'white', borderBottom: 'solid'}}>
+        <Navbar expand="lg" className={`${app_styles.white} ${base_styles.navbar}`}>
             <Container fluid>
-                <Button style={{backgroundColor: 'white', border: 'none'}}>
-                    <img style={{height: '20px'}} src={require('../images/burger.png')}/>
+                <Button className={`${app_styles.white} ${base_styles.button}`}>
+                    <img src={require('../../images/burger.png')}/>
                 </Button>
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -19,8 +22,8 @@ function Header() {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <img  style={{height: '30px', margin: 'auto 10px'}} src={require('../images/logo.png')} />
-                        <NavDropdown title={<span style={{color: 'black', fontWeight: '700'}}>Проекты</span>} id="navbarScrollingDropdown">
+                        <img className={`${app_styles.logo} ${base_styles.header_logo_margin}`} src={require('../../images/logo.png')} />
+                        <NavDropdown title={<span className={`${app_styles.white} ${app_styles.header_weight}`}>Проекты</span>} id="navbarScrollingDropdown">
                             <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">
                                 Another action
@@ -30,7 +33,7 @@ function Header() {
                                 Something else here
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <NavDropdown title={<span style={{backgroundColor: '#5222D0', color: 'white', fontWeight: '700'}}>Создать</span>} id="navbarScrollingDropdown" style={{backgroundColor: '#5222D0', borderRadius: 4}}>
+                        <NavDropdown title={<span className={`${app_styles.text_white} ${app_styles.header_weight}`}>Создать</span>} id="navbarScrollingDropdown" className={`${app_styles.main_color} ${app_styles.border_radius}`}>
                             <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">
                                 Another action
@@ -49,6 +52,7 @@ function Header() {
                             aria-label="Search"
                         />
                         <Button variant="outline-success">Search</Button>
+                        <img src={require('../../images/profile.png')} className={base_styles.profile}/>
                     </Form>
                 </Navbar.Collapse>
             </Container>

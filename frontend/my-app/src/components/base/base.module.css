@@ -1,0 +1,50 @@
+.navbar {
+    border-bottom: solid 1px
+}
+
+.button {
+    border: none;
+}
+
+.button img {
+    height: 20px
+}
+
+.header_logo_margin {
+    margin: auto 10px
+}
+
+.profile {
+    height: 30px;
+}
+
+.footer_left_part {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+}
+
+.footer_center_part {
+    display: flex;
+    margin: auto
+}
+
+.footer_right_part {
+    display: flex;
+    margin: auto 30px;
+}
+
+.footer_right_part img {
+    height: 30px;
+    margin: 10px
+}
+
+ul {
+    list-style-type: disclosure-closed;
+}
+li {
+    margin: 10px;
+    font-size: large;
+}
+

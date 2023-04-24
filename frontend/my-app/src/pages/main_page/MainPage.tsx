@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import MyHeader from "../components/Header";
-import MyFooter from "../components/Footer";
+import MyHeader from "../../components/base/Header";
+import MyFooter from "../../components/base/Footer";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Menu from "../components/Menu";
-import Tasks from "../components/Tasks";
+import Menu from "../../components/base/Menu";
+import Tasks from "../../components/Tasks";
+import app_styles from '../../App.module.css';
+import main_page_styles from './MainPage.module.css';
 
 function MainPage() {
 
@@ -17,11 +19,11 @@ function MainPage() {
                     <Col sm={2}>
                         <Menu/>
                     </Col>
-                    {/*<Col sm={9}>*/}
                         <Tasks/>
-                    {/*</Col>*/}
                     <Col sm={1}>
-                        Автор
+                        <h3 className={`${app_styles.header_weight} ${main_page_styles.title}`}>
+                            Автор
+                        </h3>
                     </Col>
                 </Row>
             </Container>

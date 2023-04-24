@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import { Row } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import app_styles from '../App.module.css';
+import main_pages_styles from '../pages/main_page/MainPage.module.css';
 
 function TaskCard() {
     return (
@@ -27,11 +28,11 @@ function Tasks() {
     return (
         <>
         <Col sm={3}>
-            <h3 style={{marginBottom: '20px'}}>
+            <h3 className={`${main_pages_styles.title} ${app_styles.header_weight}`}>
                 Все задачи
             </h3>
 
-            <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '30px', borderBottom: 'solid 1px'}}>
+            <div className={main_pages_styles.task_type}>
                 <h5>
                     Открытые
                 </h5>
@@ -40,11 +41,11 @@ function Tasks() {
                 </div>
             </div>
 
-            <div style={{display: 'flex', marginTop: '30px'}}>
-                <img src={require('../images/opened_bracket.png')} style={{objectFit: 'scale-down'}}/>
-                <h5>
+            <div className={main_pages_styles.sprint}>
+                <img src={require('../images/opened_bracket.png')} />
+                <p>
                     1 спринт (24.03.2023 - 31.03.2023)
-                </h5>
+                </p>
             </div>
 
             <TaskCard/>
@@ -52,7 +53,8 @@ function Tasks() {
         </Col>
 
         <Col sm={3}>
-            <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '30px', borderBottom: 'solid 1px', marginTop: '54px'}}>
+            <div className={main_pages_styles.title} />
+            <div className={main_pages_styles.task_type}>
                 <h5>
                     Открытые
                 </h5>
@@ -61,10 +63,13 @@ function Tasks() {
                 </div>
             </div>
 
+            <div className={main_pages_styles.sprint} />
+
             <TaskCard/>
         </Col>
         <Col>
-            <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '30px', borderBottom: 'solid 1px', marginTop: '54px'}}>
+            <div className={main_pages_styles.title} />
+            <div className={main_pages_styles.task_type}>
                 <h5>
                     Открытые
                 </h5>
@@ -72,6 +77,8 @@ function Tasks() {
                     +
                 </div>
             </div>
+
+            <div className={main_pages_styles.sprint} />
 
             <TaskCard/>
         </Col>

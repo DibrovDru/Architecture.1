@@ -2,12 +2,12 @@ import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './App.css';
-import MainPage from "./pages/MainPage";
-import AutorisationPage from "./pages/AutorisationPage";
-import RegistrationPage from "./pages/RegistrationPage";
-import CreationProject from "./pages/CreationProject";
-import Projects from "./pages/Projects";
+import './App.module.css';
+import MainPage from "./pages/main_page/MainPage";
+import AutorisationPage from "./pages/reg_auth_page/AutorisationPage";
+import RegistrationPage from "./pages/reg_auth_page/RegistrationPage";
+import CreationProject from "./pages/creation_project/CreationProject";
+import Projects from "./pages/projects/Projects";
 
 function App() {
     if (!true) {
