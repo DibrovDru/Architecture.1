@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import React from "react";
 import app_styles from '../App.module.css';
-import projects_styles from '../pages/projects/projects.module.css';
+import projects_styles from '../pages/projects_page/ProjectsPage.module.css';
 
 function ProjectCard() {
     return (

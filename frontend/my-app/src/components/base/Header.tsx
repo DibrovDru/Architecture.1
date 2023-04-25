@@ -8,6 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import app_styles from '../../App.module.css';
 import base_styles from './base.module.css';
+import Profile from "../Profile";
 
 function Header() {
     return (
@@ -52,7 +53,8 @@ function Header() {
                             aria-label="Search"
                         />
                         <Button variant="outline-success">Search</Button>
-                        <img src={require('../../images/profile.png')} className={base_styles.profile}/>
+                        {/*<img src={require('../../images/profile.png')} className={base_styles.profile}/>*/}
+                        <Profile/>
                     </Form>
                 </Navbar.Collapse>
             </Container>

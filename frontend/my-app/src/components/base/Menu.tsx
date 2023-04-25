@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import app_styles from '../../App.module.css';
-import main_page_styles from '../../pages/main_page/MainPage.module.css';
+import main_page_styles from '../../pages/main_tasks_page/TasksPage.module.css';
 import base_styles from './base.module.css';
 
 function Menu() {
 
     return (
         <div className={`${app_styles.grey} ${app_styles.height_full_screen} ${base_styles.sidebar}`}>
-            <div style={{display: 'flex'}}>
+            <div style={{display: 'flex'}} className={app_styles.margin_top_from_header}>
                 <img src={require('../../images/github.png')} style={{height: '30px', objectFit: 'scale-down'}}/>
                 <div style={{display: 'flex', flexDirection: 'column'}}>
                     <h3 className={`${app_styles.header_weight} ${main_page_styles.title}`}>

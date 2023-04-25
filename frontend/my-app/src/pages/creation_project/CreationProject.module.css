@@ -11,7 +11,7 @@
 }
 
 .window_scroll {
-    height: 300px;
+    max-height: 400px;
 }
 
 .relation_margin {

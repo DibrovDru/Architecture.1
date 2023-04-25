@@ -75,3 +75,7 @@
 .border_radius {
     border-radius: 4px;
 }
+
+.margin_top_from_header {
+    margin-top: 60px;
+}

@@ -2,11 +2,11 @@ import React, {useState} from "react";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import app_styles from '../App.module.css';
-import main_pages_styles from '../pages/main_page/MainPage.module.css';
+import main_pages_styles from '../pages/main_tasks_page/TasksPage.module.css';
 
 function TaskCard() {
     return (
-        <Card style={{ width: '15rem', marginTop: '10px', height: '200px', overflow: 'hidden' }}>
+        <Card style={{marginTop: '10px', height: '200px', overflow: 'hidden' }}>
             <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
@@ -26,7 +26,7 @@ function Tasks() {
     return (
         <>
         <Col sm={3}>
-            <h3 className={`${main_pages_styles.title} ${app_styles.header_weight}`}>
+            <h3 className={`${main_pages_styles.title} ${app_styles.header_weight} ${app_styles.margin_top_from_header}`}>
                 Все задачи
             </h3>
 
@@ -62,7 +62,7 @@ function Tasks() {
         </Col>
 
         <Col sm={3}>
-            <div className={main_pages_styles.title} />
+            <div className={`${main_pages_styles.title} ${app_styles.margin_top_from_header}`} />
             <div className={main_pages_styles.task_type}>
                 <h5>
                     Активные
@@ -82,7 +82,7 @@ function Tasks() {
             <TaskCard/>
         </Col>
         <Col>
-            <div className={main_pages_styles.title} />
+            <div className={`${main_pages_styles.title} ${app_styles.margin_top_from_header}`} />
             <div className={main_pages_styles.task_type}>
                 <h5>
                     Решенные

@@ -7,10 +7,12 @@ import Col from "react-bootstrap/Col";
 import Menu from "../../components/base/Menu";
 import Tasks from "../../components/Tasks";
 import app_styles from '../../App.module.css';
-import main_page_styles from './MainPage.module.css';
+import main_page_styles from './TasksPage.module.css';
 import base_styles from '../../components/base/base.module.css';
+import main_pages_styles from "./TasksPage.module.css";
+import Profile from "../../components/Profile";
 
-function MainPage() {
+function TasksPage() {
 
     return (
         <div>
@@ -20,17 +22,12 @@ function MainPage() {
                     <Col sm={2}>
                         <Menu/>
                     </Col>
-                        <Tasks/>
+                    <Tasks/>
                     <Col sm={1}>
-                        <h3 className={`${app_styles.header_weight} ${main_page_styles.title}`}>
+                        <h3 className={`${main_pages_styles.title} ${app_styles.header_weight} ${app_styles.margin_top_from_header}`}>
                             Автор
                         </h3>
-                        <div className={app_styles.space_between}>
-                            <img src={require('../../images/profile.png')} className={base_styles.profile} />
-                             <text>
-                                 Sophia Golovanova
-                             </text>
-                        </div>
+                        <Profile/>
                     </Col>
                 </Row>
             </Container>
@@ -39,4 +36,4 @@ function MainPage() {
     );
 }
 
-export default MainPage;
+export default TasksPage;
