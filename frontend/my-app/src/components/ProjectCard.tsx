@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import React, {FC} from "react";
 import app_styles from '../App.module.css';
 import projects_styles from '../pages/projects_page/ProjectsPage.module.css';
-import {Employee, Project} from "../types";
+import {Project} from "../types";
 
 const ProjectCard: FC<Project> = ({
                                       id,

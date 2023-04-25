@@ -1,18 +1,26 @@
-import React, {useState} from "react";
+import React, {FC} from "react";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import app_styles from '../App.module.css';
 import main_pages_styles from '../pages/main_tasks_page/TasksPage.module.css';
+import {Task, TaskType} from "../types";
+import {tasks} from "../state/state";
 
-function TaskCard() {
+const TaskCard: FC<Task> = ({
+                                id,
+                                name,
+                                description,
+                                type,
+                                creator,
+                                executor
+                            }) => {
     return (
         <Card style={{marginTop: '10px', height: '200px', overflow: 'hidden' }}>
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                <Card.Title> {name} </Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">executor: {executor.login} </Card.Subtitle>
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content. edvklmeqkvm kevkenrnrnvk enavkmadfklvmndflkvndfklqnv'l qkenkenvkenvklwnekrnvw
+                    { description }
                 </Card.Text>
             </Card.Body>
         </Card>
@@ -30,6 +38,7 @@ function Tasks() {
                 Все задачи
             </h3>
 
+{/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/}
             <div className={main_pages_styles.task_type}>
                 <h5>
                     Открытые
@@ -39,6 +48,7 @@ function Tasks() {
                 </div>
             </div>
 
+
             <div className={main_pages_styles.sprint}>
                 <img src={require('../images/opened_bracket.png')} />
                 <p>
@@ -46,8 +56,16 @@ function Tasks() {
                 </p>
             </div>
 
-            <TaskCard/>
-            <TaskCard/>
+            {tasks.filter(task => task.type === TaskType.ToDo)
+                .map(task =>
+                    <TaskCard id={task.id}
+                              name={task.name}
+                              description={task.description}
+                              executor={task.executor}
+                              creator={task.creator}
+                              type={task.type}
+                    />)
+            }
 
             <div className={main_pages_styles.sprint}>
                 <img src={require('../images/opened_bracket.png')} />
@@ -55,12 +73,9 @@ function Tasks() {
                     2 спринт (24.03.2023 - 31.03.2023)
                 </p>
             </div>
-
-            <TaskCard/>
-            <TaskCard/>
-
         </Col>
 
+{/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/}
         <Col sm={3}>
             <div className={`${main_pages_styles.title} ${app_styles.margin_top_from_header}`} />
             <div className={main_pages_styles.task_type}>
@@ -74,14 +89,22 @@ function Tasks() {
 
             <div className={main_pages_styles.sprint} />
 
-            <TaskCard/>
-            <TaskCard/>
+            {tasks.filter(task => task.type === TaskType.InProgress)
+                .map(task =>
+                    <TaskCard id={task.id}
+                              name={task.name}
+                              description={task.description}
+                              executor={task.executor}
+                              creator={task.creator}
+                              type={task.type}
+                    />)
+            }
 
             <div className={main_pages_styles.sprint} />
-
-            <TaskCard/>
         </Col>
         <Col>
+
+{/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/}
             <div className={`${main_pages_styles.title} ${app_styles.margin_top_from_header}`} />
             <div className={main_pages_styles.task_type}>
                 <h5>
@@ -94,7 +117,18 @@ function Tasks() {
 
             <div className={main_pages_styles.sprint} />
 
-            <TaskCard/>
+            {tasks.filter(task => task.type === TaskType.Done)
+                .map(task =>
+                    <TaskCard id={task.id}
+                              name={task.name}
+                              description={task.description}
+                              executor={task.executor}
+                              creator={task.creator}
+                              type={task.type}
+                    />)
+            }
+
+            <div className={main_pages_styles.sprint} />
         </Col>
         </>
     );

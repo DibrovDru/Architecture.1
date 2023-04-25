@@ -1,10 +1,6 @@
-import {Project, Employee} from "../types";
-import data from './projects.json';
-export const projects: Project[] = data;
+import {Project, Employee, Task} from "../types";
+import data from './data.json';
+export const projects: Project[] = data.projects;
+export const tasks: Task[] = data.tasks;
 
-// fetch(require('projects.json'))
-//     .then(response => response.json())
-//     .then((data: Project[]) => {
-//         projects = data;
-//     });
 

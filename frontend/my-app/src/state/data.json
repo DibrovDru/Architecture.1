@@ -1,0 +1,256 @@
+{
+  "projects" : [
+    {
+      "id": 1,
+      "name": "Augmented Reality Shopping Experience",
+      "description": "Develop an augmented reality shopping app that allows customers to try on clothes virtually before making a purchase.",
+      "creator": {
+        "id": 1,
+        "name": "Mark",
+        "surname": "Zuckerberg",
+        "login": "markzuckerberg"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Blockchain-based Supply Chain Management",
+      "description": "Create a blockchain-based supply chain management system to increase transparency and accountability in the supply chain.",
+      "creator": {
+        "id": 2,
+        "name": "Satoshi",
+        "surname": "Nakamoto",
+        "login": "satoshinakamoto"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Automated Personal Finance Assistant",
+      "description": "Build an automated personal finance assistant that helps users manage their finances and investments more effectively.",
+      "creator": {
+        "id": 3,
+        "name": "Warren",
+        "surname": "Buffett",
+        "login": "warrenbuffett"
+      }
+    },
+    {
+      "id": 4,
+      "name": "AI-powered Language Learning Platform",
+      "description": "Create an AI-powered language learning platform that uses natural language processing and machine learning to personalize the learning experience for each user.",
+      "creator": {
+        "id": 4,
+        "name": "Stephen",
+        "surname": "Hawking",
+        "login": "stephenhawking"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Smart City Traffic Management System",
+      "description": "Develop a smart city traffic management system that uses real-time data analysis and predictive modeling to optimize traffic flow and reduce congestion.",
+      "creator": {
+        "id": 5,
+        "name": "Bill",
+        "surname": "Clinton",
+        "login": "billclinton"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Social Media Monitoring Tool",
+      "description": "Build a social media monitoring tool that uses natural language processing and sentiment analysis to help businesses track their online reputation and customer sentiment.",
+      "creator": {
+        "id": 6,
+        "name": "Sheryl",
+        "surname": "Sandberg",
+        "login": "sherylsandberg"
+      }
+    },
+    {
+      "id": 7,
+      "name": "E-commerce Personalization Platform",
+      "description": "Create an e-commerce personalization platform that uses machine learning algorithms to recommend products and personalize the shopping experience for each customer.",
+      "creator": {
+        "id": 7,
+        "name": "Jeff",
+        "surname": "Bezos",
+        "login": "jeffbezos"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Smart Home Security System",
+      "description": "Develop a smart home security system that uses machine learning algorithms to detect and prevent potential security breaches and intrusions.",
+      "creator": {
+        "id": 8,
+        "name": "Elon",
+        "surname": "Musk",
+        "login": "elonmusk"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Design UI for new project",
+      "description": "Create a modern and user-friendly design for a new project",
+      "type": 0,
+      "creator": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "johndoe"
+      },
+      "executor": {
+        "id": 2,
+        "name": "Jane",
+        "surname": "Doe",
+        "login": "janedoe"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Implement login functionality",
+      "description": "Implement a secure login system with password hashing and email verification",
+      "type": 1,
+      "creator": {
+        "id": 2,
+        "name": "Jane",
+        "surname": "Doe",
+        "login": "janedoe"
+      },
+      "executor": {
+        "id": 3,
+        "name": "Bob",
+        "surname": "Smith",
+        "login": "bobsmith"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Write API documentation",
+      "description": "Create detailed documentation for the project's API endpoints",
+      "type": 2,
+      "creator": {
+        "id": 3,
+        "name": "Bob",
+        "surname": "Smith",
+        "login": "bobsmith"
+      },
+      "executor": {
+        "id": 4,
+        "name": "Alice",
+        "surname": "Johnson",
+        "login": "alicejohnson"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Optimize database queries",
+      "description": "Analyze and optimize the database queries used by the project",
+      "type": 0,
+      "creator": {
+        "id": 4,
+        "name": "Alice",
+        "surname": "Johnson",
+        "login": "alicejohnson"
+      },
+      "executor": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "johndoe"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Refactor legacy code",
+      "description": "Rewrite legacy code to make it more maintainable and scalable",
+      "type": 2,
+      "creator": {
+        "id": 2,
+        "name": "Jane",
+        "surname": "Doe",
+        "login": "janedoe"
+      },
+      "executor": {
+        "id": 4,
+        "name": "Alice",
+        "surname": "Johnson",
+        "login": "alicejohnson"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Implement user authentication",
+      "description": "Create a secure authentication system for the application",
+      "type": 0,
+      "creator": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "jdoe"
+      },
+      "executor": {
+        "id": 2,
+        "name": "Jane",
+        "surname": "Doe",
+        "login": "jane"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Fix styling issues on homepage",
+      "description": "Fix alignment and padding issues on the homepage",
+      "type": 2,
+      "creator": {
+        "id": 3,
+        "name": "Bob",
+        "surname": "Smith",
+        "login": "bsmith"
+      },
+      "executor": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "jdoe"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Add unit tests for backend code",
+      "description": "Write unit tests for the backend code to ensure proper functionality",
+      "type": 0,
+      "creator": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "jdoe"
+      },
+      "executor": {
+        "id": 3,
+        "name": "Bob",
+        "surname": "Smith",
+        "login": "bsmith"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Update API documentation",
+      "description": "Update the API documentation to reflect recent changes",
+      "type": 1,
+      "creator": {
+        "id": 2,
+        "name": "Jane",
+        "surname": "Doe",
+        "login": "jane"
+      },
+      "executor": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "jdoe"
+      }
+    }
+  ]
+}
