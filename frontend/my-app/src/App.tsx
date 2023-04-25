@@ -20,9 +20,9 @@ function App() {
             // <AutorisationPage/>
             // <RegistrationPage/>
             // <CreationProject/>
-            // <ProjectsPage/>
+            <ProjectsPage/>
             // <TasksPage/>
-            <EmployeesPage/>
+            // <EmployeesPage/>
         );
 
     }
