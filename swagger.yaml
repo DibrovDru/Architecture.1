@@ -596,10 +596,10 @@ paths:
           description: Project id
           schema:
             type: integer
-        - name: task_id
+        - name: sprint_id
           in: path
           required: true
-          description: task id
+          description: sprint id
           schema:
             type: integer
       requestBody:
@@ -622,10 +622,10 @@ paths:
           description: Project id
           schema:
             type: integer
-        - name: task_id
+        - name: sprint_id
           in: path
           required: true
-          description: task id
+          description: sprint id
           schema:
             type: integer
       responses:
