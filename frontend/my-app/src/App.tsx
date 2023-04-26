@@ -21,8 +21,9 @@ function App() {
             // <RegistrationPage/>
             // <CreationProject/>
             // <ProjectsPage/>
-            <TasksPage/>
-            // <EmployeesPage/>
+            // <TasksPage/>
+            <EmployeesPage/>
+            // <SprintsPage/>
         );
 
     }

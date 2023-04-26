@@ -20,7 +20,7 @@ function Menu() {
             </div>
             <ul>
                 <li>
-                    Проекты
+                    О проекте
                 </li>
                 <li>
                     Задачи
