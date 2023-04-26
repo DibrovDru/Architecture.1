@@ -1,3 +1,7 @@
 .modal_task_window {
-    max-width: 1000px;
+    max-width: 50%;
+}
+
+.name_field {
+    width: 40%;
 }

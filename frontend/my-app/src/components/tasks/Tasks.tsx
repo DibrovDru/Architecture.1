@@ -60,6 +60,7 @@ function Tasks() {
                                       executor={task.executor}
                                       creator={task.creator}
                                       type={task.type}
+                                      sprint={task.sprint}
                             />)
                     }
                 </div>
@@ -72,6 +73,7 @@ function Tasks() {
                                       executor={task.executor}
                                       creator={task.creator}
                                       type={task.type}
+                                      sprint={task.sprint}
                             />)
                     }
                 </div>
@@ -84,6 +86,7 @@ function Tasks() {
                                       executor={task.executor}
                                       creator={task.creator}
                                       type={task.type}
+                                      sprint={task.sprint}
                             />)
                     }
                 </div>

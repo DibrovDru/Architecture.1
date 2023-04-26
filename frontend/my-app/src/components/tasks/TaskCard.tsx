@@ -6,6 +6,9 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import app_styles from '../../App.module.css';
 import tasks_styles from './tasks.module.css';
+import Comments from "../comments/Comments";
+
+
 
 export const TaskCard: FC<Task> = ({
                                        id,
@@ -13,7 +16,8 @@ export const TaskCard: FC<Task> = ({
                                        description,
                                        type,
                                        creator,
-                                       executor
+                                       executor,
+                                       sprint
                                    }) => {
 
     const [show, setShow] = useState(false);
@@ -32,22 +36,76 @@ export const TaskCard: FC<Task> = ({
                 <Modal.Body>
                     <Form>
                         <Form.Group className={`mb-3 ${app_styles.space_between}`} controlId="exampleForm.ControlInput1">
-                            <Form.Label>Проект</Form.Label>
+                            <Form.Label className={tasks_styles.name_field}>Проект</Form.Label>
                             <Form.Control
-                                // type="email"
-                                placeholder="name@example.com"
+                                type="text"
+                                value={name}
+                                readOnly={true}
                                 autoFocus
                             />
                         </Form.Group>
+
+                        <Form.Group className={`mb-3 ${app_styles.space_between}`} controlId="exampleForm.ControlInput1">
+                            <Form.Label className={tasks_styles.name_field}>Автор</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={creator.name + ' ' + creator.surname}
+                                readOnly={true}
+                                autoFocus
+                            />
+                        </Form.Group>
+
+
+                        <Form.Group className={`mb-3 ${app_styles.space_between}`} controlId="exampleForm.ControlInput1">
+                            <Form.Label className={tasks_styles.name_field}>Исполнитель</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={executor.name + ' ' + executor.surname}
+                                readOnly={true}
+                                autoFocus
+                            />
+                        </Form.Group>
+
+                        <Form.Group className={`mb-3 ${app_styles.space_between}`} controlId="exampleForm.ControlInput1">
+                            <Form.Label className={tasks_styles.name_field}>Спринт</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={sprint.name}
+                                readOnly={true}
+                                autoFocus
+                            />
+                        </Form.Group>
+
+
+                        <Form.Group className={`mb-3 ${app_styles.space_between}`} controlId="exampleForm.ControlInput1">
+                            <Form.Label className={tasks_styles.name_field}>Статус</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={type}
+                                readOnly={true}
+                                autoFocus
+                            />
+                        </Form.Group>
+
+
+                        {/*//////////////////////////////////////////////////////////////////////////*/}
+
                         <Form.Group
                             className="mb-3"
                             controlId="exampleForm.ControlTextarea1"
                         >
-                            <Form.Label>Example textarea</Form.Label>
-                            <Form.Control as="textarea" rows={3}/>
+                            <Form.Label>Описание</Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                value={description}
+                            />
                         </Form.Group>
                     </Form>
                 </Modal.Body>
+
+                <Comments/>
+
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
@@ -56,7 +114,6 @@ export const TaskCard: FC<Task> = ({
                         Save Changes
                     </Button>
                 </Modal.Footer>
-                {/*<style>{tasks_styles.modal_task_window}</style>*/}
             </Modal>
 {/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/}
 

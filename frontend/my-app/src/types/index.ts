@@ -25,7 +25,8 @@ export interface Task {
     description: string,
     type: TaskType,
     creator: Employee,
-    executor: Employee
+    executor: Employee,
+    sprint: Sprint
 }
 
 export interface Employee {

@@ -106,6 +106,14 @@
         "name": "Jane",
         "surname": "Doe",
         "login": "janedoe"
+      },
+      "sprint": {
+        "id": 2,
+        "name": "Sprint 2",
+        "timestamp": "2023-05-05T12:00:00Z",
+        "is_actual": false,
+        "description": "This is Sprint 2",
+        "n_days": 10
       }
     },
     {
@@ -124,6 +132,14 @@
         "name": "Bob",
         "surname": "Smith",
         "login": "bobsmith"
+      },
+      "sprint": {
+        "id": 3,
+        "name": "Sprint 3",
+        "timestamp": "2023-05-05T12:00:00Z",
+        "is_actual": false,
+        "description": "This is Sprint 2",
+        "n_days": 10
       }
     },
     {
@@ -142,6 +158,14 @@
         "name": "Alice",
         "surname": "Johnson",
         "login": "alicejohnson"
+      },
+      "sprint": {
+        "id": 4,
+        "name": "Sprint 4",
+        "timestamp": "2023-05-05T12:00:00Z",
+        "is_actual": false,
+        "description": "This is Sprint 2",
+        "n_days": 10
       }
     },
     {
@@ -160,6 +184,14 @@
         "name": "John",
         "surname": "Doe",
         "login": "johndoe"
+      },
+      "sprint": {
+        "id": 5,
+        "name": "Sprint 5",
+        "timestamp": "2023-05-05T12:00:00Z",
+        "is_actual": false,
+        "description": "This is Sprint 2",
+        "n_days": 10
       }
     },
     {
@@ -178,6 +210,14 @@
         "name": "Alice",
         "surname": "Johnson",
         "login": "alicejohnson"
+      },
+      "sprint": {
+        "id": 6,
+        "name": "Sprint 6",
+        "timestamp": "2023-05-05T12:00:00Z",
+        "is_actual": false,
+        "description": "This is Sprint 2",
+        "n_days": 10
       }
     },
     {
@@ -196,6 +236,14 @@
         "name": "Jane",
         "surname": "Doe",
         "login": "jane"
+      },
+      "sprint": {
+        "id": 7,
+        "name": "Sprint 7",
+        "timestamp": "2023-05-05T12:00:00Z",
+        "is_actual": false,
+        "description": "This is Sprint 2",
+        "n_days": 10
       }
     },
     {
@@ -214,6 +262,14 @@
         "name": "John",
         "surname": "Doe",
         "login": "jdoe"
+      },
+      "sprint": {
+        "id": 8,
+        "name": "Sprint 8",
+        "timestamp": "2023-05-05T12:00:00Z",
+        "is_actual": false,
+        "description": "This is Sprint 2",
+        "n_days": 10
       }
     },
     {
@@ -232,6 +288,14 @@
         "name": "Bob",
         "surname": "Smith",
         "login": "bsmith"
+      },
+      "sprint": {
+        "id": 9,
+        "name": "Sprint 9",
+        "timestamp": "2023-05-05T12:00:00Z",
+        "is_actual": false,
+        "description": "This is Sprint 2",
+        "n_days": 10
       }
     },
     {
@@ -250,7 +314,98 @@
         "name": "John",
         "surname": "Doe",
         "login": "jdoe"
+      },
+      "sprint": {
+        "id": 10,
+        "name": "Sprint 10",
+        "timestamp": "2023-05-05T12:00:00Z",
+        "is_actual": true,
+        "description": "This is Sprint 2",
+        "n_days": 10
       }
+    }
+  ],
+  "sprints": [
+    {
+      "id": 1,
+      "name": "Sprint 1",
+      "timestamp": "2023-04-26T12:00:00Z",
+      "is_actual": true,
+      "description": "This is Sprint 1",
+      "n_days": 7
+    },
+    {
+      "id": 2,
+      "name": "Sprint 2",
+      "timestamp": "2023-05-05T12:00:00Z",
+      "is_actual": false,
+      "description": "This is Sprint 2",
+      "n_days": 10
+    },
+    {
+      "id": 3,
+      "name": "Sprint 3",
+      "timestamp": "2023-05-16T12:00:00Z",
+      "is_actual": true,
+      "description": "This is Sprint 3",
+      "n_days": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "timestamp": "2023-04-26T12:00:00Z",
+      "author": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "johndoe"
+      },
+      "text": "This is the first comment."
+    },
+    {
+      "id": 2,
+      "timestamp": "2023-04-27T10:30:00Z",
+      "author": {
+        "id": 2,
+        "name": "Jane",
+        "surname": "Smith",
+        "login": "janesmith"
+      },
+      "text": "Here is the second comment."
+    },
+    {
+      "id": 3,
+      "timestamp": "2023-04-28T15:45:00Z",
+      "author": {
+        "id": 3,
+        "name": "Alex",
+        "surname": "Johnson",
+        "login": "alexjohnson"
+      },
+      "text": "This is the third comment."
+    },
+    {
+      "id": 4,
+      "timestamp": "2023-04-29T09:15:00Z",
+      "author": {
+        "id": 4,
+        "name": "Emily",
+        "surname": "Brown",
+        "login": "emilybrown"
+      },
+      "text": "Here is the fourth comment."
+    },
+    {
+      "id": 5,
+      "timestamp": "2023-04-30T14:20:00Z",
+      "author": {
+        "id": 5,
+        "name": "Michael",
+        "surname": "Wilson",
+        "login": "michaelwilson"
+      },
+      "text": "This is the fifth comment."
     }
   ]
 }
