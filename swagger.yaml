@@ -92,12 +92,17 @@ paths:
 
 
 ########################################################################################  
-  /projects/{id}/tasks:
+  /projects/{id}/tasks/sprints/{sprint_id}:
     get:
       tags:
         - Tasks
       parameters:
         - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: sprint_id
           in: path
           required: true
           schema:
@@ -125,7 +130,7 @@ paths:
           description: Task is successfully created
 
 
-  /projects/{id}/tasks/{task_id}:
+  /projects/{id}/tasks/sprints/{sprint_id}/{task_id}:
     get:
       tags:
         - Tasks
@@ -135,6 +140,11 @@ paths:
           in: path
           required: true
           description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
           schema:
             type: integer
         - name: task_id
@@ -187,6 +197,11 @@ paths:
           description: Project id
           schema:
             type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
         - name: task_id
           in: path
           required: true
@@ -201,7 +216,7 @@ paths:
 ############################################################################################
 
 
-  /projects/{id}/tasks/{task_id}/comments:
+  /projects/{id}/tasks/sprints/{sprint_id}/{task_id}/comments:
     get:
       tags:
         - Comments
@@ -211,6 +226,11 @@ paths:
           in: path
           required: true
           description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
           schema:
             type: integer
         - name: task_id
@@ -236,6 +256,11 @@ paths:
           description: Project id
           schema:
             type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
         - name: task_id
           in: path
           required: true
@@ -252,7 +277,7 @@ paths:
       responses:
         '200':
           description: Comment is successfully created
-  /projects/{id}/tasks/{task_id}/comments/{comment_id}:
+  /projects/{id}/tasks/{task_id}/sprints/{sprint_id}/comments/{comment_id}:
     put:
       tags:
         - Comments
@@ -262,6 +287,11 @@ paths:
           in: path
           required: true
           description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
           schema:
             type: integer
         - name: task_id
@@ -294,6 +324,11 @@ paths:
           in: path
           required: true
           description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
           schema:
             type: integer
         - name: task_id
@@ -634,6 +669,7 @@ components:
       required:
         - id
         - name
+        - sprint
         - type
         - creator
         - executor
@@ -642,6 +678,8 @@ components:
           type: integer
         name:
           type: string
+        sprint:
+          $ref: '#/components/schemas/Sprint'
         description:
           type: string
         type:
