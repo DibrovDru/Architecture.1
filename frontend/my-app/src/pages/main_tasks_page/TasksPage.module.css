@@ -25,3 +25,7 @@
     margin-right: 30px;
     border-bottom: solid 1px
 }
+
+.task_column_width {
+    width: 30%;
+}

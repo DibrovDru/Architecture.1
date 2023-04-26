@@ -21,6 +21,10 @@
     height: 30px;
 }
 
+.myfooter {
+    height: 70px;
+}
+
 .footer_left_part {
     margin: 10px;
     display: flex;

@@ -15,9 +15,10 @@ function Footer() {
                     bottom: 0,
                     textAlign: 'center',
                     display: 'flex',
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    zIndex: 2
                 }}
-            className={app_styles.white}
+            className={`${app_styles.white} ${base_styles.myfooter}`}
         >
             <Nav.Item>
                 <div className={base_styles.footer_left_part}>

@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Menu from "../../components/base/Menu";
-import Tasks from "../../components/Tasks";
+import Tasks from "../../components/tasks/Tasks";
 import app_styles from '../../App.module.css';
 import main_page_styles from './TasksPage.module.css';
 import base_styles from '../../components/base/base.module.css';
@@ -25,8 +25,10 @@ function TasksPage() {
                     <Col sm={2}>
                         <Menu/>
                     </Col>
-                    <Tasks/>
-                    <Col sm={1}>
+                    <Col sm={8}>
+                        <Tasks/>
+                    </Col>
+                    <Col sm={2}>
                         <h3 className={`${main_pages_styles.title} ${app_styles.header_weight} ${app_styles.margin_top_from_header}`}>
                             Автор
                         </h3>

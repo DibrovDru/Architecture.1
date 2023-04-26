@@ -12,7 +12,7 @@ import app_styles from "../../App.module.css";
 import ImgCard from "../../components/ImgCard";
 import MyHeader from "../../components/base/Header";
 import Menu from "../../components/base/Menu";
-import Tasks from "../../components/Tasks";
+import Tasks from "../../components/tasks/Tasks";
 import main_page_styles from "../main_tasks_page/TasksPage.module.css";
 import base_styles from "../../components/base/base.module.css";
 import MyFooter from "../../components/base/Footer";
