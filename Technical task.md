@@ -530,7 +530,7 @@ Resolved - задача выполнена.
 
 Рабочий прототип, который отражает основные функции и возможности веб-приложения расположен по адресу: 
 
-https://www.figma.com/file/d9q8Aq04k7I1F0bYrjSZba/deta?node-id=0%3A1&t=yvdLZ74Ivj2hrkme-1
+## [Прототип проекта ](https://www.figma.com/file/d9q8Aq04k7I1F0bYrjSZba/deta?node-id=0%3A1&t=yvdLZ74Ivj2hrkme-1)
 
 ## Создание дизайна
 
