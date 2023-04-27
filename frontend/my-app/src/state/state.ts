@@ -7,4 +7,3 @@ export const sprints: Sprint[] = data.sprints;
 
 export const comments: Comment[] = data.comments;
 
-

@@ -10,6 +10,7 @@ import CreationProject from "./pages/creation_project/CreationProject";
 import ProjectsPage from "./pages/projects_page/ProjectsPage";
 import EmployeesPage from "./pages/main_employees_page/EmployeesPage";
 import SprintsPage from "./pages/main_sprints_page/SprintsPage";
+import InfoProjectPage from "./pages/main_info_project_page/InfoProjectPage";
 
 function App() {
     if (!true) {
@@ -24,7 +25,8 @@ function App() {
             // <ProjectsPage/>
             // <TasksPage/>
             // <EmployeesPage/>
-            <SprintsPage/>
+            // <SprintsPage/>
+            <InfoProjectPage/>
         );
 
     }
