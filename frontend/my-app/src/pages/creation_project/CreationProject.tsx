@@ -29,7 +29,7 @@ function CreationProject() {
                                        img_path={require('../../images/deta.png')}
                                        img_style={app_styles.deta}
                                        name={'Создание проекта'}
-                                       next_button={'Далее'}
+                                       // next_button={'Далее'}
                                        prev_button={'Назад'}
                         >
                             <CreationProjectInfo/>
@@ -52,7 +52,7 @@ function CreationProject() {
                                        img_path={require('../../images/deta.png')}
                                        img_style={app_styles.deta}
                                        name={'Добавить участников'}
-                                       next_button={'Далее'}
+                                       // next_button={'Далее'}
                                        prev_button={'Назад'}
                         >
                             <AddingEmployeesToProject />
@@ -75,7 +75,7 @@ function CreationProject() {
                                        img_path={require('../../images/deta.png')}
                                        img_style={app_styles.deta}
                                        name={'Создание иерархии'}
-                                       next_button={'Готово'}
+                                       // next_button={'Готово'}
                                        prev_button={'Назад'}
                         >
                             <CreationHierarchy/>

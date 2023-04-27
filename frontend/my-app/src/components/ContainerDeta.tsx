@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 
 interface ContainerDetaProps {
     name: string,
-    next_button: string,
+    // next_button: string,
     prev_button:string,
     style_card?: string,
     img_path?: string,
@@ -20,7 +20,7 @@ const ContainerDeta: FC<ContainerDetaProps> = ({
                                                img_path,
                                                img_style,
                                                name,
-                                               next_button,
+                                               // next_button,
                                                prev_button,
                                                children}) => {
     return (
@@ -32,9 +32,9 @@ const ContainerDeta: FC<ContainerDetaProps> = ({
 
             {children}
 
-            <Button variant="primary" type="submit" className={`${app_styles.max_width} ${app_styles.main_color}`}>
-                {next_button}
-            </Button>
+            {/*<Button variant="primary" type="submit" className={`${app_styles.max_width} ${app_styles.main_color}`}>*/}
+            {/*    {next_button}*/}
+            {/*</Button>*/}
 
             <Card.Body>
                 <Card.Link href="#" className={app_styles.to_center}> { prev_button } </Card.Link>

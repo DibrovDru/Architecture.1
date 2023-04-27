@@ -70,9 +70,9 @@ export function CreationProjectInfo() {
                     <Form.Label>Описание проекта</Form.Label>
                     <Form.Control as="textarea" rows={3} />
                 </Form.Group>
-                {/*<Button variant="primary" type="submit" className={`${app_styles.max_width} ${app_styles.main_color}`}>*/}
-                {/*    Готово*/}
-                {/*</Button>*/}
+                <Button variant="primary" type="submit" className={`${app_styles.max_width} ${app_styles.main_color}`}>
+                    Готово
+                </Button>
             </Form>
     );
 }
@@ -137,6 +137,10 @@ export function AddingEmployeesToProject() {
             </Button>
 
             <div style={{height: '100px'}}/>
+
+            <Button variant="primary" type="submit" className={`${app_styles.max_width} ${app_styles.main_color}`}>
+                Готово
+            </Button>
       </>
     );
 }
@@ -232,6 +236,10 @@ export function CreationHierarchy() {
                     <Form.Label>Комментарий (необязательно)</Form.Label>
                     <textarea className="form-control" placeholder="" />
                 </Form.Group>
+
+                <Button variant="primary" type="submit" className={`${app_styles.max_width} ${app_styles.main_color}`}>
+                    Готово
+                </Button>
             </Form>
     );
 }

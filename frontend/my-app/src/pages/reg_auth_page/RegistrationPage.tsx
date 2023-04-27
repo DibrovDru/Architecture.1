@@ -21,7 +21,7 @@ function RegistrationPage() {
                                    img_path={require('../../images/deta.png')}
                                    img_style={app_styles.deta}
                                    name={'Вход в систему'}
-                                   next_button={'Готово'}
+                                   // next_button={'Готово'}
                                    prev_button={'Авторизация'}
                     >
                         <RegistrationCard />

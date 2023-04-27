@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,31 +14,35 @@ import InfoProjectPage from "./pages/main_info_project_page/InfoProjectPage";
 
 
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import {Context} from "./index";
+import {observer} from "mobx-react-lite";
 
 
 
 function App() {
-    const navigate = useNavigate();
+    const {store} = useContext(Context);
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            store.checkAuth()
+        }
+    }, []) // отработает при первом запуске
 
-    if (true) {
-        navigate('/login');
+    if (store.isAuth) {
+        return (
+            <AutorisationPage/>
+        );
     }
 
     return (
-            <Router>
-                <Routes>
-                    <Route path="/login" element={<AutorisationPage />}/>
-
-            {/*// <RegistrationPage/>*/}
-            {/*// <CreationProject/>*/}
-            {/*// <ProjectsPage/>*/}
-            {/*// <TasksPage/>*/}
-            {/*// <EmployeesPage/>*/}
-            {/*// <SprintsPage/>*/}
-            {/*// <InfoProjectPage/>*/}
-                </Routes>
-            </Router>
+            // <AutorisationPage />
+            // <RegistrationPage/>
+            // <CreationProject/>
+            // <ProjectsPage/>
+            <TasksPage/>
+            // <EmployeesPage/>
+            // <SprintsPage/>
+            // <InfoProjectPage/>
         );
 }
 
-export default App;
+export default observer(App);

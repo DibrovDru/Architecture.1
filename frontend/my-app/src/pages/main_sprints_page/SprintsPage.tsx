@@ -14,7 +14,7 @@ import Menu from "../../components/base/Menu";
 import base_styles from "../../components/base/base.module.css";
 import MyFooter from "../../components/base/Footer";
 import task_pages_styles from "../main_tasks_page/TasksPage.module.css";
-import {sprints} from "../../state/state";
+import {sprints} from "../../store/state";
 import sprints_page_styles from './SprintsPage.module.css';
 import SprintCard from "../../components/SprintCard";
 

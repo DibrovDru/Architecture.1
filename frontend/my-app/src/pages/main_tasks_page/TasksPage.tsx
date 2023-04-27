@@ -11,7 +11,7 @@ import main_page_styles from './TasksPage.module.css';
 import base_styles from '../../components/base/base.module.css';
 import main_pages_styles from "./TasksPage.module.css";
 import Profile from "../../components/Profile";
-import {tasks} from "../../state/state";
+import {tasks} from "../../store/state";
 
 function TasksPage() {
 

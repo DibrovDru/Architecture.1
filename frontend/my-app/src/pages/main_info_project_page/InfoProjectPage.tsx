@@ -19,7 +19,7 @@ import MyFooter from "../../components/base/Footer";
 import main_pages_styles from "../main_tasks_page/TasksPage.module.css";
 import Profile from "../../components/Profile";
 import { Form } from 'react-bootstrap';
-import {projects} from "../../state/state";
+import {projects} from "../../store/state";
 
 
 const InfoProjectCard: FC<Project>  = (project) => {

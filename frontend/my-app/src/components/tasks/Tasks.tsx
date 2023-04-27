@@ -3,7 +3,7 @@ import app_styles from '../../App.module.css';
 import task_pages_styles from '../../pages/main_tasks_page/TasksPage.module.css';
 import base_styles from '../base/base.module.css';
 import {TaskType} from "../../types";
-import {tasks} from "../../state/state";
+import {tasks} from "../../store/state";
 import {TaskCard} from "./TaskCard";
 
 

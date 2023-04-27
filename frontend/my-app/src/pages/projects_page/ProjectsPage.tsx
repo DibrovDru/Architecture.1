@@ -6,7 +6,7 @@ import MyFooter from "../../components/base/Footer";
 import app_styles from '../../App.module.css';
 import projects_styles from './ProjectsPage.module.css';
 
-import {projects} from "../../state/state";
+import {projects} from "../../store/state";
 import {Project} from "../../types";
 import {map} from "react-bootstrap/ElementChildren";
 
