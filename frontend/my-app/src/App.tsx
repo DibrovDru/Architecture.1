@@ -12,24 +12,33 @@ import EmployeesPage from "./pages/main_employees_page/EmployeesPage";
 import SprintsPage from "./pages/main_sprints_page/SprintsPage";
 import InfoProjectPage from "./pages/main_info_project_page/InfoProjectPage";
 
-function App() {
-    if (!true) {
-        return (
-            <TasksPage/>
-        );
-    } else {
-        return (
-            // <AutorisationPage/>
-            // <RegistrationPage/>
-            // <CreationProject/>
-            // <ProjectsPage/>
-            // <TasksPage/>
-            // <EmployeesPage/>
-            // <SprintsPage/>
-            <InfoProjectPage/>
-        );
 
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+
+
+
+function App() {
+    const navigate = useNavigate();
+
+    if (true) {
+        navigate('/login');
     }
+
+    return (
+            <Router>
+                <Routes>
+                    <Route path="/login" element={<AutorisationPage />}/>
+
+            {/*// <RegistrationPage/>*/}
+            {/*// <CreationProject/>*/}
+            {/*// <ProjectsPage/>*/}
+            {/*// <TasksPage/>*/}
+            {/*// <EmployeesPage/>*/}
+            {/*// <SprintsPage/>*/}
+            {/*// <InfoProjectPage/>*/}
+                </Routes>
+            </Router>
+        );
 }
 
 export default App;
