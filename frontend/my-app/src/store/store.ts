@@ -1,4 +1,4 @@
-import {Employee, Project} from "../types";
+import {Employee, Project, Task} from "../types";
 import {makeAutoObservable} from "mobx";
 import AuthService from "../logic/services/AuthService";
 import axios from "axios";
@@ -11,6 +11,7 @@ export default class Store {
     isAuth = false;
 
     currentProject: Project = {} as Project;
+    tasks: Task[] = [];
 
     constructor() {
         makeAutoObservable(this);
@@ -75,5 +76,8 @@ export default class Store {
         console.log(project);
         this.currentProject = project;
     }
+
+
+
 }
 

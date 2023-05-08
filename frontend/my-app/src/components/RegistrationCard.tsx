@@ -15,7 +15,7 @@ function RegistrationCard() {
     const [password, setPassword] = useState<string>('');
     const [retypePassword, setRetypePassword] = useState<string>('');
 
-    const {store} = useContext(Context);
+    const {storageCurrentState} = useContext(Context);
 
     return (
             <Form>
@@ -63,7 +63,7 @@ function RegistrationCard() {
                     variant="primary"
                     type="submit"
                     className={`${app_styles.max_width} ${app_styles.main_color}`}
-                    onClick={() => store.registration(email, password, name)}
+                    onClick={() => storageCurrentState.registration(email, password, name)}
                 >
                     Зарегистрироваться
                 </Button>

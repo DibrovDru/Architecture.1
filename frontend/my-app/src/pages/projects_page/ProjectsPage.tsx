@@ -16,7 +16,7 @@ import {Context} from "../../index";
 
 
 function ProjectsPage() {
-    const {projects} = useContext(Context);
+    const {storageProjects} = useContext(Context);
     const navigate = useNavigate();
 
     const handleClick = (id: number) => {
@@ -27,8 +27,12 @@ function ProjectsPage() {
 
 
     useEffect(() => {
-        setlocalProjects(projects.storageProjects);
-        console.log(localProjects);
+        storageProjects.setProjects(projects);
+        setlocalProjects(storageProjects.storageProjects);
+
+        console.log('bbbbbbbbb');
+        // console.log(localProjects);
+        // console.log(projects.storageProjects[0]);
     }, []);
 
 

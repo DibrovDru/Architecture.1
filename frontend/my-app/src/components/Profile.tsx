@@ -8,7 +8,7 @@ import {Context} from "../index";
 
 
 function Profile() {
-    const {store} = useContext(Context);
+    const {storageCurrentState} = useContext(Context);
     return (
         <div style={{display: 'flex', marginTop: '5px'}} >
             <img src={require('../images/profile.png')} className={base_styles.profile} />
@@ -20,7 +20,7 @@ function Profile() {
                 id="dropdown-button"
                 title="Sophia Golovanova"
             >
-                <Dropdown.Item href="#/action-1" onClick={() => store.logout()}>Выйти</Dropdown.Item>
+                <Dropdown.Item href="#/action-1" onClick={() => storageCurrentState.logout()}>Выйти</Dropdown.Item>
             </DropdownButton>
 
         </div>

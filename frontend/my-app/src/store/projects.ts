@@ -9,8 +9,12 @@ import {projects} from "./state";
 export default class Projects {
     storageProjects: Project[] = [];
     constructor() {
-        this.storageProjects = projects;
+        // this.storageProjects = projects;
         makeAutoObservable(this);
+    }
+
+    setProjects(projects: Project[]) {
+        this.storageProjects = projects;
     }
 }
 

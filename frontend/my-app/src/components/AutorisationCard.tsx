@@ -18,7 +18,7 @@ function AutorisationCard() {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
-    const {store} = useContext(Context);
+    const {storageCurrentState} = useContext(Context);
 
     return (
             <Form>
@@ -46,7 +46,7 @@ function AutorisationCard() {
                     variant="primary"
                     type="submit"
                     className={`${app_styles.max_width} ${app_styles.main_color}`}
-                    onClick={() => store.login(email, password)}
+                    onClick={() => storageCurrentState.login(email, password)}
                 >
                     Войти
                 </Button>

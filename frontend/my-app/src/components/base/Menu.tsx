@@ -6,7 +6,7 @@ import {NavLink} from "react-router-dom";
 import {Context} from "../../index";
 
 function Menu() {
-    const { store} = useContext(Context);
+    const { storageCurrentState} = useContext(Context);
 
     return (
         <div className={`${app_styles.grey} ${app_styles.height_full_screen} ${base_styles.sidebar}`}>
@@ -23,22 +23,22 @@ function Menu() {
             </div>
             <ul>
                 <li>
-                    <NavLink to={`/projects/${store.currentProject.id}`}>
+                    <NavLink to={`/projects/${storageCurrentState.currentProject.id}`}>
                     О проекте
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={`/projects/${store.currentProject.id}/tasks`}>
+                    <NavLink to={`/projects/${storageCurrentState.currentProject.id}/tasks`}>
                     Задачи
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={`/projects/${store.currentProject.id}/employees`}>
+                    <NavLink to={`/projects/${storageCurrentState.currentProject.id}/employees`}>
                     Участники
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={`/projects/${store.currentProject.id}/sprints`}>
+                    <NavLink to={`/projects/${storageCurrentState.currentProject.id}/sprints`}>
                     Спринты
                     </NavLink>
                 </li>

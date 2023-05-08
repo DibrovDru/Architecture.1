@@ -6,16 +6,16 @@ import Store from './store/store';
 import Projects from './store/projects';
 
 interface State {
-    store: Store,
-    projects: Projects
+    storageCurrentState: Store,
+    storageProjects: Projects
 }
 
 const store = new Store();
 const projects: Projects = new Projects();
 
 export const Context = createContext<State>({
-    store,
-    projects
+    storageCurrentState: store,
+    storageProjects: projects
 })
 
 const root = ReactDOM.createRoot(
@@ -23,7 +23,7 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-    <Context.Provider value={{ store, projects }}>
+    <Context.Provider value={{ storageCurrentState: store, storageProjects: projects }}>
         <App />
     </Context.Provider>
 );

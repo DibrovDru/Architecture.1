@@ -23,14 +23,14 @@ import { useParams } from 'react-router-dom';
 
 
 function App() {
-    const {store} = useContext(Context);
+    const {storageCurrentState} = useContext(Context);
     useEffect(() => {
         if (localStorage.getItem('token')) {
-            store.checkAuth()
+            storageCurrentState.checkAuth()
         }
     }, []) // отработает при первом запуске
 
-    if (store.isAuth) {
+    if (storageCurrentState.isAuth) {
         return (
             <AutorisationPage/>
         );

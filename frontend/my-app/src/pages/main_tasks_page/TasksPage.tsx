@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import MyHeader from "../../components/base/Header";
 import MyFooter from "../../components/base/Footer";
 import Container from "react-bootstrap/Container";
@@ -12,8 +12,11 @@ import base_styles from '../../components/base/base.module.css';
 import main_pages_styles from "./TasksPage.module.css";
 import Profile from "../../components/Profile";
 import {tasks} from "../../store/state";
+import {Context} from "../../index";
 
 function TasksPage() {
+
+    const {storageCurrentState} = useContext(Context);
 
 
 

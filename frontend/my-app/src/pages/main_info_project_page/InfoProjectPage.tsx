@@ -57,13 +57,13 @@ const InfoProjectCard: FC<Project>  = (project) => {
 const InfoProjectPage = () => {
     const { project_id } = useParams<{ project_id: string }>();
 
-    const {projects, store} = useContext(Context);
+    const {storageProjects, storageCurrentState} = useContext(Context);
     const [currentProject, setCurrentProject] = useState<Project>({} as Project);
 
     useEffect(() => {
-        var newProject = projects.storageProjects.filter((p) => String(p.id) == project_id)[0];
-        setCurrentProject(newProject);
-        store.setProject(newProject);
+        var newProject = storageProjects.storageProjects.filter((p) => String(p.id) == project_id)[0];
+        storageCurrentState.setProject(newProject);
+        setCurrentProject(storageCurrentState.currentProject);
         // console.log(store.currentProject.name);
     }, []);
 
