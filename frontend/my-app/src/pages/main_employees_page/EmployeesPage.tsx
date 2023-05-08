@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -18,10 +18,12 @@ import base_styles from "../../components/base/base.module.css";
 import MyFooter from "../../components/base/Footer";
 import main_pages_styles from "../main_tasks_page/TasksPage.module.css";
 import Profile from "../../components/Profile";
+import {Context} from "../../index";
 
 
 
 function EmployeesPage() {
+    const {storageCurrentState} = useContext(Context);
     return (
         <div>
             <MyHeader/>
@@ -40,14 +42,34 @@ function EmployeesPage() {
                         <h3 className={`${main_pages_styles.title} ${app_styles.header_weight} ${app_styles.margin_top_from_header}`}>
                             Автор
                         </h3>
-                        <Profile/>
+                        <Profile
+                            id={storageCurrentState.user.id}
+                            name={storageCurrentState.user.name}
+                            surname={storageCurrentState.user.surname}
+                            login={storageCurrentState.user.login}
+                        />
 
                         <h3 className={`${main_pages_styles.title} ${app_styles.header_weight} ${app_styles.margin_top_from_header}`}>
                             Участники
                         </h3>
-                        <Profile/>
-                        <Profile/>
-                        <Profile/>
+                        <Profile
+                            id={storageCurrentState.user.id}
+                            name={storageCurrentState.user.name}
+                            surname={storageCurrentState.user.surname}
+                            login={storageCurrentState.user.login}
+                        />
+                        <Profile
+                            id={storageCurrentState.user.id}
+                            name={storageCurrentState.user.name}
+                            surname={storageCurrentState.user.surname}
+                            login={storageCurrentState.user.login}
+                        />
+                        <Profile
+                            id={storageCurrentState.user.id}
+                            name={storageCurrentState.user.name}
+                            surname={storageCurrentState.user.surname}
+                            login={storageCurrentState.user.login}
+                        />
                         <Button variant="primary" type="submit" className={`${app_styles.max_width} ${app_styles.main_color}`}>
                             Добавить
                         </Button>

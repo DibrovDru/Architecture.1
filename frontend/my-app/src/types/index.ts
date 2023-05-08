@@ -62,3 +62,12 @@ export interface Error {
     code: number,
     message: string
 }
+
+
+
+
+
+
+export interface TasksPerSprint {
+    [key: number]: Task[]
+}

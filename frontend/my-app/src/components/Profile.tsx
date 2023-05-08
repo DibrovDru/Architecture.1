@@ -1,13 +1,14 @@
 import Card from "react-bootstrap/Card";
 import app_styles from "../App.module.css";
-import React, {useContext} from "react";
+import React, {FC, useContext} from "react";
 import base_styles from "./base/base.module.css";
 import {DropdownButton} from "react-bootstrap";
 import Dropdown from 'react-bootstrap/Dropdown';
 import {Context} from "../index";
+import {Employee} from "../types";
 
 
-function Profile() {
+const Profile: FC<Employee> = (employee) => {
     const {storageCurrentState} = useContext(Context);
     return (
         <div style={{display: 'flex', marginTop: '5px'}} >
@@ -18,7 +19,7 @@ function Profile() {
 
             <DropdownButton
                 id="dropdown-button"
-                title="Sophia Golovanova"
+                title={employee.name}
             >
                 <Dropdown.Item href="#/action-1" onClick={() => storageCurrentState.logout()}>Выйти</Dropdown.Item>
             </DropdownButton>

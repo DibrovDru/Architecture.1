@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import MyHeader from "../../components/base/Header";
 import MyFooter from "../../components/base/Footer";
 import Container from "react-bootstrap/Container";
@@ -13,11 +13,19 @@ import main_pages_styles from "./TasksPage.module.css";
 import Profile from "../../components/Profile";
 import {tasks} from "../../store/state";
 import {Context} from "../../index";
+import {Project, Task, TasksPerSprint} from "../../types";
 
 function TasksPage() {
 
-    const {storageCurrentState} = useContext(Context);
+    const {storageCurrentState, storageTasks } = useContext(Context);
 
+
+    const [currentTasks, setCurrentTasks] = useState<TasksPerSprint>({});
+
+    useEffect(() => {
+        storageTasks.setTasks(1, tasks);
+        setCurrentTasks(storageTasks.tasks);
+    }, []);
 
 
     return (
@@ -35,7 +43,12 @@ function TasksPage() {
                         <h3 className={`${main_pages_styles.title} ${app_styles.header_weight} ${app_styles.margin_top_from_header}`}>
                             Автор
                         </h3>
-                        <Profile/>
+                        <Profile
+                            id={storageCurrentState.user.id}
+                            name={storageCurrentState.user.name}
+                            surname={storageCurrentState.user.surname}
+                            login={storageCurrentState.user.login}
+                        />
                     </Col>
                 </Row>
             </Container>

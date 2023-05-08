@@ -56,8 +56,8 @@ const InfoProjectCard: FC<Project>  = (project) => {
 
 const InfoProjectPage = () => {
     const { project_id } = useParams<{ project_id: string }>();
-
     const {storageProjects, storageCurrentState} = useContext(Context);
+
     const [currentProject, setCurrentProject] = useState<Project>({} as Project);
 
     useEffect(() => {
@@ -93,14 +93,34 @@ const InfoProjectPage = () => {
                         <h3 className={`${main_pages_styles.title} ${app_styles.header_weight} ${app_styles.margin_top_from_header}`}>
                             Автор
                         </h3>
-                        <Profile/>
+                        <Profile
+                            id={storageCurrentState.user.id}
+                            name={storageCurrentState.user.name}
+                            surname={storageCurrentState.user.surname}
+                            login={storageCurrentState.user.login}
+                        />
 
                         <h3 className={`${main_pages_styles.title} ${app_styles.header_weight} ${app_styles.margin_top_from_header}`}>
                             Участники
                         </h3>
-                        <Profile/>
-                        <Profile/>
-                        <Profile/>
+                        <Profile
+                            id={storageCurrentState.user.id}
+                            name={storageCurrentState.user.name}
+                            surname={storageCurrentState.user.surname}
+                            login={storageCurrentState.user.login}
+                        />
+                        <Profile
+                            id={storageCurrentState.user.id}
+                            name={storageCurrentState.user.name}
+                            surname={storageCurrentState.user.surname}
+                            login={storageCurrentState.user.login}
+                        />
+                        <Profile
+                            id={storageCurrentState.user.id}
+                            name={storageCurrentState.user.name}
+                            surname={storageCurrentState.user.surname}
+                            login={storageCurrentState.user.login}
+                        />
                     </Col>
                 </Row>
             </Container>

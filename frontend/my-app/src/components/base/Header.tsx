@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import React from "react";
+import React, {useContext} from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -11,8 +11,12 @@ import base_styles from './base.module.css';
 import Profile from "../Profile";
 import {NavLink} from "react-router-dom";
 import app from "../../App";
+import {Context} from "../../index";
 
 function Header() {
+
+    const {storageCurrentState } = useContext(Context);
+
     return (
         <Navbar expand="lg" className={`${app_styles.white} ${base_styles.myheader}`}>
             <Container fluid>
@@ -54,7 +58,12 @@ function Header() {
                         />
                         <Button variant="outline-success">Search</Button>
                         {/*<img src={require('../../images/profile.png')} className={base_styles.profile}/>*/}
-                        <Profile/>
+                        <Profile
+                            id={storageCurrentState.user.id}
+                            name={storageCurrentState.user.name}
+                            surname={storageCurrentState.user.surname}
+                            login={storageCurrentState.user.login}
+                        />
                     </Form>
                 </Navbar.Collapse>
             </Container>
