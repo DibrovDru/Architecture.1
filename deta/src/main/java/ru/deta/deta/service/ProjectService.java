@@ -6,9 +6,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.deta.deta.dto.ProjectDto;
 import ru.deta.deta.dto.UserDto;
+import ru.deta.deta.dto.info.ProjectInfo;
+import ru.deta.deta.dto.info.UserInfoDto;
 import ru.deta.deta.entities.Project;
 import ru.deta.deta.entities.Sprint;
+import ru.deta.deta.entities.User;
 import ru.deta.deta.repository.ProjectRepo;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -58,5 +65,31 @@ public class ProjectService {
         }
 
         return true;
+    }
+
+    @Transactional
+    public List<UserInfoDto> getParticipants(Long projectId) {
+        Project project = projectRepo.getReferenceById(projectId);
+
+        if (project.getId() == null) {
+            log.info("there is no such project with id {}", projectId);
+            return null;
+        }
+
+        List<UserInfoDto> res = new ArrayList<>();
+        res.add(new UserInfoDto(project.getAuthor()));
+        res.addAll(project.getParticipants()
+                .stream()
+                .map(UserInfoDto::new)
+                .collect(Collectors.toList()));
+        return res;
+    }
+
+    @Transactional
+    public List<ProjectInfo> getProjects(UserDto userDto) {
+        return projectRepo.getAllPersonProjects(userDto.getId())
+                .stream()
+                .map(ProjectInfo::new)
+                .collect(Collectors.toList());
     }
 }

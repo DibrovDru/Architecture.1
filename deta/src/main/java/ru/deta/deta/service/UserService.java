@@ -21,4 +21,9 @@ public class UserService {
     public User getUser(Long id) {
         return userRepo.getReferenceById(id);
     }
+
+    @Transactional
+    public User getUserByEmail(String email) {
+        return userRepo.getUserByEmail(email);
+    }
 }

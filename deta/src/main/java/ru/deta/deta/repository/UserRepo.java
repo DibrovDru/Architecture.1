@@ -6,4 +6,5 @@ import ru.deta.deta.entities.User;
 
 @Repository
 public interface UserRepo extends JpaRepository<User, Long> {
+    User getUserByEmail(String email);
 }

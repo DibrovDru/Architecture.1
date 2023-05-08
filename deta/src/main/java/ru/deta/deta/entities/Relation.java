@@ -22,4 +22,7 @@ public class Relation {
 
     @OneToOne
     private User slave;
+
+    @ManyToOne
+    private Project project;
 }
