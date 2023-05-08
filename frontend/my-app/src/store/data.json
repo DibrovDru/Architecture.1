@@ -92,8 +92,8 @@
   "tasks": [
     {
       "id": 1,
-      "name": "Design UI for new project",
-      "description": "Create a modern and user-friendly design for a new project",
+      "name": "Implement login functionality",
+      "description": "Add ability for users to log in to the application",
       "type": 0,
       "creator": {
         "id": 1,
@@ -108,220 +108,168 @@
         "login": "janedoe"
       },
       "sprint": {
-        "id": 2,
-        "name": "Sprint 2",
-        "timestamp": "2023-05-05T12:00:00Z",
-        "is_actual": false,
-        "description": "This is Sprint 2",
-        "n_days": 10
+        "id": 1,
+        "name": "Sprint 1",
+        "date_start": "2022-01-01",
+        "date_end": "2022-01-14",
+        "is_actual": true,
+        "description": "First sprint of the project"
       }
     },
     {
       "id": 2,
-      "name": "Implement login functionality",
-      "description": "Implement a secure login system with password hashing and email verification",
-      "type": 1,
-      "creator": {
-        "id": 2,
-        "name": "Jane",
-        "surname": "Doe",
-        "login": "janedoe"
-      },
-      "executor": {
-        "id": 3,
-        "name": "Bob",
-        "surname": "Smith",
-        "login": "bobsmith"
-      },
-      "sprint": {
-        "id": 3,
-        "name": "Sprint 3",
-        "timestamp": "2023-05-05T12:00:00Z",
-        "is_actual": false,
-        "description": "This is Sprint 2",
-        "n_days": 10
-      }
-    },
-    {
-      "id": 3,
-      "name": "Write API documentation",
-      "description": "Create detailed documentation for the project's API endpoints",
-      "type": 2,
-      "creator": {
-        "id": 3,
-        "name": "Bob",
-        "surname": "Smith",
-        "login": "bobsmith"
-      },
-      "executor": {
-        "id": 4,
-        "name": "Alice",
-        "surname": "Johnson",
-        "login": "alicejohnson"
-      },
-      "sprint": {
-        "id": 4,
-        "name": "Sprint 4",
-        "timestamp": "2023-05-05T12:00:00Z",
-        "is_actual": false,
-        "description": "This is Sprint 2",
-        "n_days": 10
-      }
-    },
-    {
-      "id": 4,
-      "name": "Optimize database queries",
-      "description": "Analyze and optimize the database queries used by the project",
+      "name": "Implement registration functionality",
+      "description": "Add ability for users to register for the application",
       "type": 0,
       "creator": {
-        "id": 4,
-        "name": "Alice",
-        "surname": "Johnson",
-        "login": "alicejohnson"
-      },
-      "executor": {
         "id": 1,
         "name": "John",
         "surname": "Doe",
         "login": "johndoe"
       },
-      "sprint": {
-        "id": 5,
-        "name": "Sprint 5",
-        "timestamp": "2023-05-05T12:00:00Z",
-        "is_actual": false,
-        "description": "This is Sprint 2",
-        "n_days": 10
-      }
-    },
-    {
-      "id": 6,
-      "name": "Refactor legacy code",
-      "description": "Rewrite legacy code to make it more maintainable and scalable",
-      "type": 2,
-      "creator": {
+      "executor": {
         "id": 2,
         "name": "Jane",
         "surname": "Doe",
         "login": "janedoe"
       },
+      "sprint": {
+        "id": 1,
+        "name": "Sprint 1",
+        "date_start": "2022-01-01",
+        "date_end": "2022-01-14",
+        "is_actual": true,
+        "description": "First sprint of the project"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Create homepage design",
+      "description": "Design the layout and structure of the homepage",
+      "type": 1,
+      "creator": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "johndoe"
+      },
+      "executor": {
+        "id": 3,
+        "name": "Bob",
+        "surname": "Smith",
+        "login": "bobsmith"
+      },
+      "sprint": {
+        "id": 2,
+        "name": "Sprint 2",
+        "date_start": "2022-01-15",
+        "date_end": "2022-01-28",
+        "is_actual": false,
+        "description": "Second sprint of the project"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Update user profile page",
+      "description": "Add new fields and improve UI of user profile page",
+      "type": 0,
+      "creator": {
+        "id": 2,
+        "name": "Emma",
+        "surname": "Taylor",
+        "login": "emmataylor"
+      },
+      "executor": {
+        "id": 3,
+        "name": "Bob",
+        "surname": "Lee",
+        "login": "boblee"
+      },
+      "sprint": {
+        "id": 3,
+        "name": "Sprint 3",
+        "date_start": "2022-02-01",
+        "date_end": "2022-02-14",
+        "is_actual": true,
+        "description": "Third sprint of the project"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Implement payment gateway",
+      "description": "Integrate payment gateway to the app",
+      "type": 1,
+      "creator": {
+        "id": 4,
+        "name": "Alice",
+        "surname": "Wong",
+        "login": "alicewong"
+      },
+      "executor": {
+        "id": 1,
+        "name": "Alex",
+        "surname": "Smith",
+        "login": "alexsmith"
+      },
+      "sprint": {
+        "id": 4,
+        "name": "Sprint 4",
+        "date_start": "2022-02-15",
+        "date_end": "2022-02-28",
+        "is_actual": true,
+        "description": "Fourth sprint of the project"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Add support for multiple languages",
+      "description": "Implement localization and add support for multiple languages",
+      "type": 0,
+      "creator": {
+        "id": 3,
+        "name": "Bob",
+        "surname": "Lee",
+        "login": "boblee"
+      },
       "executor": {
         "id": 4,
         "name": "Alice",
-        "surname": "Johnson",
-        "login": "alicejohnson"
+        "surname": "Wong",
+        "login": "alicewong"
       },
       "sprint": {
-        "id": 6,
-        "name": "Sprint 6",
-        "timestamp": "2023-05-05T12:00:00Z",
-        "is_actual": false,
-        "description": "This is Sprint 2",
-        "n_days": 10
+        "id": 4,
+        "name": "Sprint 4",
+        "date_start": "2022-02-15",
+        "date_end": "2022-02-28",
+        "is_actual": true,
+        "description": "Fourth sprint of the project"
       }
     },
     {
       "id": 7,
-      "name": "Implement user authentication",
-      "description": "Create a secure authentication system for the application",
+      "name": "Create admin dashboard",
+      "description": "Develop admin dashboard to manage user accounts and settings",
       "type": 0,
       "creator": {
         "id": 1,
-        "name": "John",
-        "surname": "Doe",
-        "login": "jdoe"
+        "name": "Alex",
+        "surname": "Smith",
+        "login": "alexsmith"
       },
       "executor": {
         "id": 2,
-        "name": "Jane",
-        "surname": "Doe",
-        "login": "jane"
+        "name": "Emma",
+        "surname": "Taylor",
+        "login": "emmataylor"
       },
       "sprint": {
-        "id": 7,
-        "name": "Sprint 7",
-        "timestamp": "2023-05-05T12:00:00Z",
-        "is_actual": false,
-        "description": "This is Sprint 2",
-        "n_days": 10
-      }
-    },
-    {
-      "id": 9,
-      "name": "Fix styling issues on homepage",
-      "description": "Fix alignment and padding issues on the homepage",
-      "type": 2,
-      "creator": {
-        "id": 3,
-        "name": "Bob",
-        "surname": "Smith",
-        "login": "bsmith"
-      },
-      "executor": {
-        "id": 1,
-        "name": "John",
-        "surname": "Doe",
-        "login": "jdoe"
-      },
-      "sprint": {
-        "id": 8,
-        "name": "Sprint 8",
-        "timestamp": "2023-05-05T12:00:00Z",
-        "is_actual": false,
-        "description": "This is Sprint 2",
-        "n_days": 10
-      }
-    },
-    {
-      "id": 10,
-      "name": "Add unit tests for backend code",
-      "description": "Write unit tests for the backend code to ensure proper functionality",
-      "type": 0,
-      "creator": {
-        "id": 1,
-        "name": "John",
-        "surname": "Doe",
-        "login": "jdoe"
-      },
-      "executor": {
-        "id": 3,
-        "name": "Bob",
-        "surname": "Smith",
-        "login": "bsmith"
-      },
-      "sprint": {
-        "id": 9,
-        "name": "Sprint 9",
-        "timestamp": "2023-05-05T12:00:00Z",
-        "is_actual": false,
-        "description": "This is Sprint 2",
-        "n_days": 10
-      }
-    },
-    {
-      "id": 11,
-      "name": "Update API documentation",
-      "description": "Update the API documentation to reflect recent changes",
-      "type": 1,
-      "creator": {
-        "id": 2,
-        "name": "Jane",
-        "surname": "Doe",
-        "login": "jane"
-      },
-      "executor": {
-        "id": 1,
-        "name": "John",
-        "surname": "Doe",
-        "login": "jdoe"
-      },
-      "sprint": {
-        "id": 10,
-        "name": "Sprint 10",
-        "timestamp": "2023-05-05T12:00:00Z",
+        "id": 5,
+        "name": "Sprint 5",
+        "date_start": "2022-03-01",
+        "date_end": "2022-03-14",
         "is_actual": true,
-        "description": "This is Sprint 2",
-        "n_days": 10
+        "description": "Fifth sprint of the project"
       }
     }
   ],
@@ -329,83 +277,150 @@
     {
       "id": 1,
       "name": "Sprint 1",
-      "timestamp": "2023-04-26T12:00:00Z",
-      "is_actual": true,
-      "description": "This is Sprint 1",
-      "n_days": 7
+      "date_start": "2022-01-01",
+      "date_end": "2022-01-14",
+      "is_actual": false,
+      "description": "First sprint of the project"
     },
     {
       "id": 2,
       "name": "Sprint 2",
-      "timestamp": "2023-05-05T12:00:00Z",
+      "date_start": "2022-01-15",
+      "date_end": "2022-01-31",
       "is_actual": false,
-      "description": "This is Sprint 2",
-      "n_days": 10
+      "description": "Second sprint of the project"
     },
     {
       "id": 3,
       "name": "Sprint 3",
-      "timestamp": "2023-05-16T12:00:00Z",
+      "date_start": "2022-02-01",
+      "date_end": "2022-02-14",
       "is_actual": true,
-      "description": "This is Sprint 3",
-      "n_days": 5
+      "description": "Third sprint of the project"
+    },
+    {
+      "id": 4,
+      "name": "Sprint 4",
+      "date_start": "2022-02-15",
+      "date_end": "2022-02-28",
+      "is_actual": true,
+      "description": "Fourth sprint of the project"
+    },
+    {
+      "id": 5,
+      "name": "Sprint 5",
+      "date_start": "2022-03-01",
+      "date_end": "2022-03-14",
+      "is_actual": true,
+      "description": "Fifth sprint of the project"
+    },
+    {
+      "id": 6,
+      "name": "Sprint 6",
+      "date_start": "2022-03-15",
+      "date_end": "2022-03-31",
+      "is_actual": false,
+      "description": "Sixth sprint of the project"
+    },
+    {
+      "id": 7,
+      "name": "Sprint 7",
+      "date_start": "2022-04-01",
+      "date_end": "2022-04-14",
+      "is_actual": true,
+      "description": "Seventh sprint of the project"
+    },
+    {
+      "id": 8,
+      "name": "Sprint 8",
+      "date_start": "2022-04-15",
+      "date_end": "2022-04-30",
+      "is_actual": false,
+      "description": "Eighth sprint of the project"
+    },
+    {
+      "id": 9,
+      "name": "Sprint 9",
+      "date_start": "2022-05-01",
+      "date_end": "2022-05-14",
+      "is_actual": false,
+      "description": "Ninth sprint of the project"
+    },
+    {
+      "id": 10,
+      "name": "Sprint 10",
+      "date_start": "2022-05-15",
+      "date_end": "2022-05-31",
+      "is_actual": false,
+      "description": "Tenth sprint of the project"
     }
   ],
   "comments": [
     {
       "id": 1,
-      "timestamp": "2023-04-26T12:00:00Z",
+      "timestamp": "2022-04-05T14:30:00Z",
       "author": {
         "id": 1,
         "name": "John",
         "surname": "Doe",
-        "login": "johndoe"
+        "login": "jdoe"
       },
       "text": "This is the first comment."
     },
     {
       "id": 2,
-      "timestamp": "2023-04-27T10:30:00Z",
+      "timestamp": "2022-04-06T09:15:00Z",
       "author": {
         "id": 2,
         "name": "Jane",
-        "surname": "Smith",
-        "login": "janesmith"
+        "surname": "Doe",
+        "login": "jadoe"
       },
-      "text": "Here is the second comment."
+      "text": "This is the second comment."
     },
     {
       "id": 3,
-      "timestamp": "2023-04-28T15:45:00Z",
+      "timestamp": "2022-04-07T16:45:00Z",
       "author": {
         "id": 3,
-        "name": "Alex",
-        "surname": "Johnson",
-        "login": "alexjohnson"
+        "name": "Bob",
+        "surname": "Smith",
+        "login": "bsmith"
       },
       "text": "This is the third comment."
     },
     {
       "id": 4,
-      "timestamp": "2023-04-29T09:15:00Z",
+      "timestamp": "2022-05-01T10:30:00Z",
       "author": {
         "id": 4,
-        "name": "Emily",
+        "name": "Alice",
         "surname": "Brown",
-        "login": "emilybrown"
+        "login": "abrown"
       },
-      "text": "Here is the fourth comment."
+      "text": "This is the fourth comment."
     },
     {
       "id": 5,
-      "timestamp": "2023-04-30T14:20:00Z",
+      "timestamp": "2022-05-03T16:00:00Z",
       "author": {
         "id": 5,
-        "name": "Michael",
-        "surname": "Wilson",
-        "login": "michaelwilson"
+        "name": "Charlie",
+        "surname": "Green",
+        "login": "cgreen"
       },
       "text": "This is the fifth comment."
+    },
+    {
+      "id": 6,
+      "timestamp": "2022-05-05T11:45:00Z",
+      "author": {
+        "id": 6,
+        "name": "Eve",
+        "surname": "Black",
+        "login": "eblack"
+      },
+      "text": "This is the sixth comment."
     }
   ]
 }

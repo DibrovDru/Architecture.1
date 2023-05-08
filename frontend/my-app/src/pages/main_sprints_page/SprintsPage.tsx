@@ -63,9 +63,9 @@ function SprintsPage() {
                                             <SprintCard id={sprint.id}
                                                         name={sprint.name}
                                                         description={sprint.description}
-                                                        timestamp={sprint.timestamp}
+                                                        date_start={sprint.date_start}
+                                                        date_end={sprint.date_end}
                                                         is_actual={sprint.is_actual}
-                                                        n_days={sprint.n_days}
                                             />)
                                     }
                                 </div>
@@ -75,9 +75,9 @@ function SprintsPage() {
                                             <SprintCard id={sprint.id}
                                                         name={sprint.name}
                                                         description={sprint.description}
-                                                        timestamp={sprint.timestamp}
+                                                        date_start={sprint.date_start}
+                                                        date_end={sprint.date_end}
                                                         is_actual={sprint.is_actual}
-                                                        n_days={sprint.n_days}
                                             />)
                                     }
                                 </div>

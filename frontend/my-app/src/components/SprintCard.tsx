@@ -13,9 +13,9 @@ export const SprintCard: FC<Sprint> = ({
                                        id,
                                        name,
                                        description,
-                                       timestamp,
-                                       is_actual,
-                                       n_days
+                                       date_start,
+                                       date_end,
+                                       is_actual
                                    }) => {
 
     const [show, setShow] = useState(false);
@@ -44,10 +44,10 @@ export const SprintCard: FC<Sprint> = ({
                         </Form.Group>
 
                         <Form.Group className={`mb-3 ${app_styles.space_between}`} controlId="exampleForm.ControlInput1">
-                            <Form.Label className={tasks_styles.name_field}>Количество дней</Form.Label>
+                            <Form.Label className={tasks_styles.name_field}>Дата начала спринта</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={n_days}
+                                value={date_start}
                                 readOnly={true}
                                 autoFocus
                             />
@@ -55,10 +55,10 @@ export const SprintCard: FC<Sprint> = ({
 
 
                         <Form.Group className={`mb-3 ${app_styles.space_between}`} controlId="exampleForm.ControlInput1">
-                            <Form.Label className={tasks_styles.name_field}>Дата начала</Form.Label>
+                            <Form.Label className={tasks_styles.name_field}>Дата завершения спринта</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={timestamp}
+                                value={date_end}
                                 readOnly={true}
                                 autoFocus
                             />

@@ -52,10 +52,10 @@ export interface Comment {
 export interface Sprint {
     id: number,
     name: string,
-    timestamp: string,
+    date_start: string,
+    date_end: string,
     is_actual: boolean,
     description: string,
-    n_days: number
 }
 
 export interface Error {
