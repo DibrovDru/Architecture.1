@@ -754,14 +754,17 @@ components:
       required:
         - id
         - name
-        - timestamp
+        - date_start
+        - date_end
         - is_actual
       properties:
         id:
           type: integer
         name:
           type: string
-        timestamp:
+        date_start:
+          type: string
+        date_end:
           type: string
         is_actual:
           type: boolean
