@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useContext, useEffect, useState} from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -20,6 +20,8 @@ import main_pages_styles from "../main_tasks_page/TasksPage.module.css";
 import Profile from "../../components/Profile";
 import { Form } from 'react-bootstrap';
 import {projects} from "../../store/state";
+import {useParams} from "react-router-dom";
+import {Context} from "../../index";
 
 
 const InfoProjectCard: FC<Project>  = (project) => {
@@ -53,6 +55,19 @@ const InfoProjectCard: FC<Project>  = (project) => {
 
 
 const InfoProjectPage = () => {
+    const { project_id } = useParams<{ project_id: string }>();
+
+    const {projects, store} = useContext(Context);
+    const [currentProject, setCurrentProject] = useState<Project>({} as Project);
+
+    useEffect(() => {
+        var newProject = projects.storageProjects.filter((p) => String(p.id) == project_id)[0];
+        setCurrentProject(newProject);
+        store.setProject(newProject);
+        // console.log(store.currentProject.name);
+    }, []);
+
+
     return (
         <div>
             <MyHeader/>
@@ -67,10 +82,10 @@ const InfoProjectPage = () => {
                         </h3>
 
                         <InfoProjectCard
-                            id={projects[0].id}
-                            name={projects[0].name}
-                            description={projects[0].description}
-                            creator={projects[0].creator}
+                            id={currentProject.id}
+                            name={currentProject.name}
+                            description={currentProject.description}
+                            creator={currentProject.creator}
                         />
 
                     </Col>

@@ -16,6 +16,9 @@ import InfoProjectPage from "./pages/main_info_project_page/InfoProjectPage";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import {Context} from "./index";
 import {observer} from "mobx-react-lite";
+import {PROJECTS_URL, TASKS_URL} from "./logic/http";
+import { useParams } from 'react-router-dom';
+
 
 
 
@@ -33,7 +36,20 @@ function App() {
         );
     }
 
+
+
+
     return (
+        <Router>
+            <Routes>
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/projects/:project_id" element={<InfoProjectPage />} />
+                <Route path="/projects/:project_id/tasks" element={<TasksPage />} />
+                <Route path="/projects/:project_id/employees" element={<EmployeesPage />} />
+                <Route path="/projects/:project_id/sprints" element={<SprintsPage />} />
+            </Routes>
+        </Router>
+        /*
             // <AutorisationPage />
             // <RegistrationPage/>
             // <CreationProject/>
@@ -42,6 +58,7 @@ function App() {
             // <EmployeesPage/>
             // <SprintsPage/>
             // <InfoProjectPage/>
+        */
         );
 }
 

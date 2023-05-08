@@ -9,6 +9,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import app_styles from '../../App.module.css';
 import base_styles from './base.module.css';
 import Profile from "../Profile";
+import {NavLink} from "react-router-dom";
+import app from "../../App";
 
 function Header() {
     return (
@@ -24,16 +26,14 @@ function Header() {
                         navbarScroll
                     >
                         <img className={`${app_styles.logo} ${base_styles.header_logo_margin}`} src={require('../../images/logo.png')} />
-                        <NavDropdown title={<span className={`${app_styles.white} ${app_styles.header_weight}`}>Проекты</span>} id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">
-                                Something else here
-                            </NavDropdown.Item>
-                        </NavDropdown>
+
+
+                        <Button className={app_styles.white}>
+                        <NavLink to={'/projects'}>
+                            <span className={`${app_styles.white} ${app_styles.header_weight}`}>Проекты</span>
+                        </NavLink>
+                        </Button>
+
                         <NavDropdown title={<span className={`${app_styles.text_white} ${app_styles.header_weight}`}>Создать</span>} id="navbarScrollingDropdown" className={`${app_styles.main_color} ${app_styles.border_radius}`}>
                             <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">

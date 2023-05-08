@@ -1,9 +1,12 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import app_styles from '../../App.module.css';
 import main_page_styles from '../../pages/main_tasks_page/TasksPage.module.css';
 import base_styles from './base.module.css';
+import {NavLink} from "react-router-dom";
+import {Context} from "../../index";
 
 function Menu() {
+    const { store} = useContext(Context);
 
     return (
         <div className={`${app_styles.grey} ${app_styles.height_full_screen} ${base_styles.sidebar}`}>
@@ -20,16 +23,24 @@ function Menu() {
             </div>
             <ul>
                 <li>
+                    <NavLink to={`/projects/${store.currentProject.id}`}>
                     О проекте
+                    </NavLink>
                 </li>
                 <li>
+                    <NavLink to={`/projects/${store.currentProject.id}/tasks`}>
                     Задачи
+                    </NavLink>
                 </li>
                 <li>
+                    <NavLink to={`/projects/${store.currentProject.id}/employees`}>
                     Участники
+                    </NavLink>
                 </li>
                 <li>
+                    <NavLink to={`/projects/${store.currentProject.id}/sprints`}>
                     Спринты
+                    </NavLink>
                 </li>
             </ul>
         </div>

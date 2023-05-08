@@ -1,13 +1,16 @@
-import {Employee} from "../types";
+import {Employee, Project} from "../types";
 import {makeAutoObservable} from "mobx";
 import AuthService from "../logic/services/AuthService";
 import axios from "axios";
 import {AuthResponce} from "../types/response/AithRespose";
 import {API_URL} from "../logic/http";
+import {projects} from "./state";
 
 export default class Store {
     user = {} as Employee
     isAuth = false;
+
+    currentProject: Project = {} as Project;
 
     constructor() {
         makeAutoObservable(this);
@@ -63,6 +66,14 @@ export default class Store {
         } catch (e: any) {
             console.log(e.response?.data?.message);
         }
+    }
+
+
+
+    setProject(project: Project) {
+        console.log("aaaaaaaaaaaaaa");
+        console.log(project);
+        this.currentProject = project;
     }
 }
 

@@ -3,6 +3,17 @@ import {AuthResponce} from "../../types/response/AithRespose";
 
 export const API_URL = `http://localhost:5000/api`;
 
+export const PROJECTS_URL = (project_id: string = '') =>
+    `/projects/${project_id}`;
+export const SPRINTS_URL = (project_id: string, sprint_id: string = '') =>
+    `/projects/${project_id}/sprints/${sprint_id}`;
+export const EMPLOYEES_URL = (project_id: string, relation: boolean = false) =>
+    `/projects/${project_id}/employees/${relation ? 'relation' : ''}`;
+export const TASKS_URL = (project_id: string, sprint_id: string, task_id: string = '') =>
+    `/projects/${project_id}/tasks/sprints/${sprint_id}/${task_id}`;
+export const COMMENTS_URL = (project_id: string, sprint_id: string, task_id: string, comment_id: string = '') =>
+    `/projects/${project_id}/tasks/sprints/${sprint_id}/${task_id}/comments/${comment_id}`;
+
 const $api = axios.create({
     withCredentials: true,
     baseURL: API_URL
