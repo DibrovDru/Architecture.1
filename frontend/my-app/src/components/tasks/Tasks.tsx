@@ -36,6 +36,34 @@ function Tasks() {
     // console.log('=========================================================================================');
     // console.log(storageTasks.tasks)
 
+
+    const [dragging, setDragging] = useState(false);
+    const [currentCard, setCurrentCard] = useState<Task>({} as Task);
+
+    const handleDragStart = (event: any, card: Task) => {
+        setDragging(true);
+        setCurrentCard(card);
+    };
+
+    const handleDragEnd = () => {
+        setDragging(false);
+    };
+
+    const handleDragOver = (event: any) => {
+        event.preventDefault();
+    };
+
+    const handleDrop = (event: any, taskType: TaskType) => {
+        event.preventDefault();
+        console.log('dropped', taskType)
+        for (let i = 0; i < storageTasks.tasks.length; ++i) {
+            if (storageTasks.tasks[i].id == currentCard.id) {
+                storageTasks.tasks[i].type = taskType;
+                break;
+            }
+        }
+    };
+
     return (
         <>
             <h3 className={`${task_pages_styles.title} ${app_styles.header_weight} ${app_styles.margin_top_from_header}`}>
@@ -81,9 +109,17 @@ function Tasks() {
 
 
                 <div className={app_styles.space_around}>
-                    <div className={task_pages_styles.task_column_width}>
+                    <div className={task_pages_styles.task_column_width}
+                         onDragOver={handleDragOver}
+                         onDrop={(event) => handleDrop(event, TaskType.ToDo)}
+                    >
                         {currentTasks.filter(task => task.type === TaskType.ToDo && task.sprint.id == sprint.id)
                             .map(task =>
+                                <div
+                                    draggable
+                                    onDragStart={(event) => handleDragStart(event, task)}
+                                    onDragEnd={handleDragEnd}
+                                >
                                 <TaskCard id={task.id}
                                           name={task.name}
                                           description={task.description}
@@ -91,12 +127,21 @@ function Tasks() {
                                           creator={task.creator}
                                           type={task.type}
                                           sprint={task.sprint}
-                                />)
+                                />
+                                </div>)
                         }
                     </div>
-                    <div className={task_pages_styles.task_column_width}>
+                    <div className={task_pages_styles.task_column_width}
+                         onDragOver={handleDragOver}
+                         onDrop={(event) => handleDrop(event, TaskType.InProgress)}
+                    >
                         {currentTasks.filter(task => task.type === TaskType.InProgress && task.sprint.id == sprint.id)
                             .map(task =>
+                                <div
+                                    draggable
+                                    onDragStart={(event) => handleDragStart(event, task)}
+                                    onDragEnd={handleDragEnd}
+                                >
                                 <TaskCard id={task.id}
                                           name={task.name}
                                           description={task.description}
@@ -104,12 +149,21 @@ function Tasks() {
                                           creator={task.creator}
                                           type={task.type}
                                           sprint={task.sprint}
-                                />)
+                                />
+                                </div>)
                         }
                     </div>
-                    <div className={task_pages_styles.task_column_width}>
+                    <div className={task_pages_styles.task_column_width}
+                         onDragOver={handleDragOver}
+                         onDrop={(event) => handleDrop(event, TaskType.Done)}
+                    >
                         {currentTasks.filter(task => task.type === TaskType.Done && task.sprint.id == sprint.id)
                             .map(task =>
+                                <div
+                                    draggable
+                                    onDragStart={(event) => handleDragStart(event, task)}
+                                    onDragEnd={handleDragEnd}
+                                >
                                 <TaskCard id={task.id}
                                           name={task.name}
                                           description={task.description}
@@ -117,7 +171,8 @@ function Tasks() {
                                           creator={task.creator}
                                           type={task.type}
                                           sprint={task.sprint}
-                                />)
+                                />
+                                </div>)
                         }
                     </div>
 
