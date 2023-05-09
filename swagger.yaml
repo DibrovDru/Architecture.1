@@ -42,7 +42,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Projects"
+              $ref: "#/components/schemas/Project"
       responses:
         '200':
           description: Project is successfully created
