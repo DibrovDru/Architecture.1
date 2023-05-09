@@ -68,6 +68,6 @@ export interface Error {
 
 
 
-export interface TasksPerSprint {
-    [key: number]: Task[]
-}
+// export interface TasksPerSprint {
+//     [key: number]: Task[]
+// }

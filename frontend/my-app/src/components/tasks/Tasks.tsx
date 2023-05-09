@@ -1,13 +1,40 @@
-import React from "react";
+import React, {useContext, useEffect, useState} from "react";
 import app_styles from '../../App.module.css';
 import task_pages_styles from '../../pages/main_tasks_page/TasksPage.module.css';
 import base_styles from '../base/base.module.css';
-import {TaskType} from "../../types";
-import {tasks} from "../../store/state";
+import {Sprint, TaskType} from "../../types";
+import {sprints, tasks} from "../../store/state";
 import {TaskCard} from "./TaskCard";
+import {Context} from "../../index";
+import {Task} from "../../types";
 
 
 function Tasks() {
+
+    const { storageCurrentState, storageTasks, storageSprints } = useContext(Context);
+
+
+    const [currentTasks, setCurrentTasks] = useState<Task[]>([]);
+
+    const [currentSprints, setCurrentSprints] = useState<Sprint[]>([]);
+
+
+    useEffect(() => {
+        console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ = ');
+        console.log(tasks);
+        storageTasks.setTasks(tasks);
+        storageSprints.setSprints(sprints);
+
+        setCurrentTasks(storageTasks.tasks);
+        setCurrentSprints(storageSprints.sprints);
+
+        console.log('tasks = ');
+        console.log(currentTasks.length);
+        console.log(storageTasks.tasks.length)
+        console.log(storageSprints.sprints.length)
+    }, []);
+    // console.log('=========================================================================================');
+    // console.log(storageTasks.tasks)
 
     return (
         <>
@@ -43,62 +70,61 @@ function Tasks() {
             </div>
 
 
-            <div className={task_pages_styles.sprint}>
-                <img src={require('../../images/opened_bracket.png')} />
-                <p>
-                    1 спринт (24.03.2023 - 31.03.2023)
-                </p>
-            </div>
+            {currentSprints.map(sprint => {
+                return (
+                    <><div className={task_pages_styles.sprint}>
+                        <img src={require('../../images/opened_bracket.png')} />
+                        <p>
+                            {sprint.name} ({sprint.date_start} - {sprint.date_end})
+                        </p>
+                    </div>
 
-            <div className={app_styles.space_around}>
-                <div className={task_pages_styles.task_column_width}>
-                    {tasks.filter(task => task.type === TaskType.ToDo)
-                        .map(task =>
-                            <TaskCard id={task.id}
-                                      name={task.name}
-                                      description={task.description}
-                                      executor={task.executor}
-                                      creator={task.creator}
-                                      type={task.type}
-                                      sprint={task.sprint}
-                            />)
-                    }
-                </div>
-                <div className={task_pages_styles.task_column_width}>
-                    {tasks.filter(task => task.type === TaskType.InProgress)
-                        .map(task =>
-                            <TaskCard id={task.id}
-                                      name={task.name}
-                                      description={task.description}
-                                      executor={task.executor}
-                                      creator={task.creator}
-                                      type={task.type}
-                                      sprint={task.sprint}
-                            />)
-                    }
-                </div>
-                <div className={task_pages_styles.task_column_width}>
-                    {tasks.filter(task => task.type === TaskType.Done)
-                        .map(task =>
-                            <TaskCard id={task.id}
-                                      name={task.name}
-                                      description={task.description}
-                                      executor={task.executor}
-                                      creator={task.creator}
-                                      type={task.type}
-                                      sprint={task.sprint}
-                            />)
-                    }
-                </div>
 
-            </div>
+                <div className={app_styles.space_around}>
+                    <div className={task_pages_styles.task_column_width}>
+                        {currentTasks.filter(task => task.type === TaskType.ToDo && task.sprint.id == sprint.id)
+                            .map(task =>
+                                <TaskCard id={task.id}
+                                          name={task.name}
+                                          description={task.description}
+                                          executor={task.executor}
+                                          creator={task.creator}
+                                          type={task.type}
+                                          sprint={task.sprint}
+                                />)
+                        }
+                    </div>
+                    <div className={task_pages_styles.task_column_width}>
+                        {currentTasks.filter(task => task.type === TaskType.InProgress && task.sprint.id == sprint.id)
+                            .map(task =>
+                                <TaskCard id={task.id}
+                                          name={task.name}
+                                          description={task.description}
+                                          executor={task.executor}
+                                          creator={task.creator}
+                                          type={task.type}
+                                          sprint={task.sprint}
+                                />)
+                        }
+                    </div>
+                    <div className={task_pages_styles.task_column_width}>
+                        {currentTasks.filter(task => task.type === TaskType.Done && task.sprint.id == sprint.id)
+                            .map(task =>
+                                <TaskCard id={task.id}
+                                          name={task.name}
+                                          description={task.description}
+                                          executor={task.executor}
+                                          creator={task.creator}
+                                          type={task.type}
+                                          sprint={task.sprint}
+                                />)
+                        }
+                    </div>
 
-            <div className={task_pages_styles.sprint}>
-                <img src={require('../../images/opened_bracket.png')} />
-                <p>
-                    2 спринт (24.03.2023 - 31.03.2023)
-                </p>
-            </div>
+                </div></>
+            );
+            })}
+
 
             <div className={base_styles.myfooter} />
         </>

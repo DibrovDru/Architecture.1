@@ -13,20 +13,13 @@ import main_pages_styles from "./TasksPage.module.css";
 import Profile from "../../components/Profile";
 import {tasks} from "../../store/state";
 import {Context} from "../../index";
-import {Project, Task, TasksPerSprint} from "../../types";
+import {Project, Task} from "../../types";
 
 function TasksPage() {
 
-    const {storageCurrentState, storageTasks } = useContext(Context);
+    const {storageCurrentState } = useContext(Context);
 
-
-    const [currentTasks, setCurrentTasks] = useState<TasksPerSprint>({});
-
-    useEffect(() => {
-        storageTasks.setTasks(1, tasks);
-        setCurrentTasks(storageTasks.tasks);
-    }, []);
-
+    console.log(storageCurrentState.user.surname);
 
     return (
         <div>

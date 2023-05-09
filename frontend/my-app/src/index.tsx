@@ -5,21 +5,25 @@ import App from './App';
 import Store from './store/store';
 import Projects from './store/projects';
 import Tasks from "./store/tasks";
+import Sprints from "./store/sprints";
 
 interface State {
     storageCurrentState: Store,
     storageProjects: Projects,
     storageTasks: Tasks
+    storageSprints: Sprints
 }
 
 const store = new Store();
 const projects: Projects = new Projects();
 const tasks: Tasks = new Tasks();
+const sprints: Sprints = new Sprints();
 
 export const Context = createContext<State>({
     storageCurrentState: store,
     storageProjects: projects,
-    storageTasks: tasks
+    storageTasks: tasks,
+    storageSprints: sprints
 })
 
 const root = ReactDOM.createRoot(
@@ -27,7 +31,7 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-    <Context.Provider value={{ storageCurrentState: store, storageProjects: projects, storageTasks: tasks }}>
+    <Context.Provider value={{ storageCurrentState: store, storageProjects: projects, storageTasks: tasks, storageSprints: sprints }}>
         <App />
     </Context.Provider>
 );

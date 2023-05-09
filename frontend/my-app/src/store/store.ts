@@ -14,6 +14,7 @@ export default class Store {
     tasks: Task[] = [];
 
     constructor() {
+        this.user = {id: 0, name: 'Sophia', surname: 'Golovvanova', login: 'sonyalogin'};
         makeAutoObservable(this);
     }
 
