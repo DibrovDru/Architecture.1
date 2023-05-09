@@ -36,4 +36,7 @@ public class Sprint {
 
     @Column(name = "description")
     private String description;
+
+    @Column(name = "deleted")
+    private Boolean deleted = false;
 }

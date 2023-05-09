@@ -6,13 +6,13 @@ import ru.deta.deta.entities.Project;
 
 @Getter
 @Setter
-public class ProjectInfo {
+public class ProjectInfoDto {
     private Long id;
     private String name;
     private String description;
     private UserInfoDto author;
 
-    public ProjectInfo(Project project) {
+    public ProjectInfoDto(Project project) {
         id = project.getId();
         name = project.getName();
         description = project.getText();

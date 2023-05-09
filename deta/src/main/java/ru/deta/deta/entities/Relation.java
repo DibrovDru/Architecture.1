@@ -25,4 +25,7 @@ public class Relation {
 
     @ManyToOne
     private Project project;
+
+    @Column(name = "deleted")
+    private Boolean deleted = false;
 }

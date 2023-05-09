@@ -39,7 +39,7 @@ public class Task {
     @Column(name = "text")
     private String text;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "task_comments",
             joinColumns = @JoinColumn(name = "project_id"),

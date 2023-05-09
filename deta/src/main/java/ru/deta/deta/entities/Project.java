@@ -19,7 +19,7 @@ public class Project {
     @OneToOne
     private User author;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "project_sprints",
             joinColumns = @JoinColumn(name = "project_id"),
@@ -27,7 +27,7 @@ public class Project {
     )
     private List<Sprint> sprints = new ArrayList<>();
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "project_participants",
             joinColumns = @JoinColumn(name = "project_id"),
@@ -40,4 +40,7 @@ public class Project {
 
     @Column(name = "text")
     private String text;
+
+    @Column(name = "deleted")
+    private Boolean deleted = false;
 }

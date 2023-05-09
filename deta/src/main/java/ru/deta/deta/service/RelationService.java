@@ -10,6 +10,8 @@ import ru.deta.deta.entities.Relation;
 import ru.deta.deta.entities.User;
 import ru.deta.deta.repository.RelationRepo;
 
+import java.util.List;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -45,8 +47,8 @@ public class RelationService {
             throw new IllegalArgumentException("Недопустимая операция");
         }
 
-        if (relationRepo.getRelationByMasterAndSlaveAndProject(master, slave, project) != null ||
-                relationRepo.getRelationByMasterAndSlaveAndProject(slave, master, project) != null) {
+        if (relationRepo.getRelationByMasterAndSlaveAndProjectAndDeletedEquals(master, slave, project, false) != null ||
+                relationRepo.getRelationByMasterAndSlaveAndProjectAndDeletedEquals(slave, master, project, false) != null) {
             log.info("this relation exists");
             return null;
         }
@@ -55,6 +57,12 @@ public class RelationService {
         relation.setMaster(master);
         relation.setSlave(slave);
         relation.setProject(project);
+
+        List<User> users = project.getParticipants();
+        users.add(slave);
+        project.setParticipants(users);
+        projectService.save(project);
+
         return new RelationInfoDto(relationRepo.save(relation));
     }
 
@@ -74,11 +82,6 @@ public class RelationService {
 
         Relation relation = relationRepo.getReferenceById(relationInfo.getId());
 
-        if (relation.getId() == null) {
-            log.info("relation with id {} does not exist", relation.getId());
-            throw new IllegalArgumentException("Недопустимая операция");
-        }
-
         if (!projectId.equals(relation.getProject().getId())) {
             log.info("relation with id {} is not connected with project with id {}", relation.getId(), projectId);
             throw new IllegalArgumentException("Недопустимая операция");
@@ -96,4 +99,6 @@ public class RelationService {
         relation.setSlave(slave);
         relationRepo.save(relation);
     }
+
+
 }

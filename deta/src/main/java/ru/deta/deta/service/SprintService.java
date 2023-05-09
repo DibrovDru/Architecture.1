@@ -15,4 +15,9 @@ public class SprintService {
     public Sprint getSprintById(Long id) {
         return sprintRepo.getReferenceById(id);
     }
+
+    @Transactional
+    public void save(Sprint sprint) {
+        sprintRepo.save(sprint);
+    }
 }

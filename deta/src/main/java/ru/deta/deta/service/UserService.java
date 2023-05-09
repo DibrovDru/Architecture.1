@@ -26,4 +26,9 @@ public class UserService {
     public User getUserByEmail(String email) {
         return userRepo.getUserByEmail(email);
     }
+
+    @Transactional
+    public User save(User user) {
+        return userRepo.save(user);
+    }
 }

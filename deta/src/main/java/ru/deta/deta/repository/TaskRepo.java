@@ -17,4 +17,8 @@ public interface TaskRepo extends JpaRepository<Task, Long> {
             "project_id = ?1 and sprint_id = ?2 " +
             "and id = ?3", nativeQuery = true)
     Task getTaskByProjectAndSprintAndTaskId(Long projectId, Long sprintId, Long taskId);
+
+    @Query(value = "select * from tasks where " +
+            "project_id = ?1 and sprint_id = ?2 ", nativeQuery = true)
+    List<Task> getTaskByProjectAndSprintAndTaskId(Long projectId, Long sprintId);
 }

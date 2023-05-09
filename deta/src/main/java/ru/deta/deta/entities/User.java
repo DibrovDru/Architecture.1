@@ -29,7 +29,7 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "person_projects",
             joinColumns = @JoinColumn(name = "person_id"),

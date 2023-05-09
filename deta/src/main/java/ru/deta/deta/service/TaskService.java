@@ -50,6 +50,12 @@ public class TaskService {
     }
 
     @Transactional
+    public void deleteTaskById(Long projectId, Long sprintId) {
+        List<Task> tasks = taskRepo.getTaskByProjectAndSprintAndTaskId(projectId, sprintId);
+        taskRepo.deleteAll(tasks);
+    }
+
+    @Transactional
     public TaskInfoDto createTask(Long projectId, Long sprintId, TaskInfoDto taskInfo) {
         log.info("new task creation");
         Task task = new Task();
