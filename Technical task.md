@@ -55,11 +55,19 @@ Resolved - задача выполнена.
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/authorization.png)
 
-### Работа в веб-приложение
+## Работа в веб-приложение
 
+### [Страница работы после авторизации](#страница-после-авторизации)
 
-### [Работа с разделом Проекты](#раздел-проекты)
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/PageAfterAuthorisation.png)
 
+## [Работа с разделом Проекты](#раздел-проекты)
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/WorkProjectPage.png)
+
+### [Создание проекта](#создание-проекта)
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/NewProject.png)
 
 
 ### [Работа с разделом Сотрудники](#раздел-сотрудники)
