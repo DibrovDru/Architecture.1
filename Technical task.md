@@ -41,17 +41,17 @@ Resolved - задача выполнена.
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/ierarhia.jfif)
  
-## Модель работы в веб-приложении
-### Вход в веб-приложение
+# Модель работы в веб-приложении
+## Вход в веб-приложение
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/Enter.png)
 
 
-### [Регистрация в веб-приложение](#страница-регистрации)
+## [Регистрация в веб-приложение](#страница-регистрации)
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/Registration.png)
 
-### [Авторизация в веб-приложение](#страница-авторизации)
+## [Авторизация в веб-приложение](#страница-авторизации)
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/authorization.png)
 
@@ -70,15 +70,16 @@ Resolved - задача выполнена.
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/NewProject.png)
 
 
-### [Работа с разделом Сотрудники](#раздел-сотрудники)
+## [Работа с разделом Сотрудники](#раздел-сотрудники)
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/Sotrudniki.png)
+
+
+## [Работа с разделом Задачи](#раздел-задачи)
 
 
 
-### [Работа с разделом Задачи](#раздел-задачи)
-
-
-
-### [Работа с разделом Спринты](#раздел-спринты)
+## [Работа с разделом Спринты](#раздел-спринты)
 
 
 
