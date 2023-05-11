@@ -81,7 +81,11 @@ Resolved - задача выполнена.
 
 ## [Работа с разделом Спринты](#раздел-спринты)
 
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/WorkSprintpng.png)
 
+### [Создание спринта](#создание-спринта)
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/CreateSprint.png)
 
 ## Функциональные требования к веб-приложению:
 
