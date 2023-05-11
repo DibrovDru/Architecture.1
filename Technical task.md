@@ -18,7 +18,6 @@ Resolved - задача выполнена.
 
 2. Реализовать возможность создания, редактирования и просмотра задач за день и за спринт(система управления задачами). 
 	
-
 Веб-приложение будет полезно тем,кто ведет учет данных по задачам в таблицах или на листе бумаги. Присутствует возможность создания,назначения и ведения задач по каждому сотруднику.
 
 Веб-приложение гарантирует сохранность данных и простой способ работы с большим объемом данных, а главное система прозрачна и маштабируема.
@@ -64,7 +63,6 @@ Resolved - задача выполнена.
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/WorkProjectPage.png)
 
-
 ### [Создание проекта](#создание-проекта)
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/NewProject.png)
@@ -73,21 +71,21 @@ Resolved - задача выполнена.
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/Sotrudniki.png)
 
-
 ## [Работа с разделом Задачи](#раздел-задачи)
 
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/WorkTask.png)
 
+### [Создание задачи](#создание-задачи)
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/.png)
 
 ## [Работа с разделом Спринты](#раздел-спринты)
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/WorkSprintpng.png)
 
-
 ### [Создание спринта](#создание-спринта)
 
-
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/CreateSprint.png)
-
 
 ## Функциональные требования к веб-приложению:
 
