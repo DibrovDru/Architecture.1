@@ -69,7 +69,6 @@ Resolved - задача выполнена.
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/NewProject.png)
 
-
 ## [Работа с разделом Сотрудники](#раздел-сотрудники)
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/Sotrudniki.png)
