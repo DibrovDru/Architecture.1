@@ -46,7 +46,6 @@ Resolved - задача выполнена.
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/Enter.png)
 
-
 ## [Регистрация в веб-приложение](#страница-регистрации)
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/Registration.png)
