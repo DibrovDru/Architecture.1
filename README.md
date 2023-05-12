@@ -48,6 +48,12 @@
 
 ![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/base.png)
 
+## Методология разработки
+
+Наша команда использовала гибкую методику разработки Agile. Что поспособствовало быстрой и эффективной разработке веб-приложения.
+
+![Схема](https://github.com/DibrovDru/Architecture.1/raw/dev_muratov/images/agile.png)
+
 ## **Создатели проекта**
 
 *Тим-лид/Дизайнер:* 
