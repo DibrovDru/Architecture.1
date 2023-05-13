@@ -50,15 +50,6 @@ public class ProjectController {
         projectService.updateProject(projectInfo);
     }
 
-    @DeleteMapping("/projects/{projectId}")
-    public void deleteProject(@PathVariable Long projectId,
-                              @RequestBody ProjectInfoDto projectInfo) {
-        UserDto user = userService.getAuthenticatedUser();
-        validateProjectInfo(projectInfo, user);
-        validateProjectId(projectInfo, projectId);
-        projectService.updateProject(projectInfo);
-    }
-
     private void validateProjectInfo(ProjectInfoDto projectInfo, UserDto user) {
 
     }

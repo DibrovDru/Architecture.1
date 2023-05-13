@@ -29,6 +29,9 @@ public class User {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "surname")
+    private String surname;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "person_projects",

@@ -47,8 +47,8 @@ public class RelationService {
             throw new IllegalArgumentException("Недопустимая операция");
         }
 
-        if (relationRepo.getRelationByMasterAndSlaveAndProjectAndDeletedEquals(master, slave, project, false) != null ||
-                relationRepo.getRelationByMasterAndSlaveAndProjectAndDeletedEquals(slave, master, project, false) != null) {
+        if (relationRepo.getRelationByMasterAndSlaveAndProject(master, slave, project) != null ||
+                relationRepo.getRelationByMasterAndSlaveAndProject(slave, master, project) != null) {
             log.info("this relation exists");
             return null;
         }

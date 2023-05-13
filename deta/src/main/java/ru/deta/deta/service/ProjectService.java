@@ -4,15 +4,16 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.deta.deta.dto.ProjectDto;
 import ru.deta.deta.dto.UserDto;
 import ru.deta.deta.dto.info.ProjectInfoDto;
+import ru.deta.deta.dto.info.SprintInfoDto;
 import ru.deta.deta.dto.info.UserInfoDto;
 import ru.deta.deta.entities.Project;
 import ru.deta.deta.entities.Sprint;
 import ru.deta.deta.entities.User;
 import ru.deta.deta.repository.ProjectRepo;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,10 +31,10 @@ public class ProjectService {
     public ProjectInfoDto getProject(Long id) {
         Project project = projectRepo.getReferenceById(id);
 
-        if (project.getDeleted()) {
-            log.info("project with id {} was deleted", id);
-            throw new IllegalArgumentException("Такого проекта не существует");
-        }
+//        if (project.getDeleted()) {
+//            log.info("project with id {} was deleted", id);
+//            throw new IllegalArgumentException("Такого проекта не существует");
+//        }
 
         return new ProjectInfoDto(projectRepo.getReferenceById(id));
     }
@@ -63,10 +64,10 @@ public class ProjectService {
             return false;
         }
 
-        if (project.getDeleted()) {
-            log.info("project with id {} was deleted", projectId);
-            return false;
-        }
+//        if (project.getDeleted()) {
+//            log.info("project with id {} was deleted", projectId);
+//            return false;
+//        }
 
         if (!projectId.equals(sprint.getProject().getId())) {
             log.info("sprint with id {} is not connected with project with id {}", sprintId, projectId);
@@ -82,13 +83,46 @@ public class ProjectService {
     }
 
     @Transactional
+    public boolean validateUserProject(UserDto user, Long projectId, boolean authorRequired) {
+        if (user == null || projectId == null) {
+            log.info("user or project id is null");
+            return false;
+        }
+
+        Project project = projectRepo.getReferenceById(projectId);
+        if (project.getId() == null) {
+            log.info("project with id {} is null", projectId);
+            return false;
+        }
+
+//        if (project.getDeleted()) {
+//            log.info("project with id {} was deleted", projectId);
+//            return false;
+//        }
+
+        if (!user.getId().equals(project.getAuthor().getId()) && authorRequired) {
+            log.info("user with id {} is not author of project with id {}", user.getId(), projectId);
+            return false;
+        }
+
+        if (!authorRequired) {
+            User userEntity = userService.getUser(user.getId());
+            List<User> participants = project.getParticipants();
+
+            return participants.contains(userEntity);
+        }
+
+        return true;
+    }
+
+    @Transactional
     public List<UserInfoDto> getParticipants(Long projectId) {
         Project project = projectRepo.getReferenceById(projectId);
 
-        if (project.getDeleted()) {
-            log.info("project with id {} was deleted", projectId);
-            return null;
-        }
+//        if (project.getDeleted()) {
+//            log.info("project with id {} was deleted", projectId);
+//            return null;
+//        }
 
         List<UserInfoDto> res = new ArrayList<>();
         res.add(new UserInfoDto(project.getAuthor()));
@@ -131,23 +165,35 @@ public class ProjectService {
     @Transactional
     public void updateProject(ProjectInfoDto projectInfo) {
         Project project = projectRepo.getReferenceById(projectInfo.getId());
-        if (project.getDeleted()) {
-            return;
-        }
+//        if (project.getDeleted()) {
+//            return;
+//        }
         project.setName(projectInfo.getName());
         project.setText(projectInfo.getDescription());
         projectRepo.save(project);
     }
 
+//    @Transactional
+//    public void deleteProject(Long projectId) {
+//        Project project = projectRepo.getReferenceById(projectId);
+//        project.setDeleted(true);
+//        project.getSprints().forEach(s -> {
+//            s.setDeleted(true);
+//            taskService.deleteTaskById(projectId, s.getId());
+//            sprintService.save(s);
+//        });
+//        projectRepo.save(project);
+//    }
+
     @Transactional
-    public void deleteProject(Long projectId) {
-        Project project = projectRepo.getReferenceById(projectId);
-        project.setDeleted(true);
-        project.getSprints().forEach(s -> {
-            s.setDeleted(true);
-            taskService.deleteTaskById(projectId, s.getId());
-            sprintService.save(s);
-        });
-        projectRepo.save(project);
+    public SprintInfoDto createSprint(SprintInfoDto sprintInfo, Long projectId) throws ParseException {
+        Project project = getProjectEntity(projectId);
+        Sprint sprint = sprintService.createSprint(sprintInfo, project);
+        List<Sprint> sprints = project.getSprints();
+        sprints.add(sprint);
+        project.setSprints(sprints);
+        save(project);
+
+        return new SprintInfoDto(sprint);
     }
 }

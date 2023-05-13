@@ -8,5 +8,5 @@ import ru.deta.deta.entities.User;
 
 @Repository
 public interface RelationRepo extends JpaRepository<Relation, Long> {
-    Relation getRelationByMasterAndSlaveAndProjectAndDeletedEquals(User master, User slave, Project project, Boolean deleted);
+    Relation getRelationByMasterAndSlaveAndProject(User master, User slave, Project project);
 }

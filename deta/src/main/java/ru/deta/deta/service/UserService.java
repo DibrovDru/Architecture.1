@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.deta.deta.dto.UserDto;
+import ru.deta.deta.dto.info.UserInfoDto;
 import ru.deta.deta.entities.User;
 import ru.deta.deta.repository.UserRepo;
 
@@ -30,5 +31,9 @@ public class UserService {
     @Transactional
     public User save(User user) {
         return userRepo.save(user);
+    }
+
+    public UserInfoDto getUserInfo(Long id) {
+        return new UserInfoDto(userRepo.getReferenceById(id));
     }
 }

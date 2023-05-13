@@ -41,6 +41,6 @@ public class Project {
     @Column(name = "text")
     private String text;
 
-    @Column(name = "deleted")
-    private Boolean deleted = false;
+//    @Column(name = "deleted")
+//    private Boolean deleted = false;
 }
