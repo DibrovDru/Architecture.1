@@ -22,16 +22,44 @@ import { Form } from 'react-bootstrap';
 import {projects} from "../../store/state";
 import {useParams} from "react-router-dom";
 import {Context} from "../../index";
+import {observer} from "mobx-react-lite";
+import ProjectsService from "../../logic/services/ProjectsService";
+import Projects from "../../store/projects";
 
 
-const InfoProjectCard: FC<Project>  = (project) => {
+const InfoProjectCard: FC/*<Project>*/  = observer((/*project*/) => {
+    const { storageCurrentState} = useContext(Context);
+
+    const [name, setName] = useState<string>(storageCurrentState.currentProject.name);
+    const [description, setDescription] = useState<string>(storageCurrentState.currentProject.description);
+
+    useEffect(() => {
+        setName(storageCurrentState.currentProject.name);
+        setDescription(storageCurrentState.currentProject.description);
+    }, [storageCurrentState.currentProject.name, storageCurrentState.currentProject.description]);
+
+    const saveChanges = () => {
+        ProjectsService.pushProject(String(storageCurrentState.currentProject.id),
+                                    name,
+                                    description);
+        storageCurrentState.setProject({id: storageCurrentState.currentProject.id,
+                                        name: name,
+                                        description: description,
+                                        creator: storageCurrentState.currentProject.creator});
+        // storageCurrentState.setProject(ProjectsService.fetchProject(String(storageCurrentState.currentProject.id)));
+    }
+
+    console.log('lol', name, description);
+    console.log('bruh', storageCurrentState.currentProject.name, storageCurrentState.currentProject.description);
+
     return (
         <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Наименование</Form.Label>
                 <Form.Control
                     type="text"
-                    value={project.name}
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
                 />
             </Form.Group>
 
@@ -41,30 +69,34 @@ const InfoProjectCard: FC<Project>  = (project) => {
                     as='textarea'
                     rows={3}
                     type="text"
-                    value={project.description}
+                    value={description}
+                    onChange={(event) => setDescription(event.target.value)}
                 />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary"
+                    // type="submit"
+                    onClick={saveChanges}
+            >
                 Сохранить
             </Button>
         </Form>
 
     );
-}
-
+});
 
 const InfoProjectPage = () => {
     const { project_id } = useParams<{ project_id: string }>();
-    const {storageProjects, storageCurrentState} = useContext(Context);
 
-    const [currentProject, setCurrentProject] = useState<Project>({} as Project);
+    const { storageCurrentState} = useContext(Context);
+
+    // const [currentProject, setCurrentProject] = useState<Project>({} as Project);
 
     useEffect(() => {
-        var newProject = storageProjects.storageProjects.filter((p) => String(p.id) == project_id)[0];
-        storageCurrentState.setProject(newProject);
-        setCurrentProject(storageCurrentState.currentProject);
-        // console.log(store.currentProject.name);
+        storageCurrentState.setProject(ProjectsService.fetchProject(project_id));
+
+        // setCurrentProject(storageCurrentState.currentProject);
+        console.log('name = ', storageCurrentState.currentProject.name);
     }, []);
 
 
@@ -82,10 +114,10 @@ const InfoProjectPage = () => {
                         </h3>
 
                         <InfoProjectCard
-                            id={currentProject.id}
-                            name={currentProject.name}
-                            description={currentProject.description}
-                            creator={currentProject.creator}
+                            // id={storageCurrentState.currentProject.id}
+                            // name={storageCurrentState.currentProject.name}
+                            // description={storageCurrentState.currentProject.description}
+                            // creator={storageCurrentState.currentProject.creator}
                         />
 
                     </Col>

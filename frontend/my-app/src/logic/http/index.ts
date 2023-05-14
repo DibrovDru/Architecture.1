@@ -1,7 +1,9 @@
 import axios from 'axios';
 import {AuthResponce} from "../../types/response/AithRespose";
 
-export const API_URL = `http://localhost:5000/api`;
+export const API_URL = `https://e464-176-214-100-148.ngrok-free.app`;
+
+
 
 export const PROJECTS_URL = (project_id: string = '') =>
     `/projects/${project_id}`;
@@ -13,6 +15,9 @@ export const TASKS_URL = (project_id: string, sprint_id: string, task_id: string
     `/projects/${project_id}/tasks/sprints/${sprint_id}/${task_id}`;
 export const COMMENTS_URL = (project_id: string, sprint_id: string, task_id: string, comment_id: string = '') =>
     `/projects/${project_id}/tasks/sprints/${sprint_id}/${task_id}/comments/${comment_id}`;
+
+
+
 
 const $api = axios.create({
     withCredentials: true,

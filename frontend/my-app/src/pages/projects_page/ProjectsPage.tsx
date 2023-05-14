@@ -12,6 +12,8 @@ import {map} from "react-bootstrap/ElementChildren";
 import { useNavigate } from 'react-router-dom';
 import {PROJECTS_URL} from "../../logic/http";
 import {Context} from "../../index";
+import {observer} from "mobx-react-lite";
+import ProjectsService from "../../logic/services/ProjectsService";
 
 
 
@@ -23,16 +25,17 @@ function ProjectsPage() {
         navigate(PROJECTS_URL(String(id)));
     };
 
-    const [localProjects, setlocalProjects] = useState<Project[]>([]);
+    // const [localProjects, setlocalProjects] = useState<Project[]>([]);
 
 
     useEffect(() => {
-        storageProjects.setProjects(projects);
-        setlocalProjects(storageProjects.storageProjects);
+        storageProjects.setProjects(ProjectsService.fetchProjects());
+
+        // setlocalProjects(storageProjects.storageProjects);
 
         console.log('bbbbbbbbb');
         // console.log(localProjects);
-        // console.log(projects.storageProjects[0]);
+        console.log(storageProjects.storageProjects.length);
     }, []);
 
 
@@ -57,7 +60,7 @@ function ProjectsPage() {
         <div>
             <MyHeader />
             <Carousel interval={null} indicators={false} variant={'dark'} style={{ height: '80vh' }}>
-                {makeThreeInBuch(localProjects).map(buch => (
+                {makeThreeInBuch(storageProjects.storageProjects).map(buch => (
                     <Carousel.Item>
                         <div className={`${app_styles.space_around} ${projects_styles.margin_carousel_item}`}>
                         {buch.map(project => (
@@ -79,4 +82,4 @@ function ProjectsPage() {
     );
 }
 
-export default ProjectsPage;
+export default observer(ProjectsPage);

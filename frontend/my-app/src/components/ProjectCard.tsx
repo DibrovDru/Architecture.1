@@ -5,6 +5,7 @@ import React, {FC} from "react";
 import app_styles from '../App.module.css';
 import projects_styles from '../pages/projects_page/ProjectsPage.module.css';
 import {Project} from "../types";
+import {observer} from "mobx-react-lite";
 
 const ProjectCard: FC<Project> = ({
                                       id,
@@ -25,4 +26,4 @@ const ProjectCard: FC<Project> = ({
     );
 }
 
-export default ProjectCard;
+export default observer(ProjectCard);

@@ -7,24 +7,44 @@ import {API_URL} from "../logic/http";
 import {projects} from "./state";
 
 export default class Store {
-    user = {} as Employee
-    isAuth = false;
+    _user = {id: 0, name: 'Sophia', surname: 'Golovvanova', login: 'sonyalogin'}; //{} as Employee
+    _isAuth = false;
 
-    currentProject: Project = {} as Project;
-    tasks: Task[] = [];
+    _currentProject: Project = {} as Project;
+    // _tasks: Task[] = [];
 
     constructor() {
-        this.user = {id: 0, name: 'Sophia', surname: 'Golovvanova', login: 'sonyalogin'};
         makeAutoObservable(this);
     }
 
     setAuth(bool: boolean) {
-        this.isAuth = bool;
+        this._isAuth = bool;
     }
 
     setUser(user: Employee) {
-        this.user = user;
+        this._user = user;
     }
+
+    get isAuth() {
+        return this._isAuth;
+    }
+
+    get user() {
+        return this._user;
+    }
+
+    get currentProject() {
+        return this._currentProject;
+    }
+
+    setProject(project: Project) {
+        console.log("setting current project");
+        console.log(project);
+        this._currentProject = project;
+        console.log(this.currentProject.name);
+    }
+
+
 
      async login(email: string, password: string) {
         try {
@@ -69,16 +89,6 @@ export default class Store {
             console.log(e.response?.data?.message);
         }
     }
-
-
-
-    setProject(project: Project) {
-        console.log("aaaaaaaaaaaaaa");
-        console.log(project);
-        this.currentProject = project;
-    }
-
-
 
 }
 
