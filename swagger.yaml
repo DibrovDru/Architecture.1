@@ -67,6 +67,12 @@ paths:
     put:
       tags:
         - Projects
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
@@ -119,6 +125,17 @@ paths:
       tags:
         - Tasks
       summary: Add a new Task to the db
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
@@ -169,6 +186,11 @@ paths:
           in: path
           required: true
           description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
           schema:
             type: integer
         - name: task_id
@@ -509,8 +531,8 @@ paths:
             schema:
               description: array of logins
               type: array
-              items: 
-                $ref: string
+              items:
+                type: string
       responses:
         '200':
           description: true if exists false if not
@@ -520,7 +542,7 @@ paths:
                 description: array of logins that do not exist
                 type: array
                 items: 
-                  $ref: string
+                  type: string
 
 
 
@@ -549,6 +571,12 @@ paths:
       tags:
         - Sprints
       summary: Add a new Task to the db
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
