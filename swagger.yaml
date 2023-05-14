@@ -78,7 +78,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Projects"
+              $ref: "#/components/schemas/Project"
       responses:
         '200':
           description: Project is successfully modified
@@ -667,7 +667,7 @@ externalDocs:
   url: http://swagger.io
 
 servers:
-  - url: http://127.0.0.1:8099
+  - url: https://e464-176-214-100-148.ngrok-free.app
 
 
 components:
