@@ -582,7 +582,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Sprints"
+              $ref: "#/components/schemas/Sprint"
       responses:
         '200':
           description: Task is successfully created
