@@ -2,13 +2,21 @@ import {Sprint} from "../types";
 import {makeAutoObservable} from "mobx";
 
 export default class Sprints {
-    sprints: Sprint[] = [];
+    _sprints: Sprint[] = [];
     constructor() {
         makeAutoObservable(this);
     }
 
     setSprints(sprints: Sprint[]) {
-        this.sprints = sprints;
+        this._sprints = sprints.map(sprint => {
+            sprint.is_open = true;
+            return sprint;
+        });
     }
+
+    get getSprints() {
+        return this._sprints;
+    }
+
 }
 

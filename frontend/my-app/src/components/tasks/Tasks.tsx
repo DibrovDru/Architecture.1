@@ -7,6 +7,7 @@ import {sprints, tasks} from "../../store/state";
 import {TaskCard} from "./TaskCard";
 import {Context} from "../../index";
 import {Task} from "../../types";
+import {observer} from "mobx-react-lite";
 
 
 function Tasks() {
@@ -19,6 +20,7 @@ function Tasks() {
     const [currentSprints, setCurrentSprints] = useState<Sprint[]>([]);
 
 
+
     useEffect(() => {
         console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ = ');
         console.log(tasks);
@@ -26,12 +28,12 @@ function Tasks() {
         storageSprints.setSprints(sprints);
 
         setCurrentTasks(storageTasks.tasks);
-        setCurrentSprints(storageSprints.sprints);
+        setCurrentSprints(storageSprints.getSprints);
 
         console.log('tasks = ');
         console.log(currentTasks.length);
         console.log(storageTasks.tasks.length)
-        console.log(storageSprints.sprints.length)
+        console.log(storageSprints.getSprints.length)
     }, []);
     // console.log('=========================================================================================');
     // console.log(storageTasks.tasks)
@@ -63,6 +65,15 @@ function Tasks() {
             }
         }
     };
+
+    const changeSprintState = (sprint_id: number) => {
+        for (var i = 0; i < storageSprints.getSprints.length; i++) {
+            if (storageSprints.getSprints[i].id == sprint_id) {
+                storageSprints.getSprints[i].is_open = !storageSprints.getSprints[i].is_open;
+            }
+        }
+        console.log('qwerty')
+    }
 
     return (
         <>
@@ -102,87 +113,89 @@ function Tasks() {
                 return (
                     <><div className={task_pages_styles.sprint}>
                         <img src={require('../../images/opened_bracket.png')} />
-                        <p>
+                        <p onClick={() => changeSprintState(sprint.id)}>
                             {sprint.name} ({sprint.date_start} - {sprint.date_end})
                         </p>
                     </div>
 
-
-                <div className={app_styles.space_around}>
-                    <div className={task_pages_styles.task_column_width}
-                         onDragOver={handleDragOver}
-                         onDrop={(event) => handleDrop(event, TaskType.ToDo)}
-                    >
-                        {currentTasks.filter(task => task.type === TaskType.ToDo && task.sprint.id == sprint.id)
-                            .map(task =>
-                                <div
-                                    draggable
-                                    onDragStart={(event) => handleDragStart(event, task)}
-                                    onDragEnd={handleDragEnd}
-                                >
-                                <TaskCard id={task.id}
-                                          name={task.name}
-                                          description={task.description}
-                                          executor={task.executor}
-                                          creator={task.creator}
-                                          type={task.type}
-                                          sprint={task.sprint}
-                                />
-                                </div>)
-                        }
+                {sprint.is_open
+                    ?
+                    <div className={app_styles.space_around}>
+                        <div className={task_pages_styles.task_column_width}
+                             onDragOver={handleDragOver}
+                             onDrop={(event) => handleDrop(event, TaskType.ToDo)}
+                        >
+                            {currentTasks.filter(task => task.type === TaskType.ToDo && task.sprint.id == sprint.id)
+                                .map(task =>
+                                    <div
+                                        draggable
+                                        onDragStart={(event) => handleDragStart(event, task)}
+                                        onDragEnd={handleDragEnd}
+                                    >
+                                        <TaskCard id={task.id}
+                                                  name={task.name}
+                                                  description={task.description}
+                                                  executor={task.executor}
+                                                  creator={task.creator}
+                                                  type={task.type}
+                                                  sprint={task.sprint}
+                                        />
+                                    </div>)
+                            }
+                        </div>
+                        <div className={task_pages_styles.task_column_width}
+                             onDragOver={handleDragOver}
+                             onDrop={(event) => handleDrop(event, TaskType.InProgress)}
+                        >
+                            {currentTasks.filter(task => task.type === TaskType.InProgress && task.sprint.id == sprint.id)
+                                .map(task =>
+                                    <div
+                                        draggable
+                                        onDragStart={(event) => handleDragStart(event, task)}
+                                        onDragEnd={handleDragEnd}
+                                    >
+                                        <TaskCard id={task.id}
+                                                  name={task.name}
+                                                  description={task.description}
+                                                  executor={task.executor}
+                                                  creator={task.creator}
+                                                  type={task.type}
+                                                  sprint={task.sprint}
+                                        />
+                                    </div>)
+                            }
+                        </div>
+                        <div className={task_pages_styles.task_column_width}
+                             onDragOver={handleDragOver}
+                             onDrop={(event) => handleDrop(event, TaskType.Done)}
+                        >
+                            {currentTasks.filter(task => task.type === TaskType.Done && task.sprint.id == sprint.id)
+                                .map(task =>
+                                    <div
+                                        draggable
+                                        onDragStart={(event) => handleDragStart(event, task)}
+                                        onDragEnd={handleDragEnd}
+                                    >
+                                        <TaskCard id={task.id}
+                                                  name={task.name}
+                                                  description={task.description}
+                                                  executor={task.executor}
+                                                  creator={task.creator}
+                                                  type={task.type}
+                                                  sprint={task.sprint}
+                                        />
+                                    </div>)
+                            }
+                        </div>
                     </div>
-                    <div className={task_pages_styles.task_column_width}
-                         onDragOver={handleDragOver}
-                         onDrop={(event) => handleDrop(event, TaskType.InProgress)}
-                    >
-                        {currentTasks.filter(task => task.type === TaskType.InProgress && task.sprint.id == sprint.id)
-                            .map(task =>
-                                <div
-                                    draggable
-                                    onDragStart={(event) => handleDragStart(event, task)}
-                                    onDragEnd={handleDragEnd}
-                                >
-                                <TaskCard id={task.id}
-                                          name={task.name}
-                                          description={task.description}
-                                          executor={task.executor}
-                                          creator={task.creator}
-                                          type={task.type}
-                                          sprint={task.sprint}
-                                />
-                                </div>)
-                        }
-                    </div>
-                    <div className={task_pages_styles.task_column_width}
-                         onDragOver={handleDragOver}
-                         onDrop={(event) => handleDrop(event, TaskType.Done)}
-                    >
-                        {currentTasks.filter(task => task.type === TaskType.Done && task.sprint.id == sprint.id)
-                            .map(task =>
-                                <div
-                                    draggable
-                                    onDragStart={(event) => handleDragStart(event, task)}
-                                    onDragEnd={handleDragEnd}
-                                >
-                                <TaskCard id={task.id}
-                                          name={task.name}
-                                          description={task.description}
-                                          executor={task.executor}
-                                          creator={task.creator}
-                                          type={task.type}
-                                          sprint={task.sprint}
-                                />
-                                </div>)
-                        }
-                    </div>
-
-                </div></>
+                    :
+                    <></>
+                }
+                </>
             );
             })}
-
-
             <div className={base_styles.myfooter} />
         </>
     );
 }
-export default Tasks;
+export default observer(Tasks);

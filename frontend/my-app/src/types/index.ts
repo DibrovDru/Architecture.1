@@ -56,6 +56,7 @@ export interface Sprint {
     date_end: string,
     is_actual: boolean,
     description: string,
+    is_open?: boolean
 }
 
 export interface Error {
