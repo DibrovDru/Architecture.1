@@ -18,19 +18,19 @@ export default class TasksService {
     //     return response;
     // }
 
-    static /* async */ fetchTask(task_id: number) : Project /* Promise<AxiosResponse<Project[]>> */ {
+    static /* async */ fetchTask(task_id: number) : Task /* Promise<AxiosResponse<Project[]>> */ {
         return tasks.getTasks.filter(task => task.id == task_id)[0];
         // return $api.get<Project[]>('/projects')
     }
 
-    static /* async */ pushTask(project_id: string, name: string, description: string) : Project /* Promise<AxiosResponse<Project[]>> */ {
-        for (var i = 0; i < projects.getProjects.length; i++) {
-            if (project_id == String(projects.getProjects[i].id)) {
-                projects.getProjects[i].name = name;
-                projects.getProjects[i].description = description
+    static /* async */ pushTask(task_id: number, name: string, description: string) : Task /* Promise<AxiosResponse<Project[]>> */ {
+        for (var i = 0; i < tasks.getTasks.length; i++) {
+            if (task_id == tasks.getTasks[i].id) {
+                tasks.getTasks[i].name = name;
+                tasks.getTasks[i].description = description
             }
         }
-        return {} as Project; // projects.filter(p => String(p.id) == project_id)[0];
+        return {} as Task; // projects.filter(p => String(p.id) == project_id)[0];
         // return $api.get<Project[]>('/projects')
     }
 }

@@ -10,6 +10,7 @@ import {Task} from "../../types";
 import {observer} from "mobx-react-lite";
 import ProjectsService from "../../logic/services/ProjectsService";
 import TasksService from "../../logic/services/TasksService";
+import SprintsService from "../../logic/services/SprintsService";
 
 
 function Tasks() {
@@ -31,18 +32,10 @@ function Tasks() {
 
 
 
-        storageSprints.setSprints(defaultSprints); ///////////////////////////////      <<<-----------------
+        storageSprints.setSprints(SprintsService.fetchSprints());
 
-        // setCurrentTasks(storageTasks.tasks);
-        setCurrentSprints(storageSprints.getSprints);
-
-        // console.log('tasks = ');
-        // console.log(currentTasks.length);
-        // console.log(storageTasks.tasks.length)
         console.log(storageSprints.getSprints.length)
     }, []);
-    // console.log('=========================================================================================');
-    // console.log(storageTasks.tasks)
 
 
     const [dragging, setDragging] = useState(false);
@@ -116,7 +109,7 @@ function Tasks() {
             </div>
 
 
-            {currentSprints.map(sprint => {
+            {storageSprints.getSprints.map(sprint => {
                 return (
                     <><div className={task_pages_styles.sprint}>
                         <img src={require('../../images/opened_bracket.png')} />

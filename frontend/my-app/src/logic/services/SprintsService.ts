@@ -6,7 +6,7 @@ import {defaultSprints, defaultTasks} from "../../store/state";
 import {projects, tasks, sprints} from '../../index';
 
 export default class SprintsService {
-    static fetchSprints(sprint_id: number) : Sprint[] {
+    static fetchSprints(project_id: number = 1) : Sprint[] {
         if (sprints.getSprints.length == 0) {
             return defaultSprints
         }
