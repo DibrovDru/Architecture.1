@@ -131,6 +131,7 @@ function Tasks() {
                                         draggable
                                         onDragStart={(event) => handleDragStart(event, task)}
                                         onDragEnd={handleDragEnd}
+                                        onClick={() => {storageCurrentState.setCurrentTask(task); console.log('current task is:', task.name)}}
                                     >
                                         <TaskCard id={task.id}
                                                   name={task.name}
@@ -153,6 +154,7 @@ function Tasks() {
                                         draggable
                                         onDragStart={(event) => handleDragStart(event, task)}
                                         onDragEnd={handleDragEnd}
+                                        onClick={() => {storageCurrentState.setCurrentTask(task); console.log('current task is:', task.name)}}
                                     >
                                         <TaskCard id={task.id}
                                                   name={task.name}
@@ -175,6 +177,7 @@ function Tasks() {
                                         draggable
                                         onDragStart={(event) => handleDragStart(event, task)}
                                         onDragEnd={handleDragEnd}
+                                        onClick={() => {storageCurrentState.setCurrentTask(task); console.log('current task is:', task.name)}}
                                     >
                                         <TaskCard id={task.id}
                                                   name={task.name}
