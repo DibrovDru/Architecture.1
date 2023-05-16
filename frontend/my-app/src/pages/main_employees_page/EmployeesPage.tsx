@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -19,11 +19,20 @@ import MyFooter from "../../components/base/Footer";
 import main_pages_styles from "../main_tasks_page/TasksPage.module.css";
 import Profile from "../../components/Profile";
 import {Context} from "../../index";
+import {useNavigate} from "react-router-dom";
 
 
 
 function EmployeesPage() {
     const {storageCurrentState} = useContext(Context);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!localStorage.getItem('Token')) {
+            navigate("/login");
+        }
+    }, [])
+
     return (
         <div>
             <MyHeader/>

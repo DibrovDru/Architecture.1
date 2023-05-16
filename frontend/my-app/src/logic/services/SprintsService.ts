@@ -2,7 +2,7 @@ import $api from "../http";
 import {AxiosResponse} from 'axios';
 import {AuthResponce} from "../../types/response/AuthRespose";
 import {Project, Sprint, Task} from "../../types";
-import {defaultSprints, defaultTasks} from "../../store/state";
+import {defaultSprints, defaultTasks} from "../../store/ts_objects";
 import {projects, tasks, sprints} from '../../index';
 
 export default class SprintsService {

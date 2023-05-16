@@ -14,20 +14,26 @@ import Menu from "../../components/base/Menu";
 import base_styles from "../../components/base/base.module.css";
 import MyFooter from "../../components/base/Footer";
 import task_pages_styles from "../main_tasks_page/TasksPage.module.css";
-import {defaultSprints} from "../../store/state";
+import {defaultSprints} from "../../store/ts_objects";
 import sprints_page_styles from './SprintsPage.module.css';
 import SprintCard from "../../components/SprintCard";
 import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
 import TasksService from "../../logic/services/TasksService";
 import SprintsService from "../../logic/services/SprintsService";
+import {useNavigate} from "react-router-dom";
 
 
 function SprintsPage() {
 
     const {storageSprints, storageCurrentState} = useContext(Context);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
+        if (!localStorage.getItem('Token')) {
+            navigate("/login");
+        }
         storageSprints.setSprints(SprintsService.fetchSprints());
         console.log(storageSprints.getSprints.length)
     }, [])

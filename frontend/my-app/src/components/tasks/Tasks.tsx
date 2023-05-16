@@ -3,7 +3,7 @@ import app_styles from '../../App.module.css';
 import task_pages_styles from '../../pages/main_tasks_page/TasksPage.module.css';
 import base_styles from '../base/base.module.css';
 import {Sprint, TaskType} from "../../types";
-import {defaultSprints, defaultTasks} from "../../store/state";
+import {defaultSprints, defaultTasks} from "../../store/ts_objects";
 import {TaskCard} from "./TaskCard";
 import {Context} from "../../index";
 import {Task} from "../../types";

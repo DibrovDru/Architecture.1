@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -9,6 +9,8 @@ import ImgCard from "../../components/ImgCard";
 import ContainerDeta from "../../components/ContainerDeta";
 import reg_auth_styles from "./RegAuth.module.css";
 import {CreationProjectInfo} from "../../components/CreationProjectInfo";
+import {defaultUsers} from "../../store/ts_objects";
+import {Context} from "../../index";
 
 function AutorisationPage() {
     return (

@@ -6,7 +6,7 @@ import MyFooter from "../../components/base/Footer";
 import app_styles from '../../App.module.css';
 import projects_styles from './ProjectsPage.module.css';
 
-import {defaultProjects} from "../../store/state";
+import {defaultProjects} from "../../store/ts_objects";
 import {Project} from "../../types";
 import {map} from "react-bootstrap/ElementChildren";
 import { useNavigate } from 'react-router-dom';
@@ -29,6 +29,11 @@ function ProjectsPage() {
 
 
     useEffect(() => {
+
+        if (!localStorage.getItem('Token')) {
+            navigate("/login");
+        }
+
         storageProjects.setProjects(ProjectsService.fetchProjects());
         // const responce = ProjectsService.fetchProjects().then(d => data;
         // console.log(responce);

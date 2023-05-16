@@ -13,7 +13,7 @@ import SprintsPage from "./pages/main_sprints_page/SprintsPage";
 import InfoProjectPage from "./pages/main_info_project_page/InfoProjectPage";
 
 
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, useNavigate, Navigate} from 'react-router-dom';
 import {Context} from "./index";
 import {observer} from "mobx-react-lite";
 import {PROJECTS_URL, TASKS_URL} from "./logic/http";
@@ -23,25 +23,37 @@ import { useParams } from 'react-router-dom';
 
 
 function App() {
-    const {storageCurrentState} = useContext(Context);
-    useEffect(() => {
-        if (localStorage.getItem('token')) {
-            storageCurrentState.checkAuth()
-        }
-    }, []) // отработает при первом запуске
+    const { storageCurrentState } = useContext(Context);
 
-    if (storageCurrentState.isAuth) {
-        return (
-            <AutorisationPage/>
-        );
-    }
-
-
-
+    // useEffect(() => {
+    //     if (localStorage.getItem('token')) {
+    //         storageCurrentState.checkAuth();
+    //     }
+    // }, []);
 
     return (
         <Router>
             <Routes>
+                {storageCurrentState.isAuth ? (
+                    <Route
+                        path="/*"
+                        element={
+                            <>
+                                <Navigate to="/projects" />
+                            </>
+                        }
+                    />
+                ) : (
+                    <Route
+                        path="/*"
+                        element={
+                            <>
+                                <Navigate to="/login" />
+                            </>
+                        }
+                    />
+                )}
+                <Route path="/login" element={<AutorisationPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/projects/:project_id" element={<InfoProjectPage />} />
                 <Route path="/projects/:project_id/tasks" element={<TasksPage />} />
@@ -49,17 +61,7 @@ function App() {
                 <Route path="/projects/:project_id/sprints" element={<SprintsPage />} />
             </Routes>
         </Router>
-        /*
-            // <AutorisationPage />
-            // <RegistrationPage/>
-            // <CreationProject/>
-            // <ProjectsPage/>
-            <TasksPage/>
-            // <EmployeesPage/>
-            // <SprintsPage/>
-            // <InfoProjectPage/>
-        */
-        );
+    );
 }
 
 export default observer(App);

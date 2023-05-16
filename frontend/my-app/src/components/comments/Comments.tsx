@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import app_styles from '../../App.module.css';
 import task_pages_styles from '../../pages/main_tasks_page/TasksPage.module.css';
 import base_styles from '../base/base.module.css';
-import {comments} from "../../store/state";
+import {defaultComments} from "../../store/ts_objects";
 import {Comment, Employee} from "../../types";
 import Card from "react-bootstrap/Card";
 import comments_styles from './Comments.module.css';
@@ -45,13 +45,13 @@ function Comments() {
 
     return (
         <>
-            {comments.map(comment => (
+            {defaultComments.map(comment => (
                 <MyComment comment={comment}
                            is_written={true}
                 />
                 )
             )}
-            <MyComment comment={comments[0]} is_written={false}/>
+            <MyComment comment={defaultComments[0]} is_written={false}/>
         </>
     );
 }

@@ -11,13 +11,20 @@ import main_page_styles from './TasksPage.module.css';
 import base_styles from '../../components/base/base.module.css';
 import main_pages_styles from "./TasksPage.module.css";
 import Profile from "../../components/Profile";
-import {defaultTasks} from "../../store/state";
+import {defaultTasks} from "../../store/ts_objects";
 import {Context} from "../../index";
 import {Project, Task} from "../../types";
+import {useNavigate} from "react-router-dom";
 
 function TasksPage() {
-
     const {storageCurrentState } = useContext(Context);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!localStorage.getItem('Token')) {
+            navigate("/login");
+        }
+    }, [])
 
     console.log(storageCurrentState.user.surname);
 

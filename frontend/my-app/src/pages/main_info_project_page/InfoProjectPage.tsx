@@ -19,7 +19,7 @@ import MyFooter from "../../components/base/Footer";
 import main_pages_styles from "../main_tasks_page/TasksPage.module.css";
 import Profile from "../../components/Profile";
 import { Form } from 'react-bootstrap';
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
 import ProjectsService from "../../logic/services/ProjectsService";
@@ -28,11 +28,15 @@ import Projects from "../../store/projects";
 
 const InfoProjectCard: FC/*<Project>*/  = observer((/*project*/) => {
     const { storageCurrentState} = useContext(Context);
+    const navigate = useNavigate();
 
     const [name, setName] = useState<string>(storageCurrentState.currentProject.name);
     const [description, setDescription] = useState<string>(storageCurrentState.currentProject.description);
 
     useEffect(() => {
+        if (!localStorage.getItem('Token')) {
+            navigate("/login");
+        }
         setName(storageCurrentState.currentProject.name);
         setDescription(storageCurrentState.currentProject.description);
     }, [storageCurrentState.currentProject.name, storageCurrentState.currentProject.description]);

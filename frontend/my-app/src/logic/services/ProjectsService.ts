@@ -2,7 +2,7 @@ import $api from "../http";
 import {AxiosResponse} from 'axios';
 import {AuthResponce} from "../../types/response/AuthRespose";
 import {Project} from "../../types";
-import {defaultProjects} from "../../store/state";
+import {defaultProjects} from "../../store/ts_objects";
 import {projects} from '../../index';
 
 export default class ProjectsService {

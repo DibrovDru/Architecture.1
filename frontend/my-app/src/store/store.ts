@@ -4,9 +4,10 @@ import AuthService from "../logic/services/AuthService";
 import axios from "axios";
 import {AuthResponce} from "../types/response/AuthRespose";
 import {API_URL} from "../logic/http";
+import {defaultUsers} from "./ts_objects";
 
 export default class Store {
-    _user = {id: 0, name: 'Sophia', surname: 'Golovvanova', login: 'sonyalogin'}; //{} as Employee
+    _user = {} as Employee; // {id: 0, name: 'Sophia', surname: 'Golovvanova', login: 'sonyalogin'}; //{} as Employee
     _isAuth = false;
 
     _currentProject: Project = {} as Project;
@@ -68,16 +69,27 @@ export default class Store {
 
 
 
-     async login(email: string, password: string) {
-        try {
-            const responce = await AuthService.login(email, password);
-            localStorage.setItem('token', responce.data.accessToken);
+     // async login(email: string, password: string) {
+     //    try {
+     //        const responce = await AuthService.login(email, password);
+     //        localStorage.setItem('token', responce.data.accessToken);
+     //        this.setAuth(true);
+     //        this.setUser(responce.data.user);
+     //    } catch (e: any) {
+     //        console.log(e.response?.data?.message);
+     //    }
+     // }
+    login(email: string, password: string) {
+        console.log(email);
+        console.log(defaultUsers.map(u => u.login));
+        if (defaultUsers.map(u => u.login).includes(email)) {
+            localStorage.setItem('Token', email);
+            this.setUser(defaultUsers.filter(u => u.login == email)[0]);
             this.setAuth(true);
-            this.setUser(responce.data.user);
-        } catch (e: any) {
-            console.log(e.response?.data?.message);
+        } else {
+            alert('Неверное имя пользоваля или пароль');
         }
-     }
+    }
 
     async registration(email: string, password: string, name: string) {
         try {
@@ -90,26 +102,31 @@ export default class Store {
         }
     }
 
-    async logout() {
-        try {
-            const responce = await AuthService.logout();
-            localStorage.removeItem('token');
-            this.setAuth(false);
-            this.setUser({} as Employee);
-        } catch (e: any) {
-            console.log(e.response?.data?.message);
-        }
+    // async logout() {
+    //     try {
+    //         const responce = await AuthService.logout();
+    //         localStorage.removeItem('token');
+    //         this.setAuth(false);
+    //         this.setUser({} as Employee);
+    //     } catch (e: any) {
+    //         console.log(e.response?.data?.message);
+    //     }
+    // }
+     logout() {
+        localStorage.removeItem('Token');
+        this.setAuth(false);
+        this.setUser({} as Employee);
     }
 
     async checkAuth() {
-        try {
-            const responce = await axios.get<AuthResponce>(`${API_URL}/refresh`, {withCredentials: true});
-            localStorage.setItem('token', responce.data.accessToken);
-            this.setAuth(true);
-            this.setUser(responce.data.user);
-        } catch (e: any) {
-            console.log(e.response?.data?.message);
-        }
+        // try {
+        //     const responce = await axios.get<AuthResponce>(`${API_URL}/refresh`, {withCredentials: true});
+        //     localStorage.setItem('token', responce.data.accessToken);
+        //     this.setAuth(true);
+        //     this.setUser(responce.data.user);
+        // } catch (e: any) {
+        //     console.log(e.response?.data?.message);
+        // }
     }
 
 }
