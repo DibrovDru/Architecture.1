@@ -1,4 +1,4 @@
-import {Employee, Project, Task} from "../types";
+import {Employee, Project, Sprint, Task} from "../types";
 import {makeAutoObservable} from "mobx";
 import AuthService from "../logic/services/AuthService";
 import axios from "axios";
@@ -10,6 +10,7 @@ export default class Store {
     _isAuth = false;
 
     _currentProject: Project = {} as Project;
+    _currentSprint: Sprint = {} as Sprint;
     // _tasks: Task[] = [];
 
     constructor() {
@@ -36,11 +37,22 @@ export default class Store {
         return this._currentProject;
     }
 
-    setProject(project: Project) {
+    setCurrentProject(project: Project) {
         console.log("setting current project");
         console.log(project);
         this._currentProject = project;
         console.log(this.currentProject.name);
+    }
+
+    get currentSprint() {
+        return this._currentSprint
+    }
+
+    setCurrentSprint(sprint: Sprint) {
+        console.log("setting current sprint");
+        console.log(sprint);
+        this._currentSprint = sprint;
+        console.log(this.currentSprint.name);
     }
 
 

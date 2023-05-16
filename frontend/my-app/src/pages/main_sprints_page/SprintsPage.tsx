@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -17,9 +17,22 @@ import task_pages_styles from "../main_tasks_page/TasksPage.module.css";
 import {defaultSprints} from "../../store/state";
 import sprints_page_styles from './SprintsPage.module.css';
 import SprintCard from "../../components/SprintCard";
+import {Context} from "../../index";
+import {observer} from "mobx-react-lite";
+import TasksService from "../../logic/services/TasksService";
+import SprintsService from "../../logic/services/SprintsService";
 
 
 function SprintsPage() {
+
+    const {storageSprints, storageCurrentState} = useContext(Context);
+
+    useEffect(() => {
+        storageSprints.setSprints(SprintsService.fetchSprints());
+        console.log(storageSprints.getSprints.length)
+    }, [])
+
+
     return (
         <div>
             <MyHeader/>
@@ -58,19 +71,21 @@ function SprintsPage() {
 
                             <div className={app_styles.space_around}>
                                 <div className={sprints_page_styles.sprint_column_width}>
-                                    {defaultSprints.filter(sprint => sprint.is_actual)
+                                    {storageSprints.getSprints.filter(sprint => sprint.is_actual)
                                         .map(sprint =>
+                                            <div onClick={() => {storageCurrentState.setCurrentSprint(sprint)}}>
                                             <SprintCard id={sprint.id}
                                                         name={sprint.name}
                                                         description={sprint.description}
                                                         date_start={sprint.date_start}
                                                         date_end={sprint.date_end}
                                                         is_actual={sprint.is_actual}
-                                            />)
+                                            />
+                                            </div>)
                                     }
                                 </div>
                                 <div className={sprints_page_styles.sprint_column_width}>
-                                    {defaultSprints.filter(sprint => !sprint.is_actual)
+                                    {storageSprints.getSprints.filter(sprint => !sprint.is_actual)
                                         .map(sprint =>
                                             <SprintCard id={sprint.id}
                                                         name={sprint.name}
@@ -94,4 +109,4 @@ function SprintsPage() {
     );
 }
 
-export default SprintsPage;
+export default observer(SprintsPage);

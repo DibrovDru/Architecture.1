@@ -41,7 +41,7 @@ const InfoProjectCard: FC/*<Project>*/  = observer((/*project*/) => {
         ProjectsService.pushProject(String(storageCurrentState.currentProject.id),
                                     name,
                                     description);
-        storageCurrentState.setProject(ProjectsService.fetchProject(String(storageCurrentState.currentProject.id)));
+        storageCurrentState.setCurrentProject(ProjectsService.fetchProject(String(storageCurrentState.currentProject.id)));
     }
 
     console.log('lol', name, description);
@@ -89,7 +89,7 @@ const InfoProjectPage = () => {
 
     useEffect(() => {
         storageProjects.setProjects(ProjectsService.fetchProjects());
-        storageCurrentState.setProject(ProjectsService.fetchProject(project_id));
+        storageCurrentState.setCurrentProject(ProjectsService.fetchProject(project_id));
 
         // setCurrentProject(storageCurrentState.currentProject);
         console.log('name = ', storageCurrentState.currentProject.name);
