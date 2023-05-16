@@ -3,11 +3,13 @@ import app_styles from '../../App.module.css';
 import task_pages_styles from '../../pages/main_tasks_page/TasksPage.module.css';
 import base_styles from '../base/base.module.css';
 import {Sprint, TaskType} from "../../types";
-import {sprints, tasks} from "../../store/state";
+import {defaultSprints, defaultTasks} from "../../store/state";
 import {TaskCard} from "./TaskCard";
 import {Context} from "../../index";
 import {Task} from "../../types";
 import {observer} from "mobx-react-lite";
+import ProjectsService from "../../logic/services/ProjectsService";
+import TasksService from "../../logic/services/TasksService";
 
 
 function Tasks() {
@@ -23,16 +25,20 @@ function Tasks() {
 
     useEffect(() => {
         console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ = ');
-        console.log(tasks);
-        storageTasks.setTasks(tasks);
-        storageSprints.setSprints(sprints);
+        console.log(defaultTasks.length);
+        storageTasks.setTasks(TasksService.fetchTasks(storageCurrentState.currentProject.id));
+        console.log(storageTasks.getTasks.length);
 
-        setCurrentTasks(storageTasks.tasks);
+
+
+        storageSprints.setSprints(defaultSprints); ///////////////////////////////      <<<-----------------
+
+        // setCurrentTasks(storageTasks.tasks);
         setCurrentSprints(storageSprints.getSprints);
 
-        console.log('tasks = ');
-        console.log(currentTasks.length);
-        console.log(storageTasks.tasks.length)
+        // console.log('tasks = ');
+        // console.log(currentTasks.length);
+        // console.log(storageTasks.tasks.length)
         console.log(storageSprints.getSprints.length)
     }, []);
     // console.log('=========================================================================================');
@@ -58,9 +64,9 @@ function Tasks() {
     const handleDrop = (event: any, taskType: TaskType) => {
         event.preventDefault();
         console.log('dropped', taskType)
-        for (let i = 0; i < storageTasks.tasks.length; ++i) {
-            if (storageTasks.tasks[i].id == currentCard.id) {
-                storageTasks.tasks[i].type = taskType;
+        for (let i = 0; i < storageTasks.getTasks.length; ++i) {
+            if (storageTasks.getTasks[i].id == currentCard.id) {
+                storageTasks.getTasks[i].type = taskType;
                 break;
             }
         }
@@ -70,6 +76,7 @@ function Tasks() {
         for (var i = 0; i < storageSprints.getSprints.length; i++) {
             if (storageSprints.getSprints[i].id == sprint_id) {
                 storageSprints.getSprints[i].is_open = !storageSprints.getSprints[i].is_open;
+                break;
             }
         }
         console.log('qwerty')
@@ -125,7 +132,7 @@ function Tasks() {
                              onDragOver={handleDragOver}
                              onDrop={(event) => handleDrop(event, TaskType.ToDo)}
                         >
-                            {currentTasks.filter(task => task.type === TaskType.ToDo && task.sprint.id == sprint.id)
+                            {storageTasks.getTasks.filter(task => task.type === TaskType.ToDo && task.sprint.id == sprint.id)
                                 .map(task =>
                                     <div
                                         draggable
@@ -147,7 +154,7 @@ function Tasks() {
                              onDragOver={handleDragOver}
                              onDrop={(event) => handleDrop(event, TaskType.InProgress)}
                         >
-                            {currentTasks.filter(task => task.type === TaskType.InProgress && task.sprint.id == sprint.id)
+                            {storageTasks.getTasks.filter(task => task.type === TaskType.InProgress && task.sprint.id == sprint.id)
                                 .map(task =>
                                     <div
                                         draggable
@@ -169,7 +176,7 @@ function Tasks() {
                              onDragOver={handleDragOver}
                              onDrop={(event) => handleDrop(event, TaskType.Done)}
                         >
-                            {currentTasks.filter(task => task.type === TaskType.Done && task.sprint.id == sprint.id)
+                            {storageTasks.getTasks.filter(task => task.type === TaskType.Done && task.sprint.id == sprint.id)
                                 .map(task =>
                                     <div
                                         draggable

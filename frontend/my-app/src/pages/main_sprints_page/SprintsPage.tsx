@@ -14,7 +14,7 @@ import Menu from "../../components/base/Menu";
 import base_styles from "../../components/base/base.module.css";
 import MyFooter from "../../components/base/Footer";
 import task_pages_styles from "../main_tasks_page/TasksPage.module.css";
-import {sprints} from "../../store/state";
+import {defaultSprints} from "../../store/state";
 import sprints_page_styles from './SprintsPage.module.css';
 import SprintCard from "../../components/SprintCard";
 
@@ -58,7 +58,7 @@ function SprintsPage() {
 
                             <div className={app_styles.space_around}>
                                 <div className={sprints_page_styles.sprint_column_width}>
-                                    {sprints.filter(sprint => sprint.is_actual)
+                                    {defaultSprints.filter(sprint => sprint.is_actual)
                                         .map(sprint =>
                                             <SprintCard id={sprint.id}
                                                         name={sprint.name}
@@ -70,7 +70,7 @@ function SprintsPage() {
                                     }
                                 </div>
                                 <div className={sprints_page_styles.sprint_column_width}>
-                                    {sprints.filter(sprint => !sprint.is_actual)
+                                    {defaultSprints.filter(sprint => !sprint.is_actual)
                                         .map(sprint =>
                                             <SprintCard id={sprint.id}
                                                         name={sprint.name}

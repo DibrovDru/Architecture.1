@@ -16,8 +16,8 @@ interface State {
 
 const store = new Store();
 export const projects: Projects = new Projects();
-const tasks: Tasks = new Tasks();
-const sprints: Sprints = new Sprints();
+export const tasks: Tasks = new Tasks();
+export const sprints: Sprints = new Sprints();
 
 export const Context = createContext<State>({
     storageCurrentState: store,

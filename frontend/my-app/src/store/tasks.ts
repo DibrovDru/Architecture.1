@@ -3,13 +3,17 @@ import {makeAutoObservable} from "mobx";
 
 
 export default class Tasks {
-    tasks: Task[] = [];
+    _tasks: Task[] = [];
     constructor() {
         makeAutoObservable(this);
     }
 
     setTasks(tasks: Task[]) {
-        this.tasks = tasks;
+        this._tasks = tasks;
+    }
+
+    get getTasks() {
+        return this._tasks;
     }
 }
 
