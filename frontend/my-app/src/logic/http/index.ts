@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {AuthResponce} from "../../types/response/AithRespose";
+import {AuthResponce} from "../../types/response/AuthRespose";
 
 export const API_URL = `https://e464-176-214-100-148.ngrok-free.app`;
 

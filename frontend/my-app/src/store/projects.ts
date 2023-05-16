@@ -2,7 +2,7 @@ import {Employee, Project} from "../types";
 import {makeAutoObservable} from "mobx";
 import AuthService from "../logic/services/AuthService";
 import axios from "axios";
-import {AuthResponce} from "../types/response/AithRespose";
+import {AuthResponce} from "../types/response/AuthRespose";
 import {API_URL} from "../logic/http";
 
 export default class Projects {

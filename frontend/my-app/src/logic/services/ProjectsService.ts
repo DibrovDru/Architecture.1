@@ -1,6 +1,6 @@
 import $api from "../http";
 import {AxiosResponse} from 'axios';
-import {AuthResponce} from "../../types/response/AithRespose";
+import {AuthResponce} from "../../types/response/AuthRespose";
 import {Project} from "../../types";
 import {defaultProjects} from "../../store/state";
 import {projects} from '../../index';
