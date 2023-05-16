@@ -11,7 +11,7 @@ export default class Store {
 
     _currentProject: Project = {} as Project;
     _currentSprint: Sprint = {} as Sprint;
-    // _tasks: Task[] = [];
+    _currentTask: Task = {} as Task;
 
     constructor() {
         makeAutoObservable(this);
@@ -53,6 +53,17 @@ export default class Store {
         console.log(sprint);
         this._currentSprint = sprint;
         console.log(this.currentSprint.name);
+    }
+
+    get currentTask() {
+        return this._currentTask
+    }
+
+    setCurrentTask(task: Task) {
+        console.log("setting current task");
+        console.log(task);
+        this._currentTask = task;
+        console.log(this.currentTask.name);
     }
 
 
