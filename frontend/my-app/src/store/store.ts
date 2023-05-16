@@ -4,7 +4,6 @@ import AuthService from "../logic/services/AuthService";
 import axios from "axios";
 import {AuthResponce} from "../types/response/AithRespose";
 import {API_URL} from "../logic/http";
-import {projects} from "./state";
 
 export default class Store {
     _user = {id: 0, name: 'Sophia', surname: 'Golovvanova', login: 'sonyalogin'}; //{} as Employee

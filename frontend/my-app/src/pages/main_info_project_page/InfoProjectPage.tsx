@@ -19,7 +19,6 @@ import MyFooter from "../../components/base/Footer";
 import main_pages_styles from "../main_tasks_page/TasksPage.module.css";
 import Profile from "../../components/Profile";
 import { Form } from 'react-bootstrap';
-import {projects} from "../../store/state";
 import {useParams} from "react-router-dom";
 import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
@@ -42,11 +41,7 @@ const InfoProjectCard: FC/*<Project>*/  = observer((/*project*/) => {
         ProjectsService.pushProject(String(storageCurrentState.currentProject.id),
                                     name,
                                     description);
-        storageCurrentState.setProject({id: storageCurrentState.currentProject.id,
-                                        name: name,
-                                        description: description,
-                                        creator: storageCurrentState.currentProject.creator});
-        // storageCurrentState.setProject(ProjectsService.fetchProject(String(storageCurrentState.currentProject.id)));
+        storageCurrentState.setProject(ProjectsService.fetchProject(String(storageCurrentState.currentProject.id)));
     }
 
     console.log('lol', name, description);
@@ -88,11 +83,12 @@ const InfoProjectCard: FC/*<Project>*/  = observer((/*project*/) => {
 const InfoProjectPage = () => {
     const { project_id } = useParams<{ project_id: string }>();
 
-    const { storageCurrentState} = useContext(Context);
+    const { storageCurrentState, storageProjects} = useContext(Context);
 
     // const [currentProject, setCurrentProject] = useState<Project>({} as Project);
 
     useEffect(() => {
+        storageProjects.setProjects(ProjectsService.fetchProjects());
         storageCurrentState.setProject(ProjectsService.fetchProject(project_id));
 
         // setCurrentProject(storageCurrentState.currentProject);

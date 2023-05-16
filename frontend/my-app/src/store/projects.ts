@@ -4,17 +4,20 @@ import AuthService from "../logic/services/AuthService";
 import axios from "axios";
 import {AuthResponce} from "../types/response/AithRespose";
 import {API_URL} from "../logic/http";
-import {projects} from "./state";
 
 export default class Projects {
-    storageProjects: Project[] = [];
+    _storageProjects: Project[] = [];
     constructor() {
         // this.storageProjects = projects;
         makeAutoObservable(this);
     }
 
     setProjects(projects: Project[]) {
-        this.storageProjects = projects;
+        this._storageProjects = projects;
+    }
+
+    get getProjects() {
+        return this._storageProjects;
     }
 }
 

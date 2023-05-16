@@ -15,7 +15,7 @@ interface State {
 }
 
 const store = new Store();
-const projects: Projects = new Projects();
+export const projects: Projects = new Projects();
 const tasks: Tasks = new Tasks();
 const sprints: Sprints = new Sprints();
 

@@ -6,7 +6,7 @@ import MyFooter from "../../components/base/Footer";
 import app_styles from '../../App.module.css';
 import projects_styles from './ProjectsPage.module.css';
 
-import {projects} from "../../store/state";
+import {defaultProjects} from "../../store/state";
 import {Project} from "../../types";
 import {map} from "react-bootstrap/ElementChildren";
 import { useNavigate } from 'react-router-dom';
@@ -30,12 +30,22 @@ function ProjectsPage() {
 
     useEffect(() => {
         storageProjects.setProjects(ProjectsService.fetchProjects());
+        // const responce = ProjectsService.fetchProjects().then(d => data;
+        // console.log(responce);
+
+        // ProjectsService.fetchProjects()
+            // .then(data => {
+            //     console.log(data);
+            // })
+            // .catch(error => {
+            //     console.error(error);
+            // });
 
         // setlocalProjects(storageProjects.storageProjects);
 
         console.log('bbbbbbbbb');
         // console.log(localProjects);
-        console.log(storageProjects.storageProjects.length);
+        console.log(storageProjects.getProjects.length);
     }, []);
 
 
@@ -60,7 +70,7 @@ function ProjectsPage() {
         <div>
             <MyHeader />
             <Carousel interval={null} indicators={false} variant={'dark'} style={{ height: '80vh' }}>
-                {makeThreeInBuch(storageProjects.storageProjects).map(buch => (
+                {makeThreeInBuch(storageProjects.getProjects).map(buch => (
                     <Carousel.Item>
                         <div className={`${app_styles.space_around} ${projects_styles.margin_carousel_item}`}>
                         {buch.map(project => (
