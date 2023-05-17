@@ -1,3 +1,4 @@
+# DETA
 # Веб-приложение "Система управления задачами"
 
 ## [Прототип проекта ](https://www.figma.com/file/d9q8Aq04k7I1F0bYrjSZba/deta?node-id=0%3A1&t=yvdLZ74Ivj2hrkme-1)
