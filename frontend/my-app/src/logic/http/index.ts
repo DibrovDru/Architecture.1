@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {AuthResponce} from "../../types/response/AuthRespose";
 
-export const API_URL = `https://e464-176-214-100-148.ngrok-free.app`;
+export const API_URL = `https://1e51-176-214-100-148.ngrok-free.app`;
 
 
 
@@ -24,10 +24,10 @@ const $api = axios.create({
     baseURL: API_URL
 })
 
-// $api.interceptors.request.use((config) => {
-//     config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`
-//     return config;
-// })
+$api.interceptors.request.use((config) => {
+    config.headers.Token = localStorage.getItem('Token');
+    return config;
+})
 
 // $api.interceptors.response.use((config) => {
 //     return config

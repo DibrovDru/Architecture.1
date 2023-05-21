@@ -14,6 +14,7 @@ import {PROJECTS_URL} from "../../logic/http";
 import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
 import ProjectsService from "../../logic/services/ProjectsService";
+import axios from "axios";
 
 
 
@@ -28,30 +29,54 @@ function ProjectsPage() {
     // const [localProjects, setlocalProjects] = useState<Project[]>([]);
 
 
-    useEffect(() => {
 
+    // useEffect(() => {
+    //
+    //     if (!localStorage.getItem('Token')) {
+    //         navigate("/login");
+    //     }
+    //     const fetchData = async () => {
+    //         var response;
+    //         try {
+    //             response = await ProjectsService.fetchProjects();
+    //             console.log('yyyyyyyy ', response.data);
+    //         } catch (error) {
+    //             console.log('errorororoorororororo');
+    //             console.error(error);
+    //         }
+    //     };
+    //
+    //     fetchData();
+    // }, []);
+///////////////////////////////////////////////////////////////////////
+    useEffect(() => {
         if (!localStorage.getItem('Token')) {
             navigate("/login");
         }
-
         storageProjects.setProjects(ProjectsService.fetchProjects());
-        // const responce = ProjectsService.fetchProjects().then(d => data;
-        // console.log(responce);
-
-        // ProjectsService.fetchProjects()
-            // .then(data => {
-            //     console.log(data);
-            // })
-            // .catch(error => {
-            //     console.error(error);
-            // });
-
-        // setlocalProjects(storageProjects.storageProjects);
-
-        console.log('bbbbbbbbb');
-        // console.log(localProjects);
-        console.log(storageProjects.getProjects.length);
-    }, []);
+    }, [])
+///////////////////////////////////
+//         useEffect(() => {
+//         const fetchData = async () => {
+//             axios.get('https://json.activelava.net/tasks',{
+//                 method: 'GET',
+//                 // mode: 'no-cors',
+//                 headers: {
+//                     'Access-Control-Allow-Origin': '*',
+//                     'Content-Type': 'application/json',
+//                 },
+//                 withCredentials: true,
+//                 // credentials: 'same-origin',
+//             })
+//                 .then(results => console.log(results))
+//                 // const response = await fetch('https://example.com', {
+//                 //     mode: 'no-cors'
+//                 // });
+//                 console.log('good response');
+//         };
+//
+//         fetchData();
+//     }, []);
 
 
     const makeThreeInBuch = (localProjects: Project[]) => {

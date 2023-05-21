@@ -24,6 +24,7 @@ import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
 import ProjectsService from "../../logic/services/ProjectsService";
 import Projects from "../../store/projects";
+import {AxiosResponse} from "axios";
 
 
 const InfoProjectCard: FC/*<Project>*/  = observer((/*project*/) => {
@@ -91,13 +92,28 @@ const InfoProjectPage = () => {
 
     // const [currentProject, setCurrentProject] = useState<Project>({} as Project);
 
+
     useEffect(() => {
         storageProjects.setProjects(ProjectsService.fetchProjects());
         storageCurrentState.setCurrentProject(ProjectsService.fetchProject(project_id));
+    }, [])
 
-        // setCurrentProject(storageCurrentState.currentProject);
-        console.log('name = ', storageCurrentState.currentProject.name);
-    }, []);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await ProjectsService.fetchProjects();
+    //             console.log('yyyyyyyy ', response.data);
+    //
+    //             storageCurrentState.setCurrentProject(ProjectsService.fetchProject(project_id));
+    //             console.log('name = ', storageCurrentState.currentProject.name);
+    //         } catch (error) {
+    //             console.log('errorororoorororororo');
+    //             console.error(error);
+    //         }
+    //     };
+    //
+    //     fetchData();
+    // }, []);
 
 
     return (
