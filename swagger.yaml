@@ -1,0 +1,819 @@
+openapi: 3.0.0
+info:
+  description: architecture hometask
+  version: 3.2.3
+  title: Task Swagger
+  termsOfService: http://swagger.io/terms/
+tags:
+  - name: Tasks
+    description: Everything about Tasks in db
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+  - name: Comments
+    description: Everything about Comments in db
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+  - name: Employees
+    description: Everything about Employees in db
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+
+paths:
+
+  /projects:
+    get:
+      tags:
+        - Projects
+      responses:
+        '200':
+          description: Projects are successfully got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Projects"
+    post:
+      tags:
+        - Projects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Project"
+      responses:
+        '200':
+          description: Project is successfully created
+  
+  /projects/{id}:
+    get:
+      tags:
+        - Projects
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Project is successfully got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+    put:
+      tags:
+        - Projects
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Project"
+      responses:
+        '200':
+          description: Project is successfully modified
+    delete:
+      tags:
+        - Projects
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Project is successfully deleted
+
+
+
+########################################################################################  
+  /projects/{id}/tasks/sprints/{sprint_id}:
+    get:
+      tags:
+        - Tasks
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      summary: Get Tasks from db
+      responses:
+        '200':
+          description: Tasks successfully are got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tasks"
+    post:
+      tags:
+        - Tasks
+      summary: Add a new Task to the db
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Task"
+      responses:
+        '200':
+          description: Task is successfully created
+
+
+  /projects/{id}/tasks/sprints/{sprint_id}/{task_id}:
+    get:
+      tags:
+        - Tasks
+      summary: get Task info
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: task_id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Task info is successfully got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+    put:
+      tags:
+        - Tasks
+      summary: Modify an existing Task
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: task_id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Task"
+      responses:
+        '200':
+          description:  Task is successfully modified
+    delete:
+      tags:
+        - Tasks
+      summary: Delete an existing Task
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: task_id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description:  Task is successfully deleted
+          
+
+############################################################################################
+
+
+  /projects/{id}/tasks/sprints/{sprint_id}/{task_id}/comments:
+    get:
+      tags:
+        - Comments
+      summary: Get Comments from db
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: task_id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Comments are successfully got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Comments"
+    post:
+      tags:
+        - Comments
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: task_id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      summary: Add a new Comment to the db
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Comment"
+      responses:
+        '200':
+          description: Comment is successfully created
+  /projects/{id}/tasks/{task_id}/sprints/{sprint_id}/comments/{comment_id}:
+    put:
+      tags:
+        - Comments
+      summary: Modify an existing Comment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: task_id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+        - name: comment_id
+          in: path
+          required: true
+          description: comment id
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Comment"
+      responses:
+        '200':
+          description: Comment is successfully modified
+    delete:
+      tags:
+        - Comments
+      summary: Delete an existing Comment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: task_id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+        - name: comment_id
+          in: path
+          required: true
+          description: comment id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Comment is successfully deleted
+
+
+
+###################################################################################################
+
+
+  /projects/{id}/employees:
+    get:
+      tags:
+        - Employees
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+      summary: Get Emplyees from db in current project
+      responses:
+        '200':
+          description: Emplyees successfully are got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Employees"
+    post:
+      tags:
+        - Employees
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+      summary: Add Emplyees into current project
+      requestBody:
+        required: true
+        description: "every time only {boss: project_crator, employee: Vasya}"
+        content:
+          application/json:
+            schema:
+              type: string
+              # $ref: "#/components/schemas/Relations"
+      responses:
+        '200':
+          description: Emplyees successfully are added
+
+  /projects/{id}/employees/relation:
+    post:
+      tags:
+        - Employees
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+      summary: Add Realation into current project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Relations"
+      responses:
+        '200':
+          description: Relations successfully are added
+    put:
+      tags:
+        - Employees
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+      summary: Modify Relation in current project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Relations"
+      responses:
+        '200':
+          description: Relations successfully are added
+
+
+
+###################################################################################################
+
+
+  /user/{id}:
+    get:
+      tags:
+        - Users
+      summary: Get an existing Employee
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: employee id
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Employee"
+      responses:
+        '200':
+          description:  Employee is successfully got
+    put:
+      tags:
+        - Users
+      summary: Modify an existing Employee
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Employee"
+      responses:
+        '200':
+          description:  Employee is successfully modified
+    delete:
+      tags:
+        - Users
+      summary: Delete an existing Employee
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: task id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Employee is successfully deleted
+
+  /users/find:
+    get:
+      tags:
+        - Users
+      summary: to know exists user or not
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              description: array of logins
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: true if exists false if not
+          content:
+            application/json:
+              schema:
+                description: array of logins that do not exist
+                type: array
+                items: 
+                  type: string
+
+
+
+
+########################################################################################
+#################     TODO          #########################
+  /projects/{id}/sprints:
+    get:
+      tags:
+        - Sprints
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      summary: Get Tasks from db
+      responses:
+        '200':
+          description: Tasks successfully are got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Sprints"
+    post:
+      tags:
+        - Sprints
+      summary: Add a new Task to the db
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Sprint"
+      responses:
+        '200':
+          description: Task is successfully created
+
+
+  /projects/{id}/sprints/{sprint_id}:
+    get:
+      tags:
+        - Sprints
+      summary: get Task info
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          description: sprint id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Task info is successfully got
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Sprint"
+    put:
+      tags:
+        - Sprints
+      summary: Modify an existing Task
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          description: sprint id
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Sprint"
+      responses:
+        '200':
+          description:  Task is successfully modified
+    delete:
+      tags:
+        - Sprints
+      summary: Delete an existing Task
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Project id
+          schema:
+            type: integer
+        - name: sprint_id
+          in: path
+          required: true
+          description: sprint id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description:  Task is successfully deleted
+
+#####################################################################
+
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+
+servers:
+  - url: https://e464-176-214-100-148.ngrok-free.app
+
+
+components:
+  schemas:
+    Project:
+      type: object
+      required:
+         - id
+         - name
+         - creator
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+        description:
+          type: string
+        creator:
+          $ref: '#/components/schemas/Employee'
+    Projects:
+      type: array
+      items:
+        $ref: "#/components/schemas/Project"
+
+    Task:
+      type: object
+      required:
+        - id
+        - name
+        - sprint
+        - type
+        - creator
+        - executor
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        sprint:
+          $ref: '#/components/schemas/Sprint'
+        description:
+          type: string
+        type:
+          type: string
+        creator:
+          $ref: '#/components/schemas/Employee'
+        executor:
+          $ref: '#/components/schemas/Employee'
+    Tasks:
+      type: array
+      items:
+        $ref: "#/components/schemas/Task"
+
+    Employee:
+      type: object
+      required:
+        - id
+        - name
+        - surname
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        surname:
+          type: string
+        login:
+          type: string
+    Employees:
+      type: array
+      items:
+        $ref: "#/components/schemas/Employee"
+    
+    Relation:
+      type: object
+      properties: 
+        id:
+          type: number # old relation id
+        boss:
+          type: string
+        employee:
+          type: string
+    Relations:
+      type: array
+      items:
+        $ref: "#/components/schemas/Relation"
+      
+
+    Comment:
+      type: object
+      required:
+        - id
+        - timestamp
+        - author
+        - text
+      properties:
+        id:
+          type: integer
+        timestamp:
+          type: string
+        author:
+          $ref: "#/components/schemas/Employee"
+        text:
+          type: string
+    Comments:
+      type: array
+      items:
+        $ref: "#/components/schemas/Comment"
+    
+    Sprint:
+      type: object
+      required:
+        - id
+        - name
+        - date_start
+        - date_end
+        - is_actual
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        date_start:
+          type: string
+        date_end:
+          type: string
+        is_actual:
+          type: boolean
+        description:
+          type: string
+        n_days:
+          type: number
+    Sprints:
+      type: array
+      items:
+        $ref: "#/components/schemas/Sprint"
+
+
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+ 

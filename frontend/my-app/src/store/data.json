@@ -1,0 +1,776 @@
+{
+  "projects" : [
+    {
+      "id": 1,
+      "name": "Augmented Reality Shopping Experience",
+      "description": "Develop an augmented reality shopping app that allows customers to try on clothes virtually before making a purchase.",
+      "creator": {
+        "id": 1,
+        "name": "Mark",
+        "surname": "Zuckerberg",
+        "login": "markzuckerberg"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Blockchain-based Supply Chain Management",
+      "description": "Create a blockchain-based supply chain management system to increase transparency and accountability in the supply chain.",
+      "creator": {
+        "id": 2,
+        "name": "Satoshi",
+        "surname": "Nakamoto",
+        "login": "satoshinakamoto"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Automated Personal Finance Assistant",
+      "description": "Build an automated personal finance assistant that helps users manage their finances and investments more effectively.",
+      "creator": {
+        "id": 3,
+        "name": "Warren",
+        "surname": "Buffett",
+        "login": "warrenbuffett"
+      }
+    },
+    {
+      "id": 4,
+      "name": "AI-powered Language Learning Platform",
+      "description": "Create an AI-powered language learning platform that uses natural language processing and machine learning to personalize the learning experience for each user.",
+      "creator": {
+        "id": 4,
+        "name": "Stephen",
+        "surname": "Hawking",
+        "login": "stephenhawking"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Smart City Traffic Management System",
+      "description": "Develop a smart city traffic management system that uses real-time data analysis and predictive modeling to optimize traffic flow and reduce congestion.",
+      "creator": {
+        "id": 5,
+        "name": "Bill",
+        "surname": "Clinton",
+        "login": "billclinton"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Social Media Monitoring Tool",
+      "description": "Build a social media monitoring tool that uses natural language processing and sentiment analysis to help businesses track their online reputation and customer sentiment.",
+      "creator": {
+        "id": 6,
+        "name": "Sheryl",
+        "surname": "Sandberg",
+        "login": "sherylsandberg"
+      }
+    },
+    {
+      "id": 7,
+      "name": "E-commerce Personalization Platform",
+      "description": "Create an e-commerce personalization platform that uses machine learning algorithms to recommend products and personalize the shopping experience for each customer.",
+      "creator": {
+        "id": 7,
+        "name": "Jeff",
+        "surname": "Bezos",
+        "login": "jeffbezos"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Smart Home Security System",
+      "description": "Develop a smart home security system that uses machine learning algorithms to detect and prevent potential security breaches and intrusions.",
+      "creator": {
+        "id": 8,
+        "name": "Elon",
+        "surname": "Musk",
+        "login": "elonmusk"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Implement login functionality",
+      "description": "Add ability for users to log in to the application",
+      "type": 0,
+      "creator": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "johndoe"
+      },
+      "executor": {
+        "id": 2,
+        "name": "Jane",
+        "surname": "Doe",
+        "login": "janedoe"
+      },
+      "sprint": {
+        "id": 1,
+        "name": "Sprint 1",
+        "date_start": "2022-01-01",
+        "date_end": "2022-01-14",
+        "is_actual": true,
+        "description": "First sprint of the project"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Implement registration functionality",
+      "description": "Add ability for users to register for the application",
+      "type": 0,
+      "creator": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "johndoe"
+      },
+      "executor": {
+        "id": 2,
+        "name": "Jane",
+        "surname": "Doe",
+        "login": "janedoe"
+      },
+      "sprint": {
+        "id": 1,
+        "name": "Sprint 1",
+        "date_start": "2022-01-01",
+        "date_end": "2022-01-14",
+        "is_actual": true,
+        "description": "First sprint of the project"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Create homepage design",
+      "description": "Design the layout and structure of the homepage",
+      "type": 1,
+      "creator": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "johndoe"
+      },
+      "executor": {
+        "id": 3,
+        "name": "Bob",
+        "surname": "Smith",
+        "login": "bobsmith"
+      },
+      "sprint": {
+        "id": 2,
+        "name": "Sprint 2",
+        "date_start": "2022-01-15",
+        "date_end": "2022-01-28",
+        "is_actual": false,
+        "description": "Second sprint of the project"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Update user profile page",
+      "description": "Add new fields and improve UI of user profile page",
+      "type": 0,
+      "creator": {
+        "id": 2,
+        "name": "Emma",
+        "surname": "Taylor",
+        "login": "emmataylor"
+      },
+      "executor": {
+        "id": 3,
+        "name": "Bob",
+        "surname": "Lee",
+        "login": "boblee"
+      },
+      "sprint": {
+        "id": 3,
+        "name": "Sprint 3",
+        "date_start": "2022-02-01",
+        "date_end": "2022-02-14",
+        "is_actual": true,
+        "description": "Third sprint of the project"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Implement payment gateway",
+      "description": "Integrate payment gateway to the app",
+      "type": 1,
+      "creator": {
+        "id": 4,
+        "name": "Alice",
+        "surname": "Wong",
+        "login": "alicewong"
+      },
+      "executor": {
+        "id": 1,
+        "name": "Alex",
+        "surname": "Smith",
+        "login": "alexsmith"
+      },
+      "sprint": {
+        "id": 4,
+        "name": "Sprint 4",
+        "date_start": "2022-02-15",
+        "date_end": "2022-02-28",
+        "is_actual": true,
+        "description": "Fourth sprint of the project"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Add support for multiple languages",
+      "description": "Implement localization and add support for multiple languages",
+      "type": 0,
+      "creator": {
+        "id": 3,
+        "name": "Bob",
+        "surname": "Lee",
+        "login": "boblee"
+      },
+      "executor": {
+        "id": 4,
+        "name": "Alice",
+        "surname": "Wong",
+        "login": "alicewong"
+      },
+      "sprint": {
+        "id": 4,
+        "name": "Sprint 4",
+        "date_start": "2022-02-15",
+        "date_end": "2022-02-28",
+        "is_actual": true,
+        "description": "Fourth sprint of the project"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Create admin dashboard",
+      "description": "Develop admin dashboard to manage user accounts and settings",
+      "type": 0,
+      "creator": {
+        "id": 1,
+        "name": "Alex",
+        "surname": "Smith",
+        "login": "alexsmith"
+      },
+      "executor": {
+        "id": 2,
+        "name": "Emma",
+        "surname": "Taylor",
+        "login": "emmataylor"
+      },
+      "sprint": {
+        "id": 5,
+        "name": "Sprint 5",
+        "date_start": "2022-03-01",
+        "date_end": "2022-03-14",
+        "is_actual": true,
+        "description": "Fifth sprint of the project"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Implement Login Feature",
+      "description": "Create a login feature that allows users to sign in to the web application",
+      "type": 0,
+      "creator": {
+        "id": 2,
+        "name": "Alice",
+        "surname": "Johnson",
+        "login": "alicej"
+      },
+      "executor": {
+        "id": 3,
+        "name": "Sarah",
+        "surname": "Williams",
+        "login": "swilliams"
+      },
+      "sprint": {
+        "id": 1,
+        "name": "Sprint 1",
+        "date_start": "2023-04-03",
+        "date_end": "2023-04-16",
+        "is_actual": false,
+        "description": "First sprint of the project"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Design UI for Home Page",
+      "description": "Create a user interface design for the home page of the web application",
+      "type": 1,
+      "creator": {
+        "id": 4,
+        "name": "David",
+        "surname": "Lee",
+        "login": "davidlee"
+      },
+      "executor": {
+        "id": 5,
+        "name": "Jane",
+        "surname": "Smith",
+        "login": "janesmith"
+      },
+      "sprint": {
+        "id": 2,
+        "name": "Sprint 2",
+        "date_start": "2023-04-17",
+        "date_end": "2023-04-30",
+        "is_actual": true,
+        "description": "Second sprint of the project"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Create Database Schema",
+      "description": "Design and implement the database schema for the web application",
+      "type": 0,
+      "creator": {
+        "id": 6,
+        "name": "Michael",
+        "surname": "Brown",
+        "login": "mbrown"
+      },
+      "executor": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "johndoe"
+      },
+      "sprint": {
+        "id": 2,
+        "name": "Sprint 2",
+        "date_start": "2023-04-17",
+        "date_end": "2023-04-30",
+        "is_actual": true,
+        "description": "Second sprint of the project"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Implement Profile Page",
+      "description": "Create a user profile page that displays user information",
+      "type": 1,
+      "creator": {
+        "id": 3,
+        "name": "Sarah",
+        "surname": "Williams",
+        "login": "swilliams"
+      },
+      "executor": {
+        "id": 2,
+        "name": "Emily",
+        "surname": "Johnson",
+        "login": "emilyj"
+      },
+      "sprint": {
+        "id": 3,
+        "name": "Sprint 3",
+        "date_start": "2023-05-01",
+        "date_end": "2023-05-14",
+        "is_actual": true,
+        "description": "Third sprint of the project"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Add Search Functionality",
+      "description": "Implement a search feature that allows users to find content within the web application",
+      "type": 0,
+      "creator": {
+        "id": 4,
+        "name": "David",
+        "surname": "Lee",
+        "login": "davidlee"
+      },
+      "executor": {
+        "id": 5,
+        "name": "Jane",
+        "surname": "Smith",
+        "login": "janesmith"
+      },
+      "sprint": {
+        "id": 3,
+        "name": "Sprint 3",
+        "date_start": "2023-05-01",
+        "date_end": "2023-05-14",
+        "is_actual": true,
+        "description": "Third sprint of the project"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Refactor Codebase",
+      "description": "Perform a code refactor to improve the maintainability and scalability of the web application",
+      "type": 2,
+      "creator": {
+        "id": 6,
+        "name": "Michael",
+        "surname": "Brown",
+        "login": "mbrown"
+      },
+      "executor": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "johndoe"
+      },
+      "sprint": {
+        "id": 3,
+        "name": "Sprint 3",
+        "date_start": "2023-05-01",
+        "date_end": "2023-05-14",
+        "is_actual": true,
+        "description": "Third sprint of the project"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Implement Push Notifications",
+      "description": "Create a feature that sends push notifications to users based on certain events",
+      "type": 1,
+      "creator": {
+        "id": 2,
+        "name": "Alice",
+        "surname": "Johnson",
+        "login": "alicej"
+      },
+      "executor": {
+        "id": 3,
+        "name": "Sarah",
+        "surname": "Williams",
+        "login": "swilliams"
+      },
+      "sprint": {
+        "id": 4,
+        "name": "Sprint 4",
+        "date_start": "2023-05-15",
+        "date_end": "2023-05-28",
+        "is_actual": true,
+        "description": "Fourth sprint of the project"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Add User Authentication",
+      "description": "Implement a user authentication system that allows users to create accounts and log in",
+      "type": 0,
+      "creator": {
+        "id": 5,
+        "name": "Jane",
+        "surname": "Smith",
+        "login": "janesmith"
+      },
+      "executor": {
+        "id": 4,
+        "name": "David",
+        "surname": "Lee",
+        "login": "davidlee"
+      },
+      "sprint": {
+        "id": 4,
+        "name": "Sprint 4",
+        "date_start": "2023-05-15",
+        "date_end": "2023-05-28",
+        "is_actual": true,
+        "description": "Fourth sprint of the project"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Create Admin Dashboard",
+      "description": "Develop a dashboard for administrators to manage users and content within the web application",
+      "type": 2,
+      "creator": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "johndoe"
+      },
+      "executor": {
+        "id": 6,
+        "name": "Michael",
+        "surname": "Brown",
+        "login": "mbrown"
+      },
+      "sprint": {
+        "id": 4,
+        "name": "Sprint 4",
+        "date_start": "2023-05-15",
+        "date_end": "2023-05-28",
+        "is_actual": true,
+        "description": "Fourth sprint of the project"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Implement Social Sharing",
+      "description": "Create a feature that allows users to share content from the web application to social media platforms",
+      "type": 1,
+      "creator": {
+        "id": 3,
+        "name": "Sarah",
+        "surname": "Williams",
+        "login": "swilliams"
+      },
+      "executor": {
+        "id": 2,
+        "name": "Emily",
+        "surname": "Johnson",
+        "login": "emilyj"
+      },
+      "sprint": {
+        "id": 4,
+        "name": "Sprint 4",
+        "date_start": "2023-05-15",
+        "date_end": "2023-05-28",
+        "is_actual": true,
+        "description": "Fourth sprint of the project"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Optimize Database Queries",
+      "description": "Improve the performance of database queries by optimizing indexes and improving query structure",
+      "type": 1,
+      "creator": {
+        "id": 4,
+        "name": "David",
+        "surname": "Lee",
+        "login": "davidlee"
+      },
+      "executor": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "johndoe"
+      },
+      "sprint": {
+        "id": 4,
+        "name": "Sprint 4",
+        "date_start": "2023-05-15",
+        "date_end": "2023-05-28",
+        "is_actual": true,
+        "description": "Fourth sprint of the project"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Design User Interface",
+      "description": "Create a design for the user interface of the web application that is visually appealing and easy to use",
+      "type": 0,
+      "creator": {
+        "id": 5,
+        "name": "Jane",
+        "surname": "Smith",
+        "login": "janesmith"
+      },
+      "executor": {
+        "id": 6,
+        "name": "Michael",
+        "surname": "Brown",
+        "login": "mbrown"
+      },
+      "sprint": {
+        "id": 4,
+        "name": "Sprint 4",
+        "date_start": "2023-05-15",
+        "date_end": "2023-05-28",
+        "is_actual": true,
+        "description": "Fourth sprint of the project"
+      }
+    }
+  ],
+  "sprints": [
+    {
+      "id": 1,
+      "name": "Sprint 1",
+      "date_start": "2022-01-01",
+      "date_end": "2022-01-14",
+      "is_actual": false,
+      "description": "First sprint of the project"
+    },
+    {
+      "id": 2,
+      "name": "Sprint 2",
+      "date_start": "2022-01-15",
+      "date_end": "2022-01-31",
+      "is_actual": false,
+      "description": "Second sprint of the project"
+    },
+    {
+      "id": 3,
+      "name": "Sprint 3",
+      "date_start": "2022-02-01",
+      "date_end": "2022-02-14",
+      "is_actual": true,
+      "description": "Third sprint of the project"
+    },
+    {
+      "id": 4,
+      "name": "Sprint 4",
+      "date_start": "2022-02-15",
+      "date_end": "2022-02-28",
+      "is_actual": true,
+      "description": "Fourth sprint of the project"
+    },
+    {
+      "id": 5,
+      "name": "Sprint 5",
+      "date_start": "2022-03-01",
+      "date_end": "2022-03-14",
+      "is_actual": true,
+      "description": "Fifth sprint of the project"
+    },
+    {
+      "id": 6,
+      "name": "Sprint 6",
+      "date_start": "2022-03-15",
+      "date_end": "2022-03-31",
+      "is_actual": false,
+      "description": "Sixth sprint of the project"
+    },
+    {
+      "id": 7,
+      "name": "Sprint 7",
+      "date_start": "2022-04-01",
+      "date_end": "2022-04-14",
+      "is_actual": true,
+      "description": "Seventh sprint of the project"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "timestamp": "2022-04-05T14:30:00Z",
+      "author": {
+        "id": 1,
+        "name": "John",
+        "surname": "Doe",
+        "login": "jdoe"
+      },
+      "text": "This is the first comment."
+    },
+    {
+      "id": 2,
+      "timestamp": "2022-04-06T09:15:00Z",
+      "author": {
+        "id": 2,
+        "name": "Jane",
+        "surname": "Doe",
+        "login": "jadoe"
+      },
+      "text": "This is the second comment."
+    },
+    {
+      "id": 3,
+      "timestamp": "2022-04-07T16:45:00Z",
+      "author": {
+        "id": 3,
+        "name": "Bob",
+        "surname": "Smith",
+        "login": "bsmith"
+      },
+      "text": "This is the third comment."
+    },
+    {
+      "id": 4,
+      "timestamp": "2022-05-01T10:30:00Z",
+      "author": {
+        "id": 4,
+        "name": "Alice",
+        "surname": "Brown",
+        "login": "abrown"
+      },
+      "text": "This is the fourth comment."
+    },
+    {
+      "id": 5,
+      "timestamp": "2022-05-03T16:00:00Z",
+      "author": {
+        "id": 5,
+        "name": "Charlie",
+        "surname": "Green",
+        "login": "cgreen"
+      },
+      "text": "This is the fifth comment."
+    },
+    {
+      "id": 6,
+      "timestamp": "2022-05-05T11:45:00Z",
+      "author": {
+        "id": 6,
+        "name": "Eve",
+        "surname": "Black",
+        "login": "eblack"
+      },
+      "text": "This is the sixth comment."
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John",
+      "surname": "Doe",
+      "login": "johndoe"
+    },
+    {
+      "id": 2,
+      "name": "Jane",
+      "surname": "Smith",
+      "login": "janesmith"
+    },
+    {
+      "id": 3,
+      "name": "Michael",
+      "surname": "Johnson",
+      "login": "michaeljohnson"
+    },
+    {
+      "id": 4,
+      "name": "Emily",
+      "surname": "Brown",
+      "login": "emilybrown"
+    },
+    {
+      "id": 5,
+      "name": "David",
+      "surname": "Wilson",
+      "login": "davidwilson"
+    },
+    {
+      "id": 6,
+      "name": "Olivia",
+      "surname": "Taylor",
+      "login": "oliviataylor"
+    },
+    {
+      "id": 7,
+      "name": "William",
+      "surname": "Thomas",
+      "login": "williamthomas"
+    },
+    {
+      "id": 8,
+      "name": "Sophia",
+      "surname": "Anderson",
+      "login": "sophiaanderson"
+    },
+    {
+      "id": 9,
+      "name": "James",
+      "surname": "Harris",
+      "login": "jamesharris"
+    },
+    {
+      "id": 10,
+      "name": "Charlotte",
+      "surname": "Clark",
+      "login": "charlotteclark"
+    }
+  ]
+}

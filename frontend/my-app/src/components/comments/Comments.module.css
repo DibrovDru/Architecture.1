@@ -1,0 +1,7 @@
+.comment {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row
+}

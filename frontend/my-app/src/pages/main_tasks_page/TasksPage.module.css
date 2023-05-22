@@ -1,0 +1,31 @@
+.title {
+    font-size: x-large;
+    height: 40px;
+    margin-bottom: 40px
+}
+
+.sprint {
+    display: flex;
+    margin-top: 30px;
+    height: 20px;
+    margin-bottom: 30px;
+}
+
+.sprint img {
+    object-fit: scale-down;
+}
+
+.sprint p {
+    white-space: nowrap;
+}
+
+.task_type {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    border-bottom: solid 1px
+}
+
+.task_column_width {
+    width: 30%;
+}

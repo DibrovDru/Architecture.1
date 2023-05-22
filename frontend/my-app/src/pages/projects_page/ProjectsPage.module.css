@@ -1,0 +1,19 @@
+.margin_carousel_item {
+    margin: 100px;
+    margin-top: 20vh
+}
+
+.width_card_project {
+    width: 20rem
+}
+
+.header_text {
+    font-size: x-large;
+    color: white;
+}
+
+.body_text {
+    font-size: medium;
+    color: white;
+    min-height: 200px;
+}
