@@ -1,0 +1,9 @@
+.sprint_column_width {
+    width: 40%;
+}
+
+.sprint_card {
+    margin-top: 10px;
+    height: 56px;
+    width: 100%;
+}
